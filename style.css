@@ -31,3 +31,8 @@ section {
 h4 {
   font-size: 140%;
 }
+
+em {
+  font-style: normal;
+  color: red;
+}
