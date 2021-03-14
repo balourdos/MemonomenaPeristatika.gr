@@ -8,12 +8,12 @@ const beautifyHTML = require('js-beautify').html
 
 const COLUMNS = ['contribution_date', 'date', 'location', 'url', 'description', 'status']
 
-const CSV = path.join(__dirname, './requests.csv')
+const CSV = path.join(__dirname, '../entries.csv')
 const HTML_FILE = path.join(__dirname, '../index.html')
 
 const getContributions = () => {
     const csv = fs.readFileSync(CSV).toString()
-    const records = parse(csv, { columns: COLUMNS, from_line: 2 })
+    const records = parse(csv, { columns: COLUMNS, from_line: 2 }).filter((r) => r.status === 'approved')
 
     // Deduplicate
     return _.uniqBy(records, 'url')
@@ -27,7 +27,7 @@ const generateList = (videos) => {
     let list = '<ul>'
 
     for (const { location, url, description } of videos) {
-        list += `<li><a href='${url}' target='_blank'>${location}: ${description}</a></li>`
+        list += `<li>${location}${location ? ':' : ''} <a href='${url}' target='_blank'>${description}</a></li>`
     }
 
     return list + '</ul>'
@@ -35,13 +35,14 @@ const generateList = (videos) => {
 
 const populateWithContent = (contributions) => {
     const $ = cheerio.load(loadHTML())
-    const perDate = _.groupBy(contributions, c => moment(c.date, 'MM/DD/YYYY').format('MMM Do YYYY'))
+    const perDate = _.groupBy(contributions, c => moment(c.date, 'MM/DD/YYYY').format('YYYY-MM-DD'))
+    const sorter = ([dateL, _], [dateR, __]) => moment(dateR).diff(moment(dateL), 'minutes')
 
     // Remove existing content
     $('#content *').remove()
 
-    for (const [date, requests] of Object.entries(perDate)) {
-        const title = `<h4>${date}</h4>`
+    for (const [date, requests] of Object.entries(perDate).sort(sorter)) {
+        const title = `<h4>${moment(date).locale('el').format('LL')}</h4>`
 
         $('#content').append(title)
         $('#content').append(generateList(requests))
