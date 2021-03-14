@@ -4,7 +4,7 @@ const _ = require('lodash')
 const parse = require('csv-parse/lib/sync')
 const upload = require('./uploader')
 const { generateHTML } = require('./generator')
-const { saveHTML } = require('./utils')
+const { saveHTML, loadConfig } = require('./utils')
 
 const COLUMNS = ['contribution_date', 'date', 'location', 'url', 'description', 'status']
 const CSV = path.join(__dirname, './entries.csv')
@@ -17,14 +17,23 @@ const getContributions = () => {
     return _.uniqBy(records, 'url')
 }
 
-const main = async () => {
-    const contribs = getContributions()
-
+const uploadContributions = async (contribs) => {
     // Uploads cannot be done concurrently in Cloudinary free plan
     for (contribution of contribs) {
         const cloudinaryUrl = await upload(contribution.url)
         console.log(`Uploaded to cloudinary: ${contribution.url}`)
         contribution.url = cloudinaryUrl
+    }
+
+    return contribs
+}
+
+const main = async () => {
+    const { cloudinary } = loadConfig()
+    let contribs = getContributions()
+
+    if (cloudinary.enabled) {
+        contribs = await uploadContributions(contribs)
     }
 
     const validContributions = contribs.filter(c => c.url != false)
