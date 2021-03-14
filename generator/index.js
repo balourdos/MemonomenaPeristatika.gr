@@ -1,15 +1,13 @@
-const fs = require('fs')
 const path = require('path')
-const parse = require('csv-parse/lib/sync')
-const cheerio = require('cheerio')
-const moment = require('moment')
+const fs = require('fs')
 const _ = require('lodash')
-const beautifyHTML = require('js-beautify').html
+const parse = require('csv-parse/lib/sync')
+const upload = require('./uploader')
+const { generateHTML } = require('./generator')
+const { saveHTML, loadConfig } = require('./utils')
 
 const COLUMNS = ['contribution_date', 'date', 'location', 'url', 'description', 'status']
-
-const CSV = path.join(__dirname, '../entries.csv')
-const HTML_FILE = path.join(__dirname, '../index.html')
+const CSV = path.join(__dirname, './entries.csv')
 
 const getContributions = () => {
     const csv = fs.readFileSync(CSV).toString()
@@ -19,44 +17,30 @@ const getContributions = () => {
     return _.uniqBy(records, 'url')
 }
 
-const loadHTML = () => {
-    return fs.readFileSync(HTML_FILE).toString()
-}
-
-const generateList = (videos) => {
-    let list = '<ul>\n'
-
-    for (const { location, url, description } of videos) {
-        list += `<li>${location}${location ? ':' : ''} <a href='${url}' target='_blank'>${description}</a></li>\n`
+const uploadContributions = async (contribs) => {
+    // Uploads cannot be done concurrently in Cloudinary free plan
+    for (contribution of contribs) {
+        const cloudinaryUrl = await upload(contribution.url)
+        console.log(`Uploaded to cloudinary: ${contribution.url}`)
+        contribution.url = cloudinaryUrl
     }
 
-    return list + '</ul>\n'
+    return contribs
 }
 
-const populateWithContent = (contributions) => {
-    const $ = cheerio.load(loadHTML())
-    const perDate = _.groupBy(contributions, c => moment(c.date, 'MM/DD/YYYY').format('YYYY-MM-DD'))
-    const sorter = ([dateL, _], [dateR, __]) => moment(dateR).diff(moment(dateL), 'minutes')
+const main = async () => {
+    const { cloudinary } = loadConfig()
+    let contribs = getContributions()
 
-    // Remove existing content
-    $('#content *').remove()
-
-    for (const [date, requests] of Object.entries(perDate).sort(sorter)) {
-        const title = `\n<h4>${moment(date).locale('el').format('LL')}</h4>\n`
-
-        $('#content').append(title)
-        $('#content').append(generateList(requests))
+    if (cloudinary.enabled) {
+        contribs = await uploadContributions(contribs)
     }
 
-    return $.html()
-}
+    const validContributions = contribs.filter(c => c.url != false)
+    const html = generateHTML(validContributions)
 
-const main = () => {
-    const contributions = getContributions()
-    const html = populateWithContent(contributions)
-
-    console.log(`Generated html file at: ${HTML_FILE}`)
-    fs.writeFileSync(beautifyHTML(HTML_FILE), html)
+    saveHTML(html)
+    console.log(`Generated HTML`)
 }
 
 main()
