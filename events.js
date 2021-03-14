@@ -55,16 +55,18 @@ var events = [
     ],
 ]
 
-var wrapper, myHTML
-
-wrapper = document.getElementById('events')
+var myHTML, total
 
 myHTML = ''
+total = 0
 for (var i = 0; i < events.length; i++) {
     myHTML += '<h4>' + events[i][0] + '</h4>' + '<ul>'
     for (var j = 0; j < events[i][1].length; j++) {
         myHTML += "<li><a href='" + events[i][1][j][0] + "' target='_blank'>" + events[i][1][j][1] + "</a></li>"
+        total += 1
     }
     myHTML += '</ul>'
 }
-wrapper.innerHTML = myHTML
+document.getElementById('events').innerHTML = myHTML
+
+document.getElementById('totalNum').innerHTML = total.toString()
