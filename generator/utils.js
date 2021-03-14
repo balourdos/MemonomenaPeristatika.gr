@@ -23,6 +23,10 @@ if (typeof config.cachefile === 'undefined') {
     config.cachefile = 'cloudinary-cache'
 }
 config.cachefile = path.join(__dirname, config.cachefile)
+if (typeof config.templatefolder === 'undefined') {
+    config.templatefolder = '../templates'
+}
+config.templatefolder = path.join(__dirname, config.templatefolder)
 const loadCache = () => {
     if (!fs.existsSync(config.cachefile)) {
         return {}
@@ -35,11 +39,9 @@ const cache = loadCache()
 const saveCache = cache => {
     fs.writeFileSync(config.cachefile, JSON.stringify(cache))
 }
-const loadHTML = () => fs.readFileSync(config.htmlfile).toString()
 const saveHTML = html => fs.writeFileSync(config.htmlfile, html)
 
 module.exports = {
-    loadHTML,
     saveHTML,
     cache,
     saveCache,
