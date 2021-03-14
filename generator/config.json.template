@@ -1,8 +1,8 @@
 {
     "cloudinary": {
-        "enabled": true
+        "enabled": true,
         "name": "this_is_a_cloud_name",
         "key": "this_is_a_key",
         "secret": "this_is_a_secret"
-    },
+    }
 }

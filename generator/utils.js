@@ -1,13 +1,10 @@
 const path = require('path')
 const fs = require('fs')
 
-const HTML_FILE = path.join(__dirname, '../index.html')
-
-const loadHTML = () => fs.readFileSync(HTML_FILE).toString()
-const saveHTML = html => fs.writeFileSync(HTML_FILE, html)
+const CONFIG_FILE = 'config.json'
 
 const loadConfig = () => {
-    const configPath = path.join(__dirname, './config.json')
+    const configPath = path.join(__dirname, CONFIG_FILE)
 
     if (!fs.existsSync(configPath)) {
         throw Error('Create config.json from config.json.template')
@@ -15,9 +12,17 @@ const loadConfig = () => {
 
     return require(configPath)
 }
+// set some config defaults
+const config = loadConfig()
+if (typeof config.htmlfile === 'undefined') {
+    config.htmlfile = '../index.html'
+}
+config.htmlfile = path.join(__dirname, config.htmlfile)
+const loadHTML = () => fs.readFileSync(config['htmlfile']).toString()
+const saveHTML = html => fs.writeFileSync(config['htmlfile'], html)
 
 module.exports = {
     loadHTML,
     saveHTML,
-    loadConfig
+    config
 }

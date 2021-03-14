@@ -4,14 +4,14 @@ const _ = require('lodash')
 const parse = require('csv-parse/lib/sync')
 const upload = require('./uploader')
 const { generateHTML } = require('./generator')
-const { saveHTML, loadConfig } = require('./utils')
+const { saveHTML, config } = require('./utils')
 
 const COLUMNS = ['contribution_date', 'date', 'location', 'url', 'description', 'status']
 const CSV = path.join(__dirname, './entries.csv')
 
 const getContributions = () => {
     const csv = fs.readFileSync(CSV).toString()
-    const records = parse(csv, { columns: COLUMNS, from_line: 2 }).filter((r) => r.status === 'approved')
+    const records = parse(csv, { columns: COLUMNS, from_line: 2 }).filter(r => r.status === 'approved')
 
     // Deduplicate
     return _.uniqBy(records, 'url')
@@ -29,7 +29,7 @@ const uploadContributions = async (contribs) => {
 }
 
 const main = async () => {
-    const { cloudinary } = loadConfig()
+    const { cloudinary } = config
     let contribs = getContributions()
 
     if (cloudinary.enabled) {

@@ -3,10 +3,10 @@ const crypto = require('crypto')
 const { promisify } = require('util')
 const { v2: CloudinaryClient } = require('cloudinary')
 const videoParser = require('youtube-dl-exec')
-const { loadConfig } = require('./utils')
+const { config } = require('./utils')
 
 const createCloudinaryClient = () => {
-    const { cloudinary } = loadConfig()
+    const { cloudinary } = config
 
     CloudinaryClient.config({
             cloud_name: cloudinary.name,
@@ -39,7 +39,7 @@ const getVideoURL = async (pageURL) => {
         noWarnings: true,
     })
 
-    // Formats are sorted by resolution asc 
+    // Formats are sorted by resolution asc
     return videos.pop().url
 }
 
