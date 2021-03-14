@@ -24,13 +24,13 @@ const loadHTML = () => {
 }
 
 const generateList = (videos) => {
-    let list = '<ul>'
+    let list = '<ul>\n'
 
     for (const { location, url, description } of videos) {
-        list += `<li>${location}${location ? ':' : ''} <a href='${url}' target='_blank'>${description}</a></li>`
+        list += `<li>${location}${location ? ':' : ''} <a href='${url}' target='_blank'>${description}</a></li>\n`
     }
 
-    return list + '</ul>'
+    return list + '</ul>\n'
 }
 
 const populateWithContent = (contributions) => {
@@ -42,7 +42,7 @@ const populateWithContent = (contributions) => {
     $('#content *').remove()
 
     for (const [date, requests] of Object.entries(perDate).sort(sorter)) {
-        const title = `<h4>${moment(date).locale('el').format('LL')}</h4>`
+        const title = `\n<h4>${moment(date).locale('el').format('LL')}</h4>\n`
 
         $('#content').append(title)
         $('#content').append(generateList(requests))
