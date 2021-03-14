@@ -1,21 +1,13 @@
 const cheerio = require('cheerio')
 const path = require('path')
+const fs = require('fs')
 const moment = require('moment')
 const _ = require('lodash')
 const beautifyHTML = require('js-beautify').html
 const { loadHTML } = require('./utils')
+const ejs = require('ejs')
 
-const generateList = (videos) => {
-    let list = '<ul>\n'
-
-    for (const { location, url, description } of videos) {
-        list += `<li>${location}${location ? ':' : ''} <a href='${url}' target='_blank'>${description}</a></li>\n`
-    }
-
-    return list + '</ul>\n'
-}
-
-const generateHTML = (contributions) => {
+const generateHTML = contributions => {
     const $ = cheerio.load(loadHTML())
     const perDate = _.groupBy(contributions, c => moment(c.date, 'MM/DD/YYYY').format('YYYY-MM-DD'))
     const sorter = ([dateL, _], [dateR, __]) => moment(dateR).diff(moment(dateL), 'minutes')
@@ -23,12 +15,16 @@ const generateHTML = (contributions) => {
     // Remove existing content
     $('#content *').remove()
 
-    for (const [date, requests] of Object.entries(perDate).sort(sorter)) {
-        const title = `\n<h4>${moment(date).locale('el').format('LL')}</h4>\n`
+    const entries = Object.entries(perDate)
+        .sort(sorter)
+        .map(([date, videos]) => ({
+            title: moment(date).locale('el').format('LL'),
+            videos
+        }))
 
-        $('#content').append(title)
-        $('#content').append(generateList(requests))
-    }
+    const HTML = ejs.render(fs.readFileSync(path.join(__dirname, 'page.ejs')).toString(), {entries})
+
+    $('#content').append(HTML)
 
     return beautifyHTML($.html())
 }
