@@ -6,7 +6,7 @@ const upload = require('./uploader')
 const { generateHTML } = require('./generator')
 const { saveHTML, config, cache, saveCache } = require('./utils')
 
-const COLUMNS = ['contribution_date', 'date', 'location', 'url', 'description', 'status']
+const COLUMNS = ['contribution_date', 'date', 'location', 'url', 'description', 'status', '_', '_']
 const CSV = path.join(__dirname, '../entries.csv')
 
 const getContributions = () => {
