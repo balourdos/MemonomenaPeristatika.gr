@@ -20,18 +20,17 @@ const getContributions = () => {
 }
 
 const uploadContributions = async contribs => {
-    // Uploads cannot be done concurrently in Cloudinary free plan
-    console.log('Uploading content to cloudinary')
+    console.log('Uploading content to S3')
     for (contribution of contribs) {
         if (typeof cache[contribution.url] !== 'undefined') {
             console.log('Using cached URL for ' + contribution.url)
             contribution.url = cache[contribution.url]
             continue
         }
-        const cloudinaryUrl = await upload(contribution.url)
-        console.log(`Uploaded to cloudinary: ${contribution.url}`)
-        cache[contribution.url] = cloudinaryUrl
-        contribution.url = cloudinaryUrl
+        const selfHostedURL = await upload(contribution.url)
+        console.log(`Uploaded to S3: ${contribution.url}`)
+        cache[contribution.url] = selfHostedURL
+        contribution.url = selfHostedURL
     }
     console.log('Updating the cache')
     saveCache(cache)
@@ -40,12 +39,8 @@ const uploadContributions = async contribs => {
 }
 
 const main = async () => {
-    const { cloudinary } = config
     let contribs = getContributions()
-
-    if (cloudinary.enabled) {
-        contribs = await uploadContributions(contribs)
-    }
+    contribs = await uploadContributions(contribs)
 
     const validContributions = contribs.filter(c => c.url != false)
     const html = generateHTML(validContributions)

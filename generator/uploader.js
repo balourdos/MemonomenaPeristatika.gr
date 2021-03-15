@@ -1,16 +1,16 @@
-const path = require('path')
 const crypto = require('crypto')
 const videoParser = require('youtube-dl-exec')
 const axios = require('axios')
 const { S3, config } = require('aws-sdk')
-const { Stream, PassThrough } = require('stream')
+const { PassThrough } = require('stream')
 
 config.loadFromPath('./config.json');
 const bucket = 'memonomenaperistatika.gr'
 
 const uploadFromStream = (fileResponse, fileName) => {
     const s3 = new S3();
-    const passThrough = new PassThrough();
+    const passThrough = new PassThrough()
+    console.log(fileResponse.headers)
     const promise = s3
         .upload({
             Bucket: bucket,
@@ -53,17 +53,18 @@ const getVideoURL = async (pageURL) => {
     })
 
     // Formats are sorted by resolution asc
-    return videos.pop().url
+    return videos.pop()
 }
 
 const hash = str =>  crypto.createHash('md5').update(str).digest("hex");
 
 const main = async (pageURL) => {
     try {
-        const videoURL = await getVideoURL(pageURL)
-        const res = await upload(videoURL, hash(pageURL))
+        const {url, ext} = await getVideoURL(pageURL)
+        const fileName =  hash(url) + `.${ext}`
+        const s3url = await upload(videoURL, fileName)
 
-        return res.secure_url
+        return s3url
     }
     catch (e) {
         console.log('Upload failed', pageURL)
@@ -71,7 +72,5 @@ const main = async (pageURL) => {
         return false
     }
 }
-
-main('https://www.youtube.com/watch?v=HWV1Hxe3JG0').then(console.log)
 
 module.exports = main
