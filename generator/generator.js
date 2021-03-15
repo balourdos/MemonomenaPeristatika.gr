@@ -13,7 +13,10 @@ const generateHTML = contributions => {
         .sort(sorter)
         .map(([date, videos]) => ({
             title: moment(date).locale('el').format('LL'),
-            videos
+            videos: videos.map(video => ({
+                thumburl: video.url.substr(0, video.url.lastIndexOf('.')) + '.jpg',
+                ...video
+            }))
         }))
 
     const HTML = ejs.render(fs.readFileSync(path.join(config.templatefolder, 'page.ejs')).toString(), {entries})

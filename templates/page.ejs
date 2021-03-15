@@ -39,7 +39,7 @@
       <% for ({ title, videos } of entries) { %>
         <h4><%= title %></h4>
         <ul>
-          <% for (const { location, url, description } of videos) { %>
+          <% for (const { location, url, thumburl, description } of videos) { %>
             <li>
               <span class='description'>
                 <% if (location) { %>
@@ -54,6 +54,7 @@
                 preload="none"
                 width="640"
                 height="264"
+                poster="<%= thumburl %>"
                 data-setup="{ preload: 'none' }"
               >
                 <source src="<%= url %>" type="video/mp4" />
