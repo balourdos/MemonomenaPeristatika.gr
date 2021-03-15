@@ -15,8 +15,15 @@
   },
   "scripts": {
     "build": "node index.js",
+    "watch": "npm-watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC"
+  "watch": {
+    "build": "../templates/*.ejs"
+  },
+  "author": "Grigoris Balourdos",
+  "license": "ISC",
+  "devDependencies": {
+    "npm-watch": "^0.7.0"
+  }
 }
