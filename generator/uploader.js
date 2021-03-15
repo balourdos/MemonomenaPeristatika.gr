@@ -10,7 +10,6 @@ const bucket = 'memonomenaperistatika.gr'
 const uploadFromStream = (fileResponse, fileName) => {
     const s3 = new S3();
     const passThrough = new PassThrough()
-    console.log(fileResponse.headers)
     const promise = s3
         .upload({
             Bucket: bucket,
@@ -62,7 +61,7 @@ const main = async (pageURL) => {
     try {
         const {url, ext} = await getVideoURL(pageURL)
         const fileName =  hash(url) + `.${ext}`
-        const s3url = await upload(videoURL, fileName)
+        const s3url = await upload(url, fileName)
 
         return s3url
     }
