@@ -8,6 +8,7 @@ const ejs = require('ejs')
 const generateHTML = contributions => {
     const perDate = _.groupBy(contributions, c => moment(c.date, 'MM/DD/YYYY').format('YYYY-MM-DD'))
     const sorter = ([dateL, _], [dateR, __]) => moment(dateR).diff(moment(dateL), 'minutes')
+    const entryCount = contributions.length
 
     const entries = Object.entries(perDate)
         .sort(sorter)
@@ -19,7 +20,7 @@ const generateHTML = contributions => {
             }))
         }))
 
-    const HTML = ejs.render(fs.readFileSync(path.join(config.templatefolder, 'page.ejs')).toString(), {entries})
+    const HTML = ejs.render(fs.readFileSync(path.join(config.templatefolder, 'page.ejs')).toString(), {entryCount, entries})
 
     return HTML
 }
