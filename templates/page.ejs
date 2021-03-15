@@ -41,10 +41,26 @@
         <ul>
           <% for (const { location, url, description } of videos) { %>
             <li>
-              <% if (location) { %>
-                <%= location %>:
-              <% } %>
-              <a href='<%= url %>' target='_blank'><%= description %></a>
+              <span class='description'>
+                <% if (location) { %>
+                  <%= location %>:
+                <% } %>
+                <%= description %>
+              </span>
+              <video
+                id="my-video"
+                class="video-js"
+                controls
+                preload="auto"
+                width="640"
+                height="264"
+                data-setup="{}"
+              >
+                <source src="<%= url %>" type="video/mp4" />
+                <p class="vjs-no-js">
+                  <a href='<%= url %>' target='_blank'><%= description %></a>
+                </p>
+              </video>
             </li>
           <% } %>
         </ul>
