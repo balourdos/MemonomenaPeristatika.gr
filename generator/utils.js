@@ -20,7 +20,7 @@ if (typeof config.htmlfile === 'undefined') {
 }
 config.htmlfile = path.join(__dirname, config.htmlfile)
 if (typeof config.cachefile === 'undefined') {
-    config.cachefile = 'cloudinary-cache'
+    config.cachefile = 'self-host-cache'
 }
 config.cachefile = path.join(__dirname, config.cachefile)
 if (typeof config.templatefolder === 'undefined') {

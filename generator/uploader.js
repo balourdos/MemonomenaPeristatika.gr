@@ -1,36 +1,48 @@
-const path = require('path')
 const crypto = require('crypto')
-const { promisify } = require('util')
-const { v2: CloudinaryClient } = require('cloudinary')
 const videoParser = require('youtube-dl-exec')
-const { config } = require('./utils')
+const axios = require('axios')
+const { S3, config } = require('aws-sdk')
+const { PassThrough } = require('stream')
 
-const createCloudinaryClient = () => {
-    const { cloudinary } = config
+config.loadFromPath('./config.json');
+const bucket = 'memonomenaperistatika.gr'
 
-    CloudinaryClient.config({
-            cloud_name: cloudinary.name,
-            api_key: cloudinary.key,
-            api_secret: cloudinary.secret,
-    })
+const uploadFromStream = (fileResponse, fileName) => {
+    const s3 = new S3();
+    const passThrough = new PassThrough()
+    const promise = s3
+        .upload({
+            Bucket: bucket,
+            Key: fileName,
+            ContentType: fileResponse.headers['content-type'],
+            ContentLength: fileResponse.headers['content-length'],
+            Body: passThrough,
+            ACL:'public-read'
+        })
+        .promise()
 
-    return CloudinaryClient
+    return { passThrough, promise }
 }
 
-const cloudinaryUpload = (data, publicId) => {
-    const cloudinaryClient = createCloudinaryClient()
-
-    const _upload = promisify((data, opts, cb) =>
-        cloudinaryClient.uploader.upload(data, opts, cb),
-    )
-
-    return _upload(data, {
-            resource_type: 'auto',
-            use_filename: true,
-            timeout: 60000,
-            unique_filename: false,
-            public_id: publicId,
+const downloadFile = async (fileUrl) => {
+    return axios.get(fileUrl, {
+        responseType: 'stream',
     })
+}
+
+// Returns the location of file
+const upload = async (url, fileName) => {
+    const responseStream = await downloadFile(url)
+    const { passThrough, promise } = uploadFromStream(responseStream, fileName);
+    responseStream.data.pipe(passThrough);
+
+    return promise
+        .then((result) => {
+            return result.Location;
+        })
+        .catch((e) => {
+            throw e;
+        });
 }
 
 const getVideoURL = async (pageURL) => {
@@ -40,17 +52,18 @@ const getVideoURL = async (pageURL) => {
     })
 
     // Formats are sorted by resolution asc
-    return videos.pop().url
+    return videos.pop()
 }
 
 const hash = str =>  crypto.createHash('md5').update(str).digest("hex");
 
 const main = async (pageURL) => {
     try {
-        const videoURL = await getVideoURL(pageURL)
-        const res = await cloudinaryUpload(videoURL, hash(pageURL))
+        const {url, ext} = await getVideoURL(pageURL)
+        const fileName =  hash(url) + `.${ext}`
+        const s3url = await upload(url, fileName)
 
-        return res.secure_url
+        return s3url
     }
     catch (e) {
         console.log('Upload failed', pageURL)
