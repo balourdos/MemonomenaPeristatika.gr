@@ -51,7 +51,7 @@ const main = async () => {
     const html = generateHTML(validContributions)
 
     saveHTML(html)
-    console.log(`Generated HTML`)
+    console.log(`Generated HTML at ${config.htmlfile}`)
 }
 
 main()
