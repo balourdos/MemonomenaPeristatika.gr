@@ -13,6 +13,15 @@ const loadConfig = () => {
 
     return require(configPath)
 }
+
+const genThumbFromCloudinary = async cloudinaryURL => {
+    if (!cloudinaryURL) {
+        return false
+    }
+
+    return cloudinaryURL.substr(0, cloudinaryURL.lastIndexOf('.')) + '.jpg'
+}
+
 // set some config defaults
 const config = loadConfig()
 if (typeof config.htmlfile === 'undefined') {
@@ -20,7 +29,7 @@ if (typeof config.htmlfile === 'undefined') {
 }
 config.htmlfile = path.join(__dirname, config.htmlfile)
 if (typeof config.cachefile === 'undefined') {
-    config.cachefile = 'self-host-cache'
+    config.cachefile = 'cache.json'
 }
 config.cachefile = path.join(__dirname, config.cachefile)
 if (typeof config.templatefolder === 'undefined') {
@@ -36,14 +45,17 @@ const loadCache = () => {
     return cache
 }
 const cache = loadCache()
+
 const saveCache = cache => {
-    fs.writeFileSync(config.cachefile, JSON.stringify(cache))
+    fs.writeFileSync(config.cachefile, JSON.stringify(cache, null, 4))
 }
+
 const saveHTML = html => fs.writeFileSync(config.htmlfile, html)
 
 module.exports = {
+    genThumbFromCloudinary,
     saveHTML,
     cache,
     saveCache,
-    config
+    config,
 }
