@@ -3,6 +3,7 @@ const AWSHandler = require('./handlers/aws.js')
 const CloudinaryHandler = require('./handlers/cloudinary.js')
 const LocalHandler = require('./handlers/local.js')
 const videoParser = require('youtube-dl-exec')
+const { parse } = require('url')
 
 const handlers = [new CloudinaryHandler(), new LocalHandler(), new AWSHandler()]
 
@@ -19,24 +20,25 @@ const getVideoURL = async pageURL => {
 }
 
 const multiUpload = async pageURL => {
-    let filename
+    let parsedVideo 
+    console.log("Multi-uploading", pageURL)
 
     try {
-        const {url, ext} = await getVideoURL(pageURL)
-        filename = `${hash(url)}.${ext}`
+        parsedVideo = await getVideoURL(pageURL)
     }
     catch (e) {
         console.log("URL Generation from sm link failed", pageURL)
         return
     }
 
+    const {url, ext} = parsedVideo
+    filename = `${hash(url)}.${ext}`
     const urls = []
 
     //TODO: Concurrency
     for (const handler of handlers) {
-        const url =  await handler.handle(pageURL, filename)
-        console.log(url)
-        urls[this.name] = url
+        const selfHostedURL =  await handler.handle(pageURL, url, filename)
+        urls[handler.name] = selfHostedURL
     }
 
     return urls

@@ -24,7 +24,8 @@ const uploadContributions = async contribs => {
 
     for (contribution of contribs) {
         const originalPageURL = contribution.url
-        const {aws: awsURL, cloudinary: cloudinaryURL, local: localURL } = await multiUpload(originalPageURL)
+        const {aws: awsURL, cloudinary: cloudinaryURL, local: localURL } =
+            await multiUpload(originalPageURL)
         
         contribution.thumbURL = genThumbFromCloudinary(cloudinaryURL)
         contribution.url = localURL

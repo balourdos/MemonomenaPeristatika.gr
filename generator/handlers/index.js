@@ -10,13 +10,12 @@ class Handler {
         return cache[this.name][url]
     }
 
-    async handle(url, filename) {
+    async handle(pageURL, url, filename) {
         try {
-            const cached = this.getFromCache()
-            console.log('cached', cached)
+            const cached = this.getFromCache(pageURL)
 
             if (cached) {
-                console.log([`[${this.name}] File already uploaded: ${url}`])
+                console.log(`[${this.name}] PageURL already uploaded: ${pageURL}`)
                 return cached
             }
 
@@ -28,7 +27,7 @@ class Handler {
             return null
         }
         catch (e) {
-            console.log(`[${this.name}] Upload failed for: ${url}`)
+            console.log(`[${this.name}] Upload failed for: ${pageURL}`)
             console.error(e)
 
             return null
