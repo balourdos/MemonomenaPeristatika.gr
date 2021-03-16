@@ -1,10 +1,12 @@
 const crypto = require('crypto')
 const videoParser = require('youtube-dl-exec')
 const axios = require('axios')
-const { S3, config } = require('aws-sdk')
+const AWS = require('aws-sdk')
+const { S3 } = AWS
 const { PassThrough } = require('stream')
+const { config } = require('./utils')
 
-config.loadFromPath('./config.json');
+AWS.config.update(config.aws)
 const bucket = 'memonomenaperistatika.gr'
 
 const uploadFromStream = (fileResponse, fileName) => {

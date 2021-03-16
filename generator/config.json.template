@@ -1,5 +1,7 @@
 {
-    "accessKeyId": "amazon_key_id",
-    "secretAccessKey": "amazon_access_key",
-    "region": "eu-west-3"
+    "aws": {
+        "accessKeyId": "amazon_key_id",
+        "secretAccessKey": "amazon_access_key",
+        "region": "eu-west-3"
+    }
 }
