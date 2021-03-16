@@ -2,9 +2,10 @@ const path = require('path')
 const fs = require('fs')
 const _ = require('lodash')
 const parse = require('csv-parse/lib/sync')
-const uploader = require('./uploader')
+const { uploadVideo, generateThumbnail } = require('./uploader')
 const { generateHTML } = require('./generator')
 const { saveHTML, config, cache, saveCache } = require('./utils')
+const { assert } = require('console')
 
 const COLUMNS = ['contribution_date', 'date', 'location', 'url', 'description', 'status', '_', '_']
 const CSV = path.join(__dirname, '../entries.csv')
@@ -22,25 +23,47 @@ const getContributions = () => {
 const uploadContributions = async contribs => {
     console.log('Uploading content to S3')
     for (contribution of contribs) {
-        if (typeof cache[contribution.url] !== 'undefined') {
-            console.log('Using cached URL for ' + contribution.url)
-            contribution.url = cache[contribution.url]
-            continue
+        const originalPageURL = contribution.url
+        if (typeof cache.videos[contribution.url] !== 'undefined') {
+            console.log(`Using cached video URL for ${originalPageURL}`)
+            assert(cache.videos[originalPageURL].length > 10)
+            contribution.url = cache.videos[originalPageURL]
         }
-        let selfHostedURL
-        try {
-            selfHostedURL = await uploader(contribution.url)
+        else {
+            let selfHostedVideoURL
+            console.log(`Uploading video ${originalPageURL}...`)
+            try {
+                selfHostedVideoURL = await uploadVideo(originalPageURL)
+            }
+            catch {
+                console.log(`S3 upload of ${originalPageURL} failed. Check your AWS credentials?`)
+                continue
+            }
+            console.log(`Uploaded to S3: ${originalPageURL}`)
+            cache.videos[originalPageURL] = selfHostedVideoURL
+            contribution.url = selfHostedVideoURL
         }
-        catch {
-            console.log(`S3 upload of ${contribution.url} failed. Check your AWS credentials?`)
-            continue
+        if (typeof cache.thumbnails[originalPageURL] !== 'undefined') {
+            console.log(`Using cached thumbnail URL for ${originalPageURL}`)
+            assert(cache.thumbnails[originalPageURL].length > 10)
+            contribution.thumbURL = cache.thumbnails[originalPageURL]
         }
-        console.log(`Uploaded to S3: ${contribution.url}`)
-        cache[contribution.url] = selfHostedURL
-        contribution.url = selfHostedURL
+        else {
+            let selfHostedThumbURL
+            console.log(`Generating thumbnail for ${originalPageURL}...`)
+            try {
+                selfHostedThumbURL = await generateThumbnail(originalPageURL)
+            }
+            catch {
+                console.log(`Cloudify upload of ${originalPageURL} failed. Check your cloudify credentials?`)
+                continue
+            }
+            console.log(`Uploaded to cloudify: ${originalPageURL}`)
+            cache.thumbnails[originalPageURL] = selfHostedThumbURL
+            contribution.thumbURL = selfHostedThumbURL
+        }
+        saveCache(cache)
     }
-    console.log('Updating the cache')
-    saveCache(cache)
 
     return contribs
 }

@@ -3,5 +3,11 @@
         "accessKeyId": "amazon_key_id",
         "secretAccessKey": "amazon_access_key",
         "region": "eu-west-3"
+    },
+    "cloudinary": {
+        "enabled": true,
+        "name": "cloud_name",
+        "key": "cloud_key",
+        "secret": "cloud_secret"
     }
 }

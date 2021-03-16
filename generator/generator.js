@@ -14,10 +14,7 @@ const generateHTML = contributions => {
         .sort(sorter)
         .map(([date, videos]) => ({
             title: moment(date).locale('el').format('LL'),
-            videos: videos.map(video => ({
-                thumburl: video.url.substr(0, video.url.lastIndexOf('.')) + '.jpg',
-                ...video
-            }))
+            videos
         }))
 
     const HTML = ejs.render(fs.readFileSync(path.join(config.templatefolder, 'page.ejs')).toString(), {entryCount, entries})

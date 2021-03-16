@@ -7,6 +7,7 @@
     "aws-sdk": "^2.864.0",
     "axios": "^0.21.1",
     "cheerio": "^1.0.0-rc.5",
+    "cloudinary": "^1.25.0",
     "csv-parse": "^4.15.3",
     "ejs": "^3.1.6",
     "js-beautify": "^1.13.5",
