@@ -54,7 +54,9 @@
                 preload="none"
                 width="640"
                 height="264"
-                poster="<%= thumbURL %>"
+                <% if (thumbURL !== false) { %>
+                  poster="<%= thumbURL %>"
+                <% } %>
                 data-setup="{ preload: 'none' }"
               >
                 <source src="<%= url %>" type="video/mp4" />

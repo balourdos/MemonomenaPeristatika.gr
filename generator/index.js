@@ -44,9 +44,14 @@ const uploadContributions = async contribs => {
             contribution.url = selfHostedVideoURL
         }
         if (typeof cache.thumbnails[originalPageURL] !== 'undefined') {
-            console.log(`Using cached thumbnail URL for ${originalPageURL}`)
-            assert(cache.thumbnails[originalPageURL].length > 10)
-            contribution.thumbURL = cache.thumbnails[originalPageURL]
+            if (cache.thumbnails[originalPageURL] === false) {
+                console.log(`Thumbnail for ${originalPageURL} is cached as unusable. Skipping.`)
+            }
+            else {
+                console.log(`Using cached thumbnail URL for ${originalPageURL}`)
+                assert(cache.thumbnails[originalPageURL].length > 10)
+                contribution.thumbURL = cache.thumbnails[originalPageURL]
+            }
         }
         else {
             let selfHostedThumbURL
@@ -54,8 +59,16 @@ const uploadContributions = async contribs => {
             try {
                 selfHostedThumbURL = await generateThumbnail(originalPageURL)
             }
-            catch {
-                console.log(`Cloudify upload of ${originalPageURL} failed. Check your cloudify credentials?`)
+            catch (e) {
+                console.log(`Cloudify upload of ${originalPageURL} failed with status code ${e.http_code}.`)
+                if (e.http_code == 400) {
+                    console.log(`Assuming excessive video file size. Marking thumbnail as unusable.`)
+                    cache.thumbnails[originalPageURL] = false
+                    contribution.thumbURL = false
+                }
+                if (e.http_code == 403 || e.http_code == 401) {
+                    console.log(`Check your cloudinary credentials?`)
+                }
                 continue
             }
             console.log(`Uploaded to cloudify: ${originalPageURL}`)
