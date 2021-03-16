@@ -29,6 +29,15 @@
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -36,9 +45,10 @@
     <h3>Αστυνομικής <em>βίας</em> και <em>κατάχρησης</em> εξουσίας</h3>
 
     <section id="content">
-      <% for ({ title, videos } of entries) { %>
-        <h4><%= title %></h4>
-        <ul>
+      <% for ({ date, title, videos } of entries) { %>
+        <button data-toggle="collapse"  class="btn btn-info" data-target=<%= '#' + date %>><%= title %></button>
+        <div id=<%= date %> class="collapse">
+          <ul>
           <% for (const { location, url, thumbURL, description } of videos) { %>
             <li>
               <span class='description'>
@@ -64,7 +74,9 @@
               </video>
             </li>
           <% } %>
-        </ul>
+          </ul>
+        </div>
+        <br /><br />
       <% } %>
     </section>
 

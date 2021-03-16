@@ -13,6 +13,7 @@ const generateHTML = contributions => {
     const entries = Object.entries(perDate)
         .sort(sorter)
         .map(([date, videos]) => ({
+            date,
             title: moment(date).locale('el').format('LL'),
             videos
         }))
