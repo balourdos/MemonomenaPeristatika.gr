@@ -2,7 +2,7 @@ const path = require('path')
 const fs = require('fs')
 const _ = require('lodash')
 const parse = require('csv-parse/lib/sync')
-const upload = require('./uploader')
+const uploader = require('./uploader')
 const { generateHTML } = require('./generator')
 const { saveHTML, config, cache, saveCache } = require('./utils')
 
@@ -27,7 +27,14 @@ const uploadContributions = async contribs => {
             contribution.url = cache[contribution.url]
             continue
         }
-        const selfHostedURL = await upload(contribution.url)
+        let selfHostedURL
+        try {
+            selfHostedURL = await uploader(contribution.url)
+        }
+        catch {
+            console.log(`S3 upload of ${contribution.url} failed. Check your AWS credentials?`)
+            continue
+        }
         console.log(`Uploaded to S3: ${contribution.url}`)
         cache[contribution.url] = selfHostedURL
         contribution.url = selfHostedURL

@@ -24,7 +24,7 @@ const uploadFromStream = (fileResponse, fileName) => {
     return { passThrough, promise }
 }
 
-const downloadFile = async (fileUrl) => {
+const downloadFile = async fileUrl => {
     return axios.get(fileUrl, {
         responseType: 'stream',
     })
@@ -33,16 +33,11 @@ const downloadFile = async (fileUrl) => {
 // Returns the location of file
 const upload = async (url, fileName) => {
     const responseStream = await downloadFile(url)
-    const { passThrough, promise } = uploadFromStream(responseStream, fileName);
-    responseStream.data.pipe(passThrough);
+    const { passThrough, promise } = uploadFromStream(responseStream, fileName)
+    responseStream.data.pipe(passThrough)
 
-    return promise
-        .then((result) => {
-            return result.Location;
-        })
-        .catch((e) => {
-            throw e;
-        });
+    const result = await promise
+    return result.Location
 }
 
 const getVideoURL = async (pageURL) => {
@@ -55,12 +50,12 @@ const getVideoURL = async (pageURL) => {
     return videos.pop()
 }
 
-const hash = str =>  crypto.createHash('md5').update(str).digest("hex");
+const hash = str => crypto.createHash('md5').update(str).digest('hex')
 
-const main = async (pageURL) => {
+const uploader = async pageURL => {
     try {
         const {url, ext} = await getVideoURL(pageURL)
-        const fileName =  hash(url) + `.${ext}`
+        const fileName = hash(url) + `.${ext}`
         const s3url = await upload(url, fileName)
 
         return s3url
@@ -68,8 +63,8 @@ const main = async (pageURL) => {
     catch (e) {
         console.log('Upload failed', pageURL)
         console.error(e)
-        return false
+        throw e
     }
 }
 
-module.exports = main
+module.exports = uploader
