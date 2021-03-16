@@ -16,10 +16,10 @@ footer {
   max-width: 1200px;
 }
 
-a, a:link, a:hover {
+a:not(.button), a:link:not(.button), a:hover:not(.button) {
   color: blue;
 }
-a:visited {
+a:visited:not(.button) {
   color: purple;
 }
 
@@ -52,4 +52,14 @@ em {
 span.description {
   display: block;
   margin: 15px 0 5px 0;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+nav a {
+  margin: 0 0.5em;
 }
