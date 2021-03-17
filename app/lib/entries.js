@@ -18,14 +18,15 @@ const loadCache = () => {
 }
 
 const cache = loadCache()
-const getContributions = () => {
+
+export const getContributions = () => {
   const csv = fs.readFileSync(CSV).toString()
   const records = parse(csv, { columns: COLUMNS, from_line: 2 }).filter(r => r.status === 'approved')
 
   // Deduplicate
-  const entries = _.uniqBy(records, 'url')
+  const contributions = _.uniqBy(records, 'url')
 
-  for (const contribution of entries) {
+  for (const contribution of contributions) {
     const originalPageURL = contribution.url
     if (typeof cache.videos[contribution.url] === 'undefined') {
       console.log(`Video ${originalPageURL} has not been uploaded. Skipping entry completely.`)
@@ -51,7 +52,7 @@ const getContributions = () => {
     contribution.thumbURL = cache.thumbnails[originalPageURL]
   }
 
-  return entries
+  return contributions
 }
 
 export const getEntries = async () => {
