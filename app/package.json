@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "deploy": "rm -rf .next && rm -rf out && next build && next export && rm -rf ../docs && mv out ../docs"
   },
   "dependencies": {
     "csv-parse": "^4.15.3",
