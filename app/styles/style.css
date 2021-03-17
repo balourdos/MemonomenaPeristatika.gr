@@ -1,0 +1,65 @@
+body {
+  color: #333;
+  font-family: 'Open Sans', sans-serif;
+  margin: 3em;
+}
+
+h1, h3, #subtitle {
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+  margin: 5em auto 5em auto;
+  border-top: 1px solid #eee;
+  padding-top: 5px;
+  max-width: 1200px;
+}
+
+a:not(.button), a:link:not(.button), a:hover:not(.button) {
+  color: blue;
+}
+a:visited:not(.button) {
+  color: purple;
+}
+
+section {
+  max-width: 1200px;
+  margin: auto;
+}
+
+h4 {
+  font-size: 140%;
+}
+h5 {
+  font-size: 100%;
+  font-weight: bold;
+}
+
+ul {
+  list-style: none;
+}
+
+em {
+  font-style: normal;
+  color: red;
+}
+
+.video-js {
+  max-width: 100%;
+}
+
+span.description {
+  display: block;
+  margin: 15px 0 5px 0;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+nav a {
+  margin: 0 0.5em;
+}
