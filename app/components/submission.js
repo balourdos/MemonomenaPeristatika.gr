@@ -1,12 +1,18 @@
+import Link from 'next/link'
+
 export default function Submission({ submission }) {
   const metaData = [submission.humanDate]
 
-  if (metaData.location) {
-    metaData.push(metaData.location)
+  if (submission.location) {
+    metaData.push(submission.location)
   }
 
   return (
     <div style={{maxWidth: '800px', width: '100%', borderBottom: '1px solid #ccc', paddingBottom: '1em'}}>
+      <Link href='/'>
+        <a style={{display: 'block', paddingBottom: '1em'}}>← Πίσω σε όλα τα περιστατικά</a>
+      </Link>
+
       <video
         className="video-js"
         controls
