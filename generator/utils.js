@@ -13,15 +13,6 @@ const loadConfig = () => {
     return require(configPath)
 }
 
-const genThumbFromCloudinary = async cloudinaryURL => {
-    if (!cloudinaryURL) {
-        return false
-    }
-
-    return cloudinaryURL.substr(0, cloudinaryURL.lastIndexOf('.')) + '.jpg'
-}
-
 module.exports = {
-    genThumbFromCloudinary,
     loadConfig,
 }
