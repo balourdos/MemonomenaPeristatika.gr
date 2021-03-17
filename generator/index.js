@@ -3,11 +3,12 @@ const fs = require('fs')
 const _ = require('lodash')
 const parse = require('csv-parse/lib/sync')
 const { getVideoFromSM, getVideoFilename } = require('./uploader')
-const { config } = require('./utils')
+const { loadConfig } = require('./utils')
 const { getEvent, setStatus, saveVideo, createEvent, getVideosByEventID } = require('./db')
 
 const COLUMNS = ['contribution_date', 'date', 'location', 'url', 'description', 'status', 'id']
 const CSV = path.join(__dirname, '../entries.csv')
+const config = loadConfig()
 
 const loadActiveHandlers = () => {
     const handlers = []

@@ -3,7 +3,6 @@ const AWS = require('aws-sdk')
 const { S3 } = AWS
 const { PassThrough } = require('stream')
 const Handler = require('./index')
-const { config } = require('../utils')
 
 
 class AWSHandler extends Handler {
