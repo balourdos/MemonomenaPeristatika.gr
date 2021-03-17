@@ -26,7 +26,7 @@ export default function Home({ entries }) {
       <section id="content">
         {
           entries.map(
-            entry => <Entry entry={entry} key={entry.url} />
+            entry => <Entry entry={entry} key={entry.title} />
           )
         }
       </section>
