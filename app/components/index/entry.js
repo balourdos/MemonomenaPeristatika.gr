@@ -1,4 +1,4 @@
-import { Submission } from './submission'
+import Thumb from './thumb'
 
 export default function Entry({ entry }) {
   return (
@@ -10,7 +10,7 @@ export default function Entry({ entry }) {
           entry.videos.map(
             submission =>
               <li key={submission.url}>
-                <Submission submission={submission} />
+                <Thumb submission={submission} />
               </li>
           )
         }

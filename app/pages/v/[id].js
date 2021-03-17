@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import _ from "lodash"
-import { Submission } from "../../components/index/submission"
+import Submission from "../../components/submission"
 import Layout from '../../components/layout'
 
 export default function Video({ submission }) {

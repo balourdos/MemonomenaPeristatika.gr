@@ -1,10 +1,6 @@
-export function Submission({ submission }) {
+export default function Thumb({submission}) {
   return (
     <div>
-      <span className='description'>
-        { submission.location? submission.location + ': ': '' }
-        { submission.description }
-      </span>
       <video
         className="video-js"
         controls
@@ -19,6 +15,10 @@ export function Submission({ submission }) {
           <a href={submission.url} target='_blank'>{ submission.description }</a>
         </p>
       </video>
+      <span className='description'>
+        { submission.location? submission.location + ': ': '' }
+        { submission.description }
+      </span>
     </div>
   )
 }
