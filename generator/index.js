@@ -7,7 +7,7 @@ const { generateHTML } = require('./generator')
 const { saveHTML, config, cache, saveCache } = require('./utils')
 const { assert } = require('console')
 
-const COLUMNS = ['contribution_date', 'date', 'location', 'url', 'description', 'status', '_', '_']
+const COLUMNS = ['contribution_date', 'date', 'location', 'url', 'description', 'status', 'id']
 const CSV = path.join(__dirname, '../entries.csv')
 
 const getContributions = () => {
