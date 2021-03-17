@@ -1,12 +1,26 @@
+import { useEffect, useRef } from 'react'
 import Link from 'next/link'
 import videojs from 'video.js'
 
 export default function Submission({ submission }) {
   const metaData = [submission.humanDate]
+  const videoEl = useRef()
 
   if (submission.location) {
     metaData.push(submission.location)
   }
+
+  useEffect(() => {
+    const player = videojs(videoEl.current)
+
+    player.ready(() => {
+      try {
+        player.play()
+      }
+      catch {
+      }
+    })
+  }, [])
 
   return (
     <div style={{maxWidth: '800px', width: '100%', borderBottom: '1px solid #ccc', paddingBottom: '1em'}}>
