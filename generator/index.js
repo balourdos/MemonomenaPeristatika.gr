@@ -54,7 +54,7 @@ const populateDatabase = async contribs => {
 
         for (handler of handlers) {
             if (sources.includes(handler.name)) {
-                console.log(`Video ${pageURL} already uploaded on ${handler.name}`)
+                // console.log(`Video ${pageURL} already uploaded on ${handler.name}`)
                 continue
             }
             console.log(`Video ${pageURL} is not uploaded on ${handler.name}. Uploading it`)
@@ -62,7 +62,7 @@ const populateDatabase = async contribs => {
             video = video ? video : await getVideoFromSM(pageURL)
             if (!video) {
                 console.log("URL Generation from social media link failed", pageURL)
-                continue
+                break
             }
 
             const filename = getVideoFilename(pageURL, video)
