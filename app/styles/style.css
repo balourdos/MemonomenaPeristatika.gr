@@ -10,7 +10,7 @@ h1, h3, #subtitle {
 
 footer {
   text-align: center;
-  margin: 5em auto 5em auto;
+  margin: 5em auto 0 auto;
   border-top: 1px solid #eee;
   padding-top: 5px;
   max-width: 1200px;
