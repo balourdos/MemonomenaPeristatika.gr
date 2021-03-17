@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { getEntries } from '../lib/entries'
-import Entry from '../components/entry'
+import Entry from '../components/index/entry'
 import Layout from '../components/layout'
 
 export default function Home({ entries }) {
