@@ -10,7 +10,7 @@ export function Submission({ submission }) {
         preload="none"
         width="640"
         height="264"
-        poster={submission.thumbURL}
+        poster={submission.thumbURL? submission.thumbURL: undefined}
         data-setup="{ preload: 'none' }"
       >
         <source src={submission.url} type="video/mp4" />
