@@ -63,3 +63,10 @@ nav {
 nav a {
   margin: 0 0.5em;
 }
+
+#donations {
+  text-align: left;
+  background: #efefef;
+  padding: 20px;
+  border-radius: 5px;
+}
