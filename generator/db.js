@@ -41,12 +41,21 @@ const getAllEvents = async (source = 'local') => {
     return db('video')
         .select()
         .join('event', 'event.id', '=', 'video.event_id')
+        .where('event.url', '>', 10)
+        .where('event.status', 'approved')
         .where({ source })
+}
+
+const setStatus = async (id, status) => {
+    return db('event')
+        .update({ status })
+        .where({ id })
 }
 
 module.exports = {
     db,
     getEvent,
+    setStatus,
     createEvent,
     saveVideo,
     getVideosByEventID,

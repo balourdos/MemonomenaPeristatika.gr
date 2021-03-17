@@ -4,7 +4,7 @@ const _ = require('lodash')
 const parse = require('csv-parse/lib/sync')
 const { getVideoFromSM, getVideoFilename } = require('./uploader')
 const { config } = require('./utils')
-const { getEvent, saveVideo, createEvent, getVideosByEventID } = require('./db')
+const { getEvent, setStatus, saveVideo, createEvent, getVideosByEventID } = require('./db')
 
 const COLUMNS = ['contribution_date', 'date', 'location', 'url', 'description', 'status', 'id']
 const CSV = path.join(__dirname, '../entries.csv')
@@ -27,7 +27,7 @@ const loadActiveHandlers = () => {
 
 const getContributions = () => {
     const csv = fs.readFileSync(CSV).toString()
-    const records = parse(csv, { columns: COLUMNS, from_line: 2 }).filter(r => r.status === 'approved')
+    const records = parse(csv, { columns: COLUMNS, from_line: 2 })
 
     // Deduplicate
     const entries = _.uniqBy(records, 'url')
@@ -46,6 +46,12 @@ const populateDatabase = async contribs => {
         if (!event) {
             console.log(`Event ${pageURL} does't exist in the database. Adding it`)
             event = await createEvent(contrib)
+        }
+
+        if (contrib.status != 'approved') {
+            console.log(`Event ${pageURL} is not approved. Flagging in the database`)
+            await setStatus(contrib.id, contrib.status)
+            break
         }
 
         const hostedVideos = await getVideosByEventID(contrib.id)
