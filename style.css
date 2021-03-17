@@ -29,6 +29,8 @@ section {
 }
 
 h4 {
+  margin:0 auto;
+  width:53%;
   font-size: 140%;
 }
 h5 {
@@ -46,12 +48,12 @@ em {
 }
 
 .video-js {
+  margin:0 auto;
   max-width: 100%;
 }
 
 span.description {
-  display: block;
-  margin: 15px 0 5px 0;
+  margin: 15px 0 10% 0; 
 }
 
 nav {
