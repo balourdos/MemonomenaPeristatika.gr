@@ -5,16 +5,14 @@ export default function Entry({ entry }) {
     <div>
       <h4>{ entry.title }</h4>
 
-      <ul>
+      <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap'}}>
         {
           entry.videos.map(
             submission =>
-              <li key={submission.url}>
-                <Thumb submission={submission} />
-              </li>
+              <Thumb submission={submission} />
           )
         }
-      </ul>
+      </div>
     </div>
   )
 }
