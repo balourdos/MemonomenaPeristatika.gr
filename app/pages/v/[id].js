@@ -1,9 +1,13 @@
+import Head from 'next/head'
 import _ from "lodash"
 import { Submission } from "../../components/submission"
 import Layout from '../../components/layout'
 
 export default function Video({ submission }) {
   return <Layout>
+    <Head>
+      <title>{ submission.description } - Μεμονωμένο Περιστατικό</title>
+    </Head>
     <Submission submission={submission} />
   </Layout>
 }
