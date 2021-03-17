@@ -1537,7 +1537,7 @@ export default function Home({ entries }) {
 
       <footer>
           <p><a href="https://forms.gle/cNgRuEyUQWDPr4rr8">Ανάφερε κάποιο μεμονωμένο περιστατικό</a> για να το αναρτήσουμε,
-            <a href='mailto:balourdos@protonmail.com'>επικοινώνησε μαζί μας</a>
+            {' '}<a href='mailto:balourdos@protonmail.com'>επικοινώνησε μαζί μας</a>{' '}
               ή, αν γράφεις κώδικα, <a href="https://github.com/balourdos/MemonomenaPeristatika.gr">βοήθησέ μας με την
                   ανάπτυξη της πλατφόρμας</a>.</p>
       </footer>
