@@ -1,6 +1,4 @@
 export function Submission({ submission }) {
-  console.log(submission)
-
   return (
     <div>
       <span className='description'>

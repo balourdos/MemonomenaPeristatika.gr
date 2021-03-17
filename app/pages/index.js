@@ -65,8 +65,6 @@ export default function Home({ entries }) {
 export async function getStaticProps() {
   const entries = await getEntries()
 
-  console.log(entries)
-
   return {
     props: { entries }
   }
