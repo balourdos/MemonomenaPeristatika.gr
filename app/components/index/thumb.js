@@ -1,24 +1,25 @@
+import Link from 'next/link'
+
 export default function Thumb({submission}) {
   return (
-    <div>
-      <video
-        className="video-js"
-        controls
-        preload="none"
-        width="640"
-        height="264"
-        poster={submission.thumbURL? submission.thumbURL: undefined}
-        data-setup="{ preload: 'none' }"
-      >
-        <source src={submission.url} type="video/mp4" />
-        <p className="vjs-no-js">
-          <a href={submission.url} target='_blank'>{ submission.description }</a>
-        </p>
-      </video>
-      <span className='description'>
-        { submission.location? submission.location + ': ': '' }
-        { submission.description }
-      </span>
+    <div className='thumb'>
+      <Link href={`/v/${submission.id}`}>
+        <a>
+          <span style={{display: 'block', width: '100%', height: 0, paddingTop: '56.25%', position: 'relative'}}>
+            <span style={{display: 'block', position: 'absolute', top: 0, right: 0, bottom: 0, left: 0}}>
+              {submission.thumbURL?
+                <img style={{width: '100%', height: '100%'}} src={submission.thumbURL? submission.thumbURL: undefined} alt={submission.description} />
+                :
+                <div style={{border: '1px solid #ccc', width: '100%', height: '100%', backgroundColor: 'black'}}></div>
+              }
+            </span>
+          </span>
+          <span className='description' style={{fontSize: '110%', fontWeight: 'bold'}}>
+            { submission.location? submission.location + ': ': '' }
+            { submission.description }
+          </span>
+        </a>
+      </Link>
     </div>
   )
 }

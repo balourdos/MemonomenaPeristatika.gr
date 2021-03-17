@@ -4,6 +4,26 @@ body {
   margin: 3em;
 }
 
+@media (max-width: 600px) {
+  body {
+    margin: 3em 0;
+  }
+  .thumb {
+    width: 100%;
+  }
+}
+
+@media (min-width: 600px) {
+  .thumb {
+    width: 360px;
+    padding: 10px 10px 10px 0;
+  }
+}
+
+.thumb {
+  padding-bottom: 10px;
+}
+
 h1, h3, #subtitle {
   text-align: center;
 }
@@ -30,6 +50,7 @@ section {
 
 h4 {
   font-size: 140%;
+  margin-top: 2em;
 }
 h5 {
   font-size: 100%;
@@ -51,7 +72,7 @@ em {
 
 span.description {
   display: block;
-  margin: 15px 0 5px 0;
+  margin: 5px 0 5px 0;
 }
 
 nav {
