@@ -46,16 +46,16 @@ const getAllEvents = async (source = 'local') => {
         .where({ source })
 }
 
-const setStatus = async (id, status) => {
+const deleteEvent = async (id) => {
     return db('event')
-        .update({ status })
         .where({ id })
+        .del()
 }
 
 module.exports = {
     db,
     getEvent,
-    setStatus,
+    deleteEvent,
     createEvent,
     saveVideo,
     getVideosByEventID,

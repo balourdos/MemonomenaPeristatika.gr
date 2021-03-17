@@ -15,8 +15,6 @@ Promise.all([
         table.integer('event_id')
         table.string('source') // cloudinary, aws, local
         table.string('url')
-
-        table.foreign('event_id').references('event').inTable('id')
     })
 ])
 .then(console.log('Basic schema was created'))
