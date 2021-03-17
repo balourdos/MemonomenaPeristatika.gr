@@ -2,6 +2,7 @@ export function Submission({ submission }) {
   return (
     <div>
       <span className='description'>
+        { submission.location? submission.location + ': ': '' }
         { submission.description }
       </span>
       <video
