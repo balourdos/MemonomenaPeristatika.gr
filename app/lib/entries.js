@@ -18,14 +18,18 @@ const loadCache = () => {
 }
 
 const cache = loadCache()
-const getContributions = () => {
+
+const humanDate = date => moment(date).locale('el').format('LL')
+
+export const getContributions = () => {
   const csv = fs.readFileSync(CSV).toString()
   const records = parse(csv, { columns: COLUMNS, from_line: 2 }).filter(r => r.status === 'approved')
 
   // Deduplicate
-  const entries = _.uniqBy(records, 'url')
+  const contributions = _.uniqBy(records, 'url')
 
-  for (const contribution of entries) {
+  for (const contribution of contributions) {
+    contribution.humanDate = humanDate(contribution.date)
     const originalPageURL = contribution.url
     if (typeof cache.videos[contribution.url] === 'undefined') {
       console.log(`Video ${originalPageURL} has not been uploaded. Skipping entry completely.`)
@@ -51,7 +55,7 @@ const getContributions = () => {
     contribution.thumbURL = cache.thumbnails[originalPageURL]
   }
 
-  return entries
+  return contributions
 }
 
 export const getEntries = async () => {
@@ -64,7 +68,7 @@ export const getEntries = async () => {
   const entries = Object.entries(perDate)
     .sort(sorter)
     .map(([date, videos]) => ({
-      title: moment(date).locale('el').format('LL'),
+      title: humanDate(date),
       videos
     }))
 
