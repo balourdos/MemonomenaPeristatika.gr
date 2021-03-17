@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import videojs from 'video.js'
 
 export default function Submission({ submission }) {
   const metaData = [submission.humanDate]
@@ -15,12 +16,13 @@ export default function Submission({ submission }) {
 
       <video
         className="video-js"
+        ref={videoEl}
         controls
-        preload="none"
+        preload="auto"
         width="640"
         height="264"
         poster={submission.thumbURL? submission.thumbURL: undefined}
-        data-setup="{ preload: 'none' }"
+        data-setup='{ "preload": "auto" }'
         style={{width: '100%', height: '100%'}}
       >
         <source src={submission.url} type="video/mp4" />
