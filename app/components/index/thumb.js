@@ -14,7 +14,7 @@ export default function Thumb({submission}) {
               }
             </span>
           </span>
-          <span className='description' style={{fontSize: '110%', fontWeight: 'bold'}}>
+          <span className='description' style={{fontSize: '110%'}}>
             { submission.location? submission.location + ': ': '' }
             { submission.description }
           </span>

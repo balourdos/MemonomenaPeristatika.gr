@@ -24,6 +24,10 @@ body {
   padding-bottom: 10px;
 }
 
+.thumb > a {
+  text-decoration: none;
+}
+
 h1, h3, #subtitle {
   text-align: center;
 }
