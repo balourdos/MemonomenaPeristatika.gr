@@ -1,49 +1,18 @@
 import Head from 'next/head'
-import { useState } from 'react'
-import styles from '../styles/Home.module.css'
 import { getEntries } from '../lib/entries'
 import Entry from '../components/entry'
-
-const GA_TRACKING_ID = 'G-FV7VX546WR'
+import Layout from '../components/layout'
 
 export default function Home({ entries }) {
-  const [donationsVisible, setDonationsVisibility] = useState(false)
-
-  function handleDonationsClick() {
-    if (gtag && !donationsVisible) {
-      gtag('event', 'click', {target: 'donations'});
-    }
-    setDonationsVisibility(!donationsVisible)
-  }
-
   return (
-    <div className={styles.container}>
+    <Layout>
       <Head>
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&amp;display=swap" rel="stylesheet" />
-        <link rel="shortcut icon" type="image/jpg" href="https://img.icons8.com/ios-filled/50/000000/policeman-male--v1.png" />
-        <link href="https://vjs.zencdn.net/7.10.2/video-js.css" rel="stylesheet" />
         <title>Μεμονωμένα Περιστατικά</title>
-        <script async="" src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}></script>
-        <script
-            dangerouslySetInnerHTML={{
-              __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${GA_TRACKING_ID}', {
-              page_path: window.location.pathname,
-            });
-          `,
-            }}
-        />
         <meta property="og:title" content="Μεμονωμένα Περιστατικά" />
         <meta property="og:description" content="Αστυνομική βία, αυθαιρεσία και κατάχρηση εξουσίας" />
         <meta property="og:image" content="https://memonomenaperistatika.gr/social-header.jpg?v=1" />
         <meta property="og:url" content="https://memonomenaperistatika.gr" />
         <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
       <h1><em>{ entries.reduce((acc, entry) => acc + entry.videos.length, 0) }</em> Μεμονωμένα Περιστατικά</h1>
@@ -61,53 +30,7 @@ export default function Home({ entries }) {
           )
         }
       </section>
-
-      <footer>
-        <p><a href="https://forms.gle/cNgRuEyUQWDPr4rr8">Ανάφερε κάποιο μεμονωμένο περιστατικό</a> για να το αναρτήσουμε,
-          {' '}<a href="mailto:balourdos@protonmail.com">επικοινώνησε μαζί μας</a>{' '}
-            ή, αν γράφεις κώδικα, <a href="https://github.com/balourdos/MemonomenaPeristatika.gr">βοήθησέ μας με την
-                ανάπτυξη της πλατφόρμας</a>.</p>
-        <button onClick={handleDonationsClick}>Donate</button>
-
-        {donationsVisible && (
-          <section id="donations">
-            <p>
-              Σε ευχαριστούμε πολύ για τη βοήθεια! Οι δωρεές θα χρησιμοποιηθούν αποκλειστικά για τα πάγια έξοδα συντήρησης του site.<br />
-              Ξεκινήσαμε πριν μόνο μερικές ημέρες. Αυτή τη στιγμή, τα κόστη μας είναι ένας dedicated server που κοστίζει 30&euro; το μήνα. Το να κάνουμε host video είναι ακριβό - και τα κόστη μας θα συνεχίσουν να αυξάνονται καθώς αυξάνεται η κίνηση.
-            </p>
-            <ul>
-              <li>
-                <strong>Bitcoin:</strong> bc1q9rn4q5j7w294jkef3qy7l0sd208q58gzgyccp4
-              </li>
-              <li>
-                <strong>Bitcoin Cash:</strong> qp032xrc88rw7m32c48zut7mhlcf8gh85ufq7rnuzw
-              </li>
-              <li>
-                <strong>Ethereum:</strong> 0xD2FBd2600643C286414f6618de0b919b279992a1
-              </li>
-              <li>
-                <strong>Cardano:</strong> addr1q862rr2exhe8wz57gd6ggmfgz5amy4xlhr544ql545ptfuh55xx4jd0jwu9fusm5s3kjs9fmkf2dlw8ft2plftgzkneqmzg5j6
-              </li>
-              <li>
-                <strong>Monero:</strong> 443iREMvecGMGFcykUqizuLdSajue3hnwgWL3k7gMkm9ikALUc8aoctRprsX6acdME7ckDYkajwgkcNXdG6q8x6Z4GEfZQh
-              </li>
-              <li>
-                <strong>Zcash:</strong> t1ecsqf4uZVj4vjnH999vEE3PkZqrHiVYeM
-              </li>
-              <li>
-                <strong>Litecoin:</strong> LWkVxWJpHVkHzJNWnbQtuzBnJgvvqt8RMf
-              </li>
-              <li>
-                <strong>Dogecoin:</strong> DKWw19q166JxXKaohyTJ9Dz1g4JbSjNMGn
-              </li>
-              <li>
-                <strong>Fiat (EUR, USD, CHF, κλπ.):</strong> <a href="mailto:balourdos@protonmail.com">επικοινώνησε μαζί μας</a>
-              </li>
-            </ul>
-          </section>
-        )}
-      </footer>
-    </div>
+    </Layout>
   )
 }
 

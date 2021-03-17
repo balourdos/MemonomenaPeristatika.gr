@@ -1,10 +1,11 @@
-import _ from "lodash";
-import { Submission } from "../../components/submission";
+import _ from "lodash"
+import { Submission } from "../../components/submission"
+import Layout from '../../components/layout'
 
 export default function Video({ submission }) {
-  return <div>
+  return <Layout>
     <Submission submission={submission} />
-  </div>
+  </Layout>
 }
 
 export async function getStaticPaths() {
