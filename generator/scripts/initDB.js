@@ -1,9 +1,10 @@
 // Script which generates basic SQL Schema
-const db = require('../db')
+const { db } = require('../db')
 
 Promise.all([
     db.schema.createTable('event', (table) => {
-        table.increments('id').primary()
+        table.integer('id').primary()
+        table.string('page_url')
         table.string('description')
         table.string('location')
         table.datetime('posted_at')
@@ -15,7 +16,7 @@ Promise.all([
         table.string('source') // cloudinary, aws, local
         table.string('url')
 
-        table.foreign('event_id').references('event;').inTable('id')
+        table.foreign('event_id').references('event').inTable('id')
     })
 ])
 .then(console.log('Basic schema was created'))

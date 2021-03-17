@@ -1,34 +1,16 @@
-const { config, cache } = require('../utils')
-
 class Handler {
-    constructor(name) {
+    constructor(name, config) {
         this.name = name
-        this.config = config[name]
+        this.config = config
     }
 
-    getFromCache(url) {
-        return cache[this.name][url]
-    }
-
-    async handle(pageURL, url, filename) {
+    async handle(url, filename) {
         try {
-            const cached = this.getFromCache(pageURL)
-
-            if (cached) {
-                console.log(`[${this.name}] PageURL already uploaded: ${pageURL}`)
-                return cached
-            }
-
-            if (this.config.enabled) {
-                console.log(`[${this.name}] Fetching url`, url)
-                return await this._handle(url, filename)
-            }
-
-            return null
+            return await this._handle(url, filename)
         }
         catch (e) {
-            console.log(`[${this.name}] Upload failed for: ${pageURL}`)
-            console.error(e)
+            console.log(`[${this.name}] Upload failed`)
+            console.log(e)
 
             return null
         }

@@ -1,48 +1,26 @@
 const crypto = require('crypto')
-const AWSHandler = require('./handlers/aws.js')
-const CloudinaryHandler = require('./handlers/cloudinary.js')
-const LocalHandler = require('./handlers/local.js')
 const videoParser = require('youtube-dl-exec')
-const { parse } = require('url')
 
-const handlers = [new CloudinaryHandler(), new LocalHandler(), new AWSHandler()]
+// @param video youtube_dl format
+const getVideoFilename = (pageURL, video) => {
+    const hash = crypto.createHash('md5').update(pageURL).digest('hex')
+    const filename = `${hash}.${video.ext}`
 
-const hash = str => crypto.createHash('md5').update(str).digest('hex')
-
-const getVideoURL = async pageURL => {
-    const { formats: videos } = await videoParser(pageURL, {
-        dumpJson: true,
-        noWarnings: true,
-    })
-
-    // Formats are sorted by resolution asc
-    return videos.pop()
+    return filename
 }
 
-const multiUpload = async pageURL => {
-    let parsedVideo 
-    console.log("Multi-uploading", pageURL)
-
+const getVideoFromSM = async pageURL => {
     try {
-        parsedVideo = await getVideoURL(pageURL)
+        const { formats: videos } = await videoParser(pageURL, {
+            dumpJson: true,
+            noWarnings: true,
+        })
+
+        return videos.pop()
     }
     catch (e) {
-        console.log("URL Generation from sm link failed", pageURL)
-        return
+        return null
     }
-
-    const {url, ext} = parsedVideo
-    filename = `${hash(url)}.${ext}`
-    const urls = []
-
-    //TODO: Concurrency
-    for (const handler of handlers) {
-        const selfHostedURL =  await handler.handle(pageURL, url, filename)
-        urls[handler.name] = selfHostedURL
-    }
-
-    return urls
 }
 
-
-module.exports = { multiUpload }
+module.exports = { getVideoFilename, getVideoFromSM }

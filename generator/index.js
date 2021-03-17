@@ -2,12 +2,28 @@ const path = require('path')
 const fs = require('fs')
 const _ = require('lodash')
 const parse = require('csv-parse/lib/sync')
-const { multiUpload, generateThumbnail } = require('./uploader')
-const { generateHTML } = require('./generator')
-const { saveHTML, config, cache, saveCache, genThumbFromCloudinary } = require('./utils')
+const { getVideoFromSM, getVideoFilename } = require('./uploader')
+const { config } = require('./utils')
+const { getEvent, saveVideo, createEvent, getVideosByEventID } = require('./db')
 
-const COLUMNS = ['contribution_date', 'date', 'location', 'url', 'description', 'status', '_', '_']
+const COLUMNS = ['contribution_date', 'date', 'location', 'url', 'description', 'status', 'id']
 const CSV = path.join(__dirname, '../entries.csv')
+
+const loadActiveHandlers = () => {
+    const handlers = []
+    const hosts = Object.keys(config.hosts)
+
+    for (const host of hosts) {
+        const hostConfig = config.hosts[host]
+
+        if (hostConfig.enabled) {
+            const handler = require(`./handlers/${host}`)
+            handlers.push(new handler(hostConfig))
+        }
+    }
+
+    return handlers
+}
 
 const getContributions = () => {
     const csv = fs.readFileSync(CSV).toString()
@@ -16,25 +32,48 @@ const getContributions = () => {
     // Deduplicate
     const entries = _.uniqBy(records, 'url')
     console.log(`Retrieved ${entries.length} entries`)
+
     return entries
 }
 
-const uploadContributions = async contribs => {
-    console.log('Uploading content to S3')
+const populateDatabase = async contribs => {
+    const handlers = loadActiveHandlers()
 
-    for (contribution of contribs) {
-        const originalPageURL = contribution.url
-        const {aws: awsURL, cloudinary: cloudinaryURL, local: localURL } =
-            await multiUpload(originalPageURL)
-        
-        contribution.thumbURL = genThumbFromCloudinary(cloudinaryURL)
-        contribution.url = localURL
+    for (const contrib of contribs) {
+        const pageURL = contrib.url
+        let event = await getEvent(+contrib.id)
 
-        // TODO: Rewrite that
-        cache['cloudinary'][originalPageURL] = cloudinaryURL
-        cache['aws'][originalPageURL] = awsURL
-        cache['local'][originalPageURL] = localURL
-        saveCache(cache)
+        if (!event) {
+            console.log(`Event ${pageURL} does't exist in the database. Adding it`)
+            event = await createEvent(contrib)
+        }
+
+        const hostedVideos = await getVideosByEventID(contrib.id)
+        const sources = hostedVideos.map(t => t.source)
+        let video
+
+        for (handler of handlers) {
+            if (sources.includes(handler.name)) {
+                console.log(`Video ${pageURL} already uploaded on ${handler.name}`)
+                continue
+            }
+            console.log(`Video ${pageURL} is not uploaded on ${handler.name}. Uploading it`)
+
+            video = video ? video : await getVideoFromSM(pageURL)
+            if (!video) {
+                console.log("URL Generation from social media link failed", pageURL)
+                continue
+            }
+
+            const filename = getVideoFilename(pageURL, video)
+            const selfHostedURL = await handler.handle(video.url, filename)
+
+            if (!selfHostedURL) { 
+                console.log(`Video handle failed on ${handler.name}, ${pageURL}`)
+            }
+            console.log('Video was handled successfully and stored at ', selfHostedURL)
+            await saveVideo({event_id: contrib.id, source: handler.name, url: selfHostedURL})
+        }
     }
 
     return contribs
@@ -42,13 +81,9 @@ const uploadContributions = async contribs => {
 
 const main = async () => {
     let contribs = getContributions()
-    contribs = await uploadContributions(contribs)
+    await populateDatabase(contribs)
 
-    const validContributions = contribs.filter(c => c.url != false)
-    const html = generateHTML(validContributions)
-
-    saveHTML(html)
-    console.log(`Generated HTML at ${config.htmlfile}`)
+    console.log(`Database was successfuly updated`)
 }
 
 main()

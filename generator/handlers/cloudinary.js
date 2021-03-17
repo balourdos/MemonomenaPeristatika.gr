@@ -3,8 +3,8 @@ const { promisify } = require('util')
 const Handler = require('./index')
 
 class CloudinaryHandler extends Handler {
-    constructor() {
-        super('cloudinary')
+    constructor(config) {
+        super('cloudinary', config)
     }
 
     getClient() {
@@ -18,11 +18,12 @@ class CloudinaryHandler extends Handler {
     }
 
     upload = promisify((data, opts, cb) =>
-        cloudinaryClient.uploader.upload(data, opts, cb),
+        CloudinaryClient.uploader.upload(data, opts, cb),
     )
 
     async _handle(url, filename) {
-        const { secure_url } = await upload(url, {
+        console.log('URL', url)
+        const { secure_url } = await this.upload(url, {
             resource_type: 'auto',
             use_filename: true,
             timeout: 60000,

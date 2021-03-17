@@ -7,9 +7,10 @@ const { config } = require('../utils')
 
 
 class AWSHandler extends Handler {
-    constructor() {
-        super('aws')
-        AWS.config.update(config.aws)
+    constructor(config) {
+        super('aws', config)
+
+        AWS.config.update(config)
         this.bucket = 'memonomenaperistatika.gr'
     }
 

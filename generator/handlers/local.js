@@ -4,11 +4,12 @@ const fs = require('fs')
 const Handler = require('./index')
 
 class LocalHandler extends Handler {
-    constructor() {
-        super('local')
+    constructor(config) {
+        super('local', config)
     }
 
     async _handle(url, filename) {
+        console.log('[LOCAL] Handling', filename)
         const file = path.join(this.config.videosPath, filename)
 
         const response = await axios({
