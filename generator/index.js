@@ -47,7 +47,7 @@ const populateDatabase = async contribs => {
         if (contrib.status != 'approved') {
             console.log(`Event ${pageURL} is not approved. Deleting`)
             await deleteEvent(contrib.id)
-            break
+            continue
         }
 
         if (!event) {

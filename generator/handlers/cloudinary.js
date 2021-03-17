@@ -18,11 +18,10 @@ class CloudinaryHandler extends Handler {
     }
 
     upload = promisify((data, opts, cb) =>
-        CloudinaryClient.uploader.upload(data, opts, cb),
+        this.getClient().uploader.upload(data, opts, cb),
     )
 
     async _handle(url, filename) {
-        console.log('URL', url)
         const { secure_url } = await this.upload(url, {
             resource_type: 'auto',
             use_filename: true,
