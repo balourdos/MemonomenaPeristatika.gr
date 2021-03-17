@@ -40,8 +40,8 @@ export default function Home({ entries }) {
       <h3>Αστυνομικής <em>βίας</em> και <em>κατάχρησης</em> εξουσίας</h3>
 
       <nav>
-        <a href='https://forms.gle/cNgRuEyUQWDPr4rr8' className='button button-primary'>Αναφορα Περιστατικου</a>
-        <a href='https://twitter.com/peristatika' className='button button-secondary'>Twitter</a>
+        <a href="https://forms.gle/cNgRuEyUQWDPr4rr8" className="button button-primary">Αναφορα Περιστατικου</a>
+        <a href="https://twitter.com/peristatika" className="button button-secondary">Twitter</a>
       </nav>
 
       <section id="content">
@@ -54,7 +54,7 @@ export default function Home({ entries }) {
 
       <footer>
           <p><a href="https://forms.gle/cNgRuEyUQWDPr4rr8">Ανάφερε κάποιο μεμονωμένο περιστατικό</a> για να το αναρτήσουμε,
-            {' '}<a href='mailto:balourdos@protonmail.com'>επικοινώνησε μαζί μας</a>{' '}
+            {' '}<a href="mailto:balourdos@protonmail.com">επικοινώνησε μαζί μας</a>{' '}
               ή, αν γράφεις κώδικα, <a href="https://github.com/balourdos/MemonomenaPeristatika.gr">βοήθησέ μας με την
                   ανάπτυξη της πλατφόρμας</a>.</p>
       </footer>
