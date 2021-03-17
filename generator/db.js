@@ -36,16 +36,6 @@ const getVideosByEventID = async (event_id) => {
     return db('video').where({ event_id })
 }
 
-// Basic function called by the app to generate the HTML
-const getAllEvents = async (source = 'local') => {
-    return db('video')
-        .select()
-        .join('event', 'event.id', '=', 'video.event_id')
-        .where('event.url', '>', 10)
-        .where('event.status', 'approved')
-        .where({ source })
-}
-
 const deleteEvent = async (id) => {
     return db('event')
         .where({ id })
@@ -59,5 +49,4 @@ module.exports = {
     createEvent,
     saveVideo,
     getVideosByEventID,
-    getAllEvents
 }
