@@ -4,7 +4,7 @@ import parse from 'csv-parse/lib/sync'
 import moment from 'moment'
 import { assert } from 'console'
 
-const COLUMNS = ['contribution_date', 'date', 'location', 'url', 'description', 'status', '_', '_']
+const COLUMNS = ['contribution_date', 'date', 'location', 'url', 'description', 'status', 'id']
 const CSV = '../entries.csv'
 const CACHE = '../generator/self-host-cache'
 
