@@ -8,11 +8,17 @@ export default function Home({ entries }) {
     <Layout>
       <Head>
         <title>Μεμονωμένα Περιστατικά</title>
+        <meta property="og:locale" content="el_GR" />
         <meta property="og:title" content="Μεμονωμένα Περιστατικά" />
         <meta property="og:description" content="Αστυνομική βία, αυθαιρεσία και κατάχρηση εξουσίας" />
         <meta property="og:image" content="https://memonomenaperistatika.gr/social-header.jpg?v=1" />
         <meta property="og:url" content="https://memonomenaperistatika.gr" />
         <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Μεμονωμένα Περιστατικά" />
+        <meta name="twitter:title" content="Μεμονωμένα Περιστατικά" />
+        <meta name="twitter:description" content="Αστυνομική βία, αυθαιρεσία και κατάχρηση εξουσίας" />
+        <meta name="twitter:image" content="https://memonomenaperistatika.gr/social-header.jpg?v=1" />
+        <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
       <h1><em>{ entries.reduce((acc, entry) => acc + entry.videos.length, 0) }</em> Μεμονωμένα Περιστατικά</h1>

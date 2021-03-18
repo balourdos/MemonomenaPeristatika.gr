@@ -4,9 +4,22 @@ import Submission from "../../components/submission"
 import Layout from '../../components/layout'
 
 export default function Video({ submission }) {
+  const title = `${submission.description} - Μεμονωμένο Περιστατικό`
+  const image = submission.thumbURL ? submission.thumbURL : "https://memonomenaperistatika.gr/social-header.jpg?v=1"
   return <Layout>
     <Head>
       <title>{ submission.description } - Μεμονωμένο Περιστατικό</title>
+      <meta property="og:locale" content="el_GR" />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={submission.description} />
+      <meta property="og:image" content={image} />
+      <meta property="og:url" content={ `https://memonomenaperistatika.gr/v/${submission.id}`} />
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="Μεμονωμένα Περιστατικά" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={submission.description} />
+      <meta name="twitter:image" content={image} />
+      <meta name="twitter:card" content="summary_large_image" />
     </Head>
     <Submission submission={submission} />
   </Layout>
