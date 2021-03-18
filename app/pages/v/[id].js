@@ -7,6 +7,17 @@ export default function Video({ submission }) {
   return <Layout>
     <Head>
       <title>{ submission.description } - Μεμονωμένο Περιστατικό</title>
+      <meta property="og:locale" content="el_GR" />
+      <meta property="og:title" content={ submission.description + " - Μεμονωμένο Περιστατικό" } />
+      <meta property="og:description" content={ submission.description } />
+      <meta property="og:image" content={ submission.thumbURL? submission.thumbURL: undefined } />
+      <meta property="og:url" content={ "https://memonomenaperistatika.gr/v/" + submission.id } />
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="Μεμονωμένα Περιστατικά" />
+      <meta name="twitter:title" content={ submission.description + " - Μεμονωμένο Περιστατικό" } />
+      <meta name="twitter:description" content={ submission.description } />
+      <meta name="twitter:image" content={ submission.thumbURL? submission.thumbURL: undefined } />
+      <meta name="twitter:card" content="summary_large_image" />
     </Head>
     <Submission submission={submission} />
   </Layout>
