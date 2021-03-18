@@ -36,7 +36,7 @@ export default function Submission({ submission }) {
 
   return (
     <div style={{maxWidth: '1200px', maxHeight: '100%', width: '100%', borderBottom: '1px solid #ccc', paddingBottom: '1em'}}>
-      <Link href='/'>
+      <Link href={`/#${submission.id}`}>
         <a style={{display: 'block', paddingBottom: '1em'}}>← Πίσω σε όλα τα περιστατικά</a>
       </Link>
 
