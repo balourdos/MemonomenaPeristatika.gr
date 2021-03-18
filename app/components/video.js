@@ -52,7 +52,7 @@ export default function Video({ video }) {
           >
             <source src={video.url} type="video/mp4" />
             <p className="vjs-no-js">
-              { video.description }
+              <a href={video.url} target='_blank'>{ video.description }</a>
             </p>
           </video>
         </div>
