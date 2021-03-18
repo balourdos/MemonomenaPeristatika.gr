@@ -1,13 +1,13 @@
 import _ from 'lodash'
 import moment from 'moment'
-import servePromise from './serve'
+import serveResult from './serve'
 
 const humanDate = date => {
   return moment(date).locale('el').format('LL')
 }
 
 export const getEvents = async () => {
-  const events = await servePromise
+  const events = await serveResult
 
   for (const event of events) {
     event.humanDate = humanDate(event.date)

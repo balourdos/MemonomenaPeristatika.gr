@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "rm -f .sqlite.lock && next build",
     "start": "next start",
     "deploy": "rm -rf .next && rm -rf out && next build && next export && rm -rf ../docs && mv out ../docs"
   },
