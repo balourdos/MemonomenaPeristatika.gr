@@ -2,12 +2,12 @@ import { useEffect, useRef } from 'react'
 import Link from 'next/link'
 import videojs from 'video.js'
 
-export default function Submission({ submission }) {
-  const metaData = [submission.humanDate]
+export default function Video({ video }) {
+  const metaData = [video.humanDate]
   const videoEl = useRef()
 
-  if (submission.location) {
-    metaData.push(submission.location)
+  if (video.location) {
+    metaData.push(video.location)
   }
 
   useEffect(() => {
@@ -47,18 +47,18 @@ export default function Submission({ submission }) {
             ref={videoEl}
             controls
             preload="auto"
-            poster={submission.thumbURL? submission.thumbURL: undefined}
+            poster={video.thumbnail? video.thumbnail: undefined}
             data-setup='{ "preload": "auto", "fill": true }'
           >
-            <source src={submission.url} type="video/mp4" />
+            <source src={video.url} type="video/mp4" />
             <p className="vjs-no-js">
-              <a href={submission.url} target='_blank'>{ submission.description }</a>
+              <a href={video.url} target='_blank'>{ video.description }</a>
             </p>
           </video>
         </div>
       </div>
       <span className='description' style={{fontSize: '140%'}}>
-        { submission.description }
+        { video.description }
       </span>
       <span>
         { metaData.join(' • ') }

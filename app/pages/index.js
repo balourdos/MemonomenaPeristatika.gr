@@ -3,7 +3,7 @@ import { getEntries } from '../lib/entries'
 import Entry from '../components/index/entry'
 import Layout from '../components/layout'
 
-export default function Home({ entries }) {
+export default function HomePage({ entries }) {
   return (
     <Layout>
       <Head>
