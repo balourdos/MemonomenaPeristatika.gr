@@ -47,7 +47,7 @@ export default function Video({ video }) {
             ref={videoEl}
             controls
             preload="auto"
-            poster={video.thumbURL? video.thumbURL: undefined}
+            poster={video.thumbnail? video.thumbnail: undefined}
             data-setup='{ "preload": "auto", "fill": true }'
           >
             <source src={video.url} type="video/mp4" />
