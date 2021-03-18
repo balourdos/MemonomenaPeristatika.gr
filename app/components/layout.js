@@ -41,9 +41,9 @@ export default function Layout({ children }) {
         {children}
 
         <footer>
-        <p><a href="https://forms.gle/cNgRuEyUQWDPr4rr8">Ανάφερε κάποιο μεμονωμένο περιστατικό</a> για να το αναρτήσουμε,
+        <p><a href="https://forms.gle/cNgRuEyUQWDPr4rr8" target="_blank">Ανάφερε κάποιο μεμονωμένο περιστατικό</a> για να το αναρτήσουμε,
           {' '}<a href="mailto:balourdos@protonmail.com">επικοινώνησε μαζί μας</a>{' '}
-            ή, αν γράφεις κώδικα, <a href="https://github.com/balourdos/MemonomenaPeristatika.gr">βοήθησέ μας με την
+            ή, αν γράφεις κώδικα, <a href="https://github.com/balourdos/MemonomenaPeristatika.gr" target="_blank">βοήθησέ μας με την
                 ανάπτυξη της πλατφόρμας</a>.</p>
         <button onClick={handleDonationsClick}>Donate</button>
 

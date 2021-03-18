@@ -19,8 +19,8 @@ export default function Home({ entries }) {
       <h3>Αστυνομικής <em>βίας</em> και <em>κατάχρησης</em> εξουσίας</h3>
 
       <nav>
-        <a href="https://forms.gle/cNgRuEyUQWDPr4rr8" className="button button-primary">Αναφορα Περιστατικου</a>
-        <a href="https://twitter.com/peristatika" className="button button-secondary">Twitter</a>
+        <a href="https://forms.gle/cNgRuEyUQWDPr4rr8" className="button button-primary" target="_blank">Αναφορα Περιστατικου</a>
+        <a href="https://twitter.com/peristatika" className="button button-secondary" target="_blank">Twitter</a>
       </nav>
 
       <section id="content">
