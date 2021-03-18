@@ -1,8 +1,11 @@
+const path = require('path')
+
 const db = require('knex')({
     client: 'sqlite',
     connection: {
-      filename: './db.sqlite'
+      filename: path.join(__dirname, 'db.sqlite')
     },
+    pool: { min: 0, max: 1 },
     useNullAsDefault: true
 });
 
