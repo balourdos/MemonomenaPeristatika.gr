@@ -22,6 +22,9 @@ class CloudinaryHandler extends Handler {
     )
 
     async _handle(url, filename) {
+	// Hacky way to remove extension since cloudinary re-appends it
+	filename = filename.substr(0, filename.length - 4)
+
         const { secure_url } = await this.upload(url, {
             resource_type: 'auto',
             use_filename: true,
