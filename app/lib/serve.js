@@ -14,7 +14,7 @@ const connect = async () => {
         // file-based semaphore lock to bypass next.js's unconfigurable multithreaded build process
         // as sqlite does not support simultaneous accesses and causes node to crash with a core dump
         try {
-            fs.writeFileSync('./.sqlite.lock', '', { flag: 'wx'})
+            fs.writeFileSync('./.sqlite.lock', '', { flag: 'wx' })
             console.log('Obtained lock')
             lockObtained = true
             break
