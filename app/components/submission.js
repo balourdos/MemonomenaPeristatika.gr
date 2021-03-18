@@ -52,7 +52,7 @@ export default function Submission({ submission }) {
           >
             <source src={submission.url} type="video/mp4" />
             <p className="vjs-no-js">
-              <a href={submission.url} target='_blank'>{ submission.description }</a>
+              { submission.description }
             </p>
           </video>
         </div>
