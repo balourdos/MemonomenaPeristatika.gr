@@ -20,9 +20,7 @@ class LocalHandler extends Handler {
 
         await response.data.pipe(fs.createWriteStream(file))
 
-        const selfHostURL = path.join(this.config.videosDomain, filename)
-
-        return selfHostURL
+        return filename
     }
 }
 
