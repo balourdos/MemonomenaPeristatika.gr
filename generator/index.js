@@ -2,80 +2,86 @@ const path = require('path')
 const fs = require('fs')
 const _ = require('lodash')
 const parse = require('csv-parse/lib/sync')
-const { uploadVideo, generateThumbnail } = require('./uploader')
-const { generateHTML } = require('./generator')
-const { saveHTML, config, cache, saveCache } = require('./utils')
-const { assert } = require('console')
+const { getVideoFromSM, getVideoFilename } = require('./uploader')
+const { loadConfig } = require('./utils')
+const { getEvent, deleteEvent, saveVideo, createEvent, getVideosByEventID } = require('./db')
 
 const COLUMNS = ['contribution_date', 'date', 'location', 'url', 'description', 'status', 'id']
 const CSV = path.join(__dirname, '../entries.csv')
+const config = loadConfig()
+
+const loadActiveHandlers = () => {
+    const handlers = []
+    const hosts = Object.keys(config.hosts)
+
+    for (const host of hosts) {
+        const hostConfig = config.hosts[host]
+
+        if (hostConfig.enabled) {
+            const handler = require(`./handlers/${host}`)
+            handlers.push(new handler(hostConfig))
+        }
+    }
+
+    return handlers
+}
 
 const getContributions = () => {
     const csv = fs.readFileSync(CSV).toString()
-    const records = parse(csv, { columns: COLUMNS, from_line: 2 }).filter(r => r.status === 'approved')
+    const records = parse(csv, { columns: COLUMNS, from_line: 2 })
 
     // Deduplicate
     const entries = _.uniqBy(records, 'url')
     console.log(`Retrieved ${entries.length} entries`)
+
     return entries
 }
 
-const uploadContributions = async contribs => {
-    console.log('Uploading content to S3')
-    for (contribution of contribs) {
-        const originalPageURL = contribution.url
-        if (typeof cache.videos[contribution.url] !== 'undefined') {
-            console.log(`Using cached video URL for ${originalPageURL}`)
-            assert(cache.videos[originalPageURL].length > 10)
-            contribution.url = cache.videos[originalPageURL]
+const populateDatabase = async contribs => {
+    const handlers = loadActiveHandlers()
+
+    for (const contrib of contribs) {
+        const pageURL = contrib.url
+        let event = await getEvent(+contrib.id)
+
+        if (contrib.status != 'approved') {
+            console.log(`Event ${pageURL} is not approved. Deleting`)
+            await deleteEvent(contrib.id)
+            continue
         }
-        else {
-            let selfHostedVideoURL
-            console.log(`Uploading video ${originalPageURL}...`)
-            try {
-                selfHostedVideoURL = await uploadVideo(originalPageURL)
-            }
-            catch {
-                console.log(`S3 upload of ${originalPageURL} failed. Check your AWS credentials?`)
+
+        if (!event) {
+            console.log(`Event ${pageURL} does't exist in the database. Adding it`)
+            event = await createEvent(contrib)
+        }
+
+
+        const hostedVideos = await getVideosByEventID(contrib.id)
+        const sources = hostedVideos.map(t => t.source)
+        let video
+
+        for (handler of handlers) {
+            if (sources.includes(handler.name)) {
+                // console.log(`Video ${pageURL} already uploaded on ${handler.name}`)
                 continue
             }
-            console.log(`Uploaded to S3: ${originalPageURL}`)
-            cache.videos[originalPageURL] = selfHostedVideoURL
-            contribution.url = selfHostedVideoURL
+            console.log(`Video ${pageURL} is not uploaded on ${handler.name}. Uploading it`)
+
+            video = video ? video : await getVideoFromSM(pageURL)
+            if (!video) {
+                console.log("URL Generation from social media link failed", pageURL)
+                break
+            }
+
+            const filename = getVideoFilename(pageURL, video)
+            const selfHostedURL = await handler.handle(video.url, filename)
+
+            if (!selfHostedURL) { 
+                console.log(`Video handle failed on ${handler.name}, ${pageURL}`)
+            }
+            console.log('Video was handled successfully and stored at ', selfHostedURL)
+            await saveVideo({event_id: contrib.id, source: handler.name, url: selfHostedURL})
         }
-        if (typeof cache.thumbnails[originalPageURL] !== 'undefined') {
-            if (cache.thumbnails[originalPageURL] === false) {
-                console.log(`Thumbnail for ${originalPageURL} is cached as unusable. Skipping.`)
-            }
-            else {
-                console.log(`Using cached thumbnail URL for ${originalPageURL}`)
-                assert(cache.thumbnails[originalPageURL].length > 10)
-                contribution.thumbURL = cache.thumbnails[originalPageURL]
-            }
-        }
-        else {
-            let selfHostedThumbURL
-            console.log(`Generating thumbnail for ${originalPageURL}...`)
-            try {
-                selfHostedThumbURL = await generateThumbnail(originalPageURL)
-            }
-            catch (e) {
-                console.log(`Cloudify upload of ${originalPageURL} failed with status code ${e.http_code}.`)
-                if (e.http_code == 400) {
-                    console.log(`Assuming excessive video file size. Marking thumbnail as unusable.`)
-                    cache.thumbnails[originalPageURL] = false
-                    contribution.thumbURL = false
-                }
-                if (e.http_code == 403 || e.http_code == 401) {
-                    console.log(`Check your cloudinary credentials?`)
-                }
-                continue
-            }
-            console.log(`Uploaded to cloudify: ${originalPageURL}`)
-            cache.thumbnails[originalPageURL] = selfHostedThumbURL
-            contribution.thumbURL = selfHostedThumbURL
-        }
-        saveCache(cache)
     }
 
     return contribs
@@ -83,13 +89,9 @@ const uploadContributions = async contribs => {
 
 const main = async () => {
     let contribs = getContributions()
-    contribs = await uploadContributions(contribs)
+    await populateDatabase(contribs)
 
-    const validContributions = contribs.filter(c => c.url != false)
-    const html = generateHTML(validContributions)
-
-    saveHTML(html)
-    console.log(`Generated HTML at ${config.htmlfile}`)
+    console.log(`Database was successfuly updated`)
 }
 
 main()

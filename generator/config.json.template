@@ -1,13 +1,21 @@
 {
-    "aws": {
-        "accessKeyId": "amazon_key_id",
-        "secretAccessKey": "amazon_access_key",
-        "region": "eu-west-3"
-    },
-    "cloudinary": {
-        "enabled": true,
-        "name": "cloud_name",
-        "key": "cloud_key",
-        "secret": "cloud_secret"
+    "hosts": {
+        "aws": {
+            "enabled": "true",
+            "accessKeyId": "",
+            "secretAccessKey": "",
+            "region": "eu-west-3"
+        },
+        "cloudinary": {
+            "enabled": "true",
+            "name": "",
+            "key": "",
+            "secret": ""
+        },
+        "local":  {
+            "enabled": "true",
+            "videosPath": "videos/",
+            "videosDomain": "https://videos.memonomenaperistatika.gr"
+        }
     }
 }
