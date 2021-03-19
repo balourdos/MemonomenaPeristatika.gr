@@ -89,7 +89,7 @@ Timestamp,Πότε συνέβη;,Πού συνέβη;,Σύνδεσμος σε β
 3/15/2021 18:08:34,11/17/2020,Αθήνα,https://www.youtube.com/watch?v=VrbwOE4_YtI,Διάλυση ειρηνικής διαδήλωσης,approved,88
 3/15/2021 18:10:21,2/24/2021,Αθήνα,https://www.youtube.com/watch?v=Duul-fxypLs,Διάλυση ειρηνικής διαδήλωσης,approved,89
 3/15/2021 18:12:36,11/17/2019,Eξάρχεια,https://www.youtube.com/watch?v=YgYqh9pyTvQ,Ξυλοδαρμός πολιτών,approved,90
-3/15/2021 18:13:50,7/17/2020,Αθήνα,https://www.youtube.com/watch?v=wIGRcr2OtXM,Ξυλοδαρμός διαδηλωτών,approved,91
+3/15/2021 18:13:50,7/17/2020,Αθήνα,https://www.youtube.com/watch?v=wIGRcr2OtXM,Ξυλοδαρμός διαδηλωτών,duplicate,91
 3/15/2021 18:14:47,6/14/2020,Βόλος,https://www.youtube.com/watch?v=uhD6gVhYoo0,Ξυλοδαρμός Βασίλη Μάγκου,duplicate,92
 3/15/2021 18:15:57,2/3/2021,Αθήνα,https://www.youtube.com/watch?v=HWV1Hxe3JG0,Επίθεση σε ειρηνική διαδήλωση,approved,93
 3/15/2021 18:17:23,11/17/2014,Εξάρχεια,https://www.youtube.com/watch?v=Zkm65hjr9yI&t=106s,Κλοπή από περίπτερο και ξυλοδαρμός υπαλλήλου,approved,94
@@ -124,7 +124,7 @@ Timestamp,Πότε συνέβη;,Πού συνέβη;,Σύνδεσμος σε β
 3/17/2021 22:29:33,6/29/2011,,https://youtu.be/31vWtF6rs2g,Ξυλοδαρμός διαδηλωτή,approved,123
 3/17/2021 22:59:27,7/5/2020,πλ. Βικτωρίας,https://youtu.be/L0HwbEq3mmw,"Βίαιη μεταφορά προσφύγων-ισσών, μεταναστριών/ών από την πλ.Βικτωρίας σε στρατόπεδα συγκέντωσης.",duplicate,124
 3/17/2021 23:21:11,3/9/2021,Νέα Σμύρνη,https://twitter.com/IKM_nc/status/1369376267905142791,Βίαιη σύλληψη ατόμου ενώ κάτοικοι αποδοκιμάζουν,approved,125
-3/18/2021 1:44:55,11/17/2006,Πλατεία Συντριβανίου Θεσσαλονίκη,https://www.youtube.com/watch?v=LgTREwHpsFA,Ξυλοδαρμός φοιτητή,approved,126
+3/18/2021 1:44:55,11/17/2006,Πλατεία Συντριβανίου Θεσσαλονίκη,https://www.youtube.com/watch?v=LgTREwHpsFA,"Ξυλοδαρμός φοιτητή (υπόθεση ""ζαρντινιέρα"")",approved,126
 3/18/2021 1:49:45,12/6/2008,Εξάρχεια,https://www.youtube.com/watch?v=vZr60dididA,Δολοφονία του δεκαπεντάχρονου μαθητή Αλ. Γρηγορόπουλου,approved,127
 3/18/2021 4:31:01,2/4/2021,Θεσσαλονίκη,https://www.youtube.com/watch?v=zJD9EQXg524,Η αστυνομία προσάγει τραυματία στη Θεσσαλονίκη,duplicate,128
 3/18/2021 4:33:21,11/17/2020,Σεπόλια,https://www.youtube.com/watch?v=SO3Luy4M9AY,Εν ψυχρώ επίθεση και της ΕΛ.ΑΣ. σε φοιτητή και οικογένεια στα Σεπόλια,duplicate,129
@@ -151,9 +151,135 @@ Timestamp,Πότε συνέβη;,Πού συνέβη;,Σύνδεσμος σε β
 3/18/2021 13:26:00,11/7/2020,Πάτρα,https://www.youtube.com/watch?v=lT_CKNw1L94,Ξυλοδαρμός αγωνιστή από δέκα Ματατζήδες μπροστά στο Παράρτημα και ενώ κατευθυνόταν σε συγκέντρωση ενάντια στην κρατική διαχείριση της πανδημίας,,150
 3/18/2021 13:46:38,2/12/2012,Θεσσαλονίκη,https://www.youtube.com/watch?v=QCZ-eVwb_FA,Δακρυγόνα και επίθεση ΜΑΤ σε διαδηλωτές που αποχωρούν,approved,151
 3/18/2021 16:49:56,3/6/2021,Χαλάνδρι,https://www.youtube.com/watch?v=Z2u9txvgy3Y,Αστυνομικοί σέρνουν γυναίκα που κουβαλάει πανό και περνάνε με μηχανάκια μέσα από λαϊκή αγορά,,152
-3/18/2021 16:53:57,12/24/2020,Πύργος Ηλείας,https://www.youtube.com/watch?v=cJ69phM2Oiw,Αστυνομικός τραμπουκίζει γυναίκα που τραβάει βίντεο που απεικονίζει αυθαιρεσία,,153
+3/18/2021 16:53:57,12/24/2020,Πύργος Ηλείας,https://www.youtube.com/watch?v=cJ69phM2Oiw,Αστυνομικός τραμπουκίζει γυναίκα που τραβάει βίντεο που απεικονίζει αυθαιρεσία,duplicate,153
 3/18/2021 17:04:39,9/21/2018,Αθήνα,https://www.youtube.com/watch?v=CyHUzMgEVnw,Βιοπραγίες κατά του αναίσθητου Ζακ Κωστόπουλου,approved,154
 3/18/2021 21:56:36,9/21/2018,Ομόνοια,https://youtu.be/CyHUzMgEVnw,Το 2ο λιντσάρισμα του Ζακ Κωστόπουλου,duplicate,155
-3/18/2021 22:26:35,12/6/2008,Εξάρχεια,https://www.youtube.com/watch?v=xLo9BJsqM8U,Η δολοφονία του Αλέξη Γρηγορόπουλου,approved,156
+3/18/2021 22:26:35,12/6/2008,Εξάρχεια,https://www.youtube.com/watch?v=xLo9BJsqM8U,Η δολοφονία του Αλέξη Γρηγορόπουλου,duplicate,156
 3/18/2021 22:31:42,5/11/2008,Αθήνα,https://youtu.be/rgo5hbZAZ50,Το ντοκουμέντο από την δολοφονία του Νίκου Σακελλίωνα,,157
 3/18/2021 23:38:12,3/12/2021,Αθήνα,https://www.youtube.com/watch?v=OlGIAVYXqOY,Υπηρεσιακό όχημα τραυματίζει θανάσιμα πολίτη σε δίκυκλο,approved,158
+3/19/2021 0:24:47,11/17/2006,Θεσσαλονίκη,https://www.youtube.com/watch?v=LgTREwHpsFA,"Ξυλοδαρμός νεαρού φοιτητή στη Θεσσαλονίκη. Υπόθεση ""Ζαρντινιέρα""",duplicate,159
+3/19/2021 0:33:13,5/24/2020,Σεπόλια,https://www.youtube.com/watch?v=lkBlgBGl11s,Ξυλοδαρμός δύο 24χρονων από αστυνομικούς,approved,160
+3/19/2021 0:39:28,8/17/2020,Θεσσαλονίκη,https://www.youtube.com/watch?v=-z-Sr3rjHTI,"Ξυλοδαρμός νεαρού από αστυνομικό στο σταθμό Θεσσαλονίκης, χωρίς λόγο",,161
+3/19/2021 0:45:26,7/3/2020,Εξάρχεια,https://www.youtube.com/watch?v=z3bhi6J2DRI,Επίθεση ΜΑΤ σε πλήθος σε επιτέθηκαν σε συναυλία αλληλεγγύης στην Κατάληψη Δερβενιών,,162
+3/19/2021 0:47:19,2/12/2012,Σύνταγμα,https://www.youtube.com/watch?v=k3-IULrW8bU,ΜΑΤ ξυλοκοπούν και σέρνουν στο δρόμο πεσμένο άνθρωπο,approved,163
+3/19/2021 0:53:41,6/15/2011,Σύνταγμα,https://www.youtube.com/watch?v=NT_82JW2iis,Ξύλο πολλών ΜΑΤ σε ήδη συλληφθέντα διαδηλωτή,approved,164
+3/19/2021 0:57:28,11/17/2013,Εξάρχεια,https://www.youtube.com/watch?v=0IZzkbSqvXo,Ομάδα ΔΕΛΤΑ ξυλοκοπεί ανθρώπους που τους χειροκροτούν ειρωνικά και σπάει το τζάμι καταστήματος,approved,165
+3/19/2021 1:04:19,6/16/2007,Αθήνα,https://www.youtube.com/watch?v=todRLzjudp8,Αστυνομικοί του ΑΤ Ομονοίας υποχρεώνουν συλληφθέντες να χτυπάνε ο ένας τον άλλο,approved,166
+3/19/2021 1:19:02,9/12/2020,Ορεστιάδα,https://www.youtube.com/watch?v=c489YMOBNmk,Τσαμπουκάς μεθυσμένων ματατζήδων εξτός υπηρεσίας σε πολίτες,,167
+3/19/2021 1:22:16,2/25/2020,Βροντάδο Χίου,https://www.youtube.com/watch?v=tefO0N9Fd3g,Απρόκλητα επίθεση από άνδρα των ΜΑΤ σε περαστικό πολίτη,,168
+3/19/2021 1:34:51,5/21/2020,Τήνος,https://www.youtube.com/watch?v=vFZYOFrJrIc,ΜΑΤ εναντίον ειρηνικής συγκέντρωσης για τις ανεμογεννήτριες,,169
+3/19/2021 3:04:51,12/6/2020,"Πεζόδρομος Τσαμαδού, Εξάρχεια,",https://www.youtube.com/watch?v=uc3cUUSI818&ab_channel=Perseus999,Επαγγελματίες δολοφόνοι: Αστυνομικοί πετούν χειροβομβίδα κρότου - λάμψης μέσα σε πολυκατοικία,duplicate,170
+3/19/2021 3:08:20,12/6/2020,"Πεζόδρομος Τσαμαδού, Εξάρχεια",https://www.youtube.com/watch?v=zSEaCo1VJuw&ab_channel=EllinofreneiaOfficial,Εξάρχεια: Η αστυνομία ρίχνει κρότου λάμψης μέσα σε πολυκατοικία 2o πλάνο,duplicate,171
+3/19/2021 3:10:46,12/6/2020,"Πεζόδρομος Τσαμαδού, Εξάρχεια",https://www.youtube.com/watch?v=QcjFkVeNWh4&ab_channel=newsbomb.gr,Χειροβομβίδα κρότου λάμψης σε πολυκατοικία στα Εξάρχεια 3ο πλάνο,duplicate,172
+3/19/2021 3:13:19,12/6/2020,Εξάρχεια,https://www.youtube.com/watch?v=ABkE7igZA0Y&ab_channel=Perseus999,Απαγόρευση μετακίνησης στο σημείο της δολοφονίας και προσαγωγή αθώων πολιτών,,173
+3/19/2021 3:14:55,12/6/2020,Εξάρχεια,https://www.youtube.com/watch?v=LQsv5nARXAc&ab_channel=Perseus999,6 Δεκέμβρη 2020: Καλώς το 1967 - Αμοντάριστα πλάνα καταστολής...,,174
+3/19/2021 3:17:14,2/3/2021,Πανεπιστημιου Εθνική Βιβλιοθήκη ( 17:30),https://www.youtube.com/watch?v=HWV1Hxe3JG0&ab_channel=Perseus999,Πανοραμικό βίντεο από το χτύπημα των ΜΑΤ στη συγκέντρωση για τον απεργό πείνας Δημήτρη Κουφοντίνα,duplicate,175
+3/19/2021 3:20:31,2/19/2021,Κέντρο Αθήνας υποθέτω,https://www.youtube.com/watch?v=VMDQJCh3CvU&ab_channel=Perseus999,Επίθεση αστυνομικών σε διαδηλωτές ,,176
+3/19/2021 3:22:21,2/26/2021,Μετρό Ομόνοιας ,https://www.youtube.com/watch?v=rQv3ZaGqZxM&ab_channel=Perseus999,Το βιντεο πριν την επίθεση των ματ στο μετρό Ομόνοιας,,177
+3/19/2021 3:23:48,2/24/2021,Κέντρο Αθηνας,https://www.youtube.com/watch?v=dGK5dTdQy74&ab_channel=Perseus999,Κουφοντίνας: Επίθεση με ΜΑΤ και αύρα νερού σε διαδηλωτές ,,178
+3/19/2021 3:24:57,2/28/2021,Ηράκλειο Κρήτης,https://www.youtube.com/watch?v=ronIpcBsDl0&ab_channel=Perseus999,"Crete: Riot police attacks, but faced with determined protesters, is forced to retreat (Koufodinas)",,179
+3/19/2021 3:27:27,3/5/2021,Κέντρο Αθήνας,https://www.youtube.com/watch?v=CBx71lmcWys&ab_channel=Perseus999,Βια και καταστολή στο κέντρο της Αθήνας,,180
+3/19/2021 3:27:53,6/21/2003,Θεσσαλονίκη,https://youtu.be/S4QR7Dg_kVs?t=16,"Ξυλοδαρμοί,τυφλές συλλήψεις,τοποθέτηση τσάντας με μολοτοφ σε διαδηλωτή",,181
+3/19/2021 3:28:34,3/5/2021,Σύνταγμα πλατεία,https://www.youtube.com/watch?v=iGXBijc-cgM&ab_channel=Perseus999,Επίθεση σε διαδηλωτές στην πλατεία Συντάγματος,,182
+3/19/2021 3:29:56,3/7/2021,Εξάρχεια,https://www.youtube.com/watch?v=ngi3pWu-NA4&ab_channel=Perseus999,ΚΑταστολή διαδήλωσης ,,183
+3/19/2021 3:31:12,3/6/2021,Πετράλωνα,https://www.youtube.com/watch?v=VCUL1USiA5s&ab_channel=Perseus999,ΕΚφοβισμός στα πετράλωνα,,184
+3/19/2021 3:33:01,3/7/2021,Κάποια λαική στην Αθήνα,https://www.youtube.com/watch?v=Z2u9txvgy3Y&ab_channel=Perseus999,Βίαιη προσαγωγή σε λαική αγορά,duplicate,185
+3/19/2021 3:34:42,11/4/2020,Ξάνθη,https://www.youtube.com/watch?v=CziEh9BTMPk&ab_channel=Perseus999,Επίθεση και τραμπουκισμοί από την αστυνομία στην κεντρική πλατεία στην Ξάνθη,,186
+3/19/2021 3:36:03,12/6/2020,Εξάρχεια,https://www.youtube.com/watch?v=5hRYFLVARtw&ab_channel=Perseus999,Βιαιη προσαγωγή και δηλώσεις που πρέπει να ακουστουν ,,187
+3/19/2021 3:37:39,8/25/2020,Παγκράτι,https://www.youtube.com/watch?v=ab4it_BmO9k&ab_channel=Perseus999,Ο ορισμός του προβοκάτορα: Βαθμοφόρος των ΜΑΤ προσπαθεί να προκαλέσει επεισόδια (Πορεία Παγκράτι),,188
+3/19/2021 3:39:14,12/8/2020,Μετρό ομόνοια,https://www.youtube.com/watch?v=gly6u7BcbEA&ab_channel=Perseus999,"Αστυνομικός κλωτσά τραυματία με γύψο στο πόδι και πατερίτσες (Μετρό, Σταθμός Ομόνοια)",,189
+3/19/2021 3:43:02,6/14/2020,Βόλος,https://www.youtube.com/watch?v=uhD6gVhYoo0&ab_channel=Perseus999,Το ξύλο που οδήγησε στον θάνατο τον Β. Μαγγο δίχως θολούρα,,190
+3/19/2021 3:44:53,3/9/2020,Κυψέλη,https://www.youtube.com/watch?v=LziUs5gAdBM&ab_channel=Perseus999,Επίθεση στην Κυψέλη: Έσβησαν τα φώτα και χωρίς προειδοποίηση ΜΑΤ και ΔΕΛΤΑ επιτέθηκαν με χημικά,,191
+3/19/2021 3:46:15,5/9/2020,Κυψέλη,https://www.youtube.com/watch?v=QxAdMKjkXx0&ab_channel=Perseus999,Κάτοικοι αντιδρουν στην καταστολή στην Κυψέλη,,192
+3/19/2021 3:47:16,5/17/2020,"Άνω Πόλη, Θεσσαλονίκη",https://www.youtube.com/watch?v=SdQVd9NMj2A&ab_channel=Perseus999,Επίθεση σε πλατεία στην Θεσσαλονίκη ,,193
+3/19/2021 3:48:19,7/3/2020,Εξάρχεια,https://www.youtube.com/watch?v=z3bhi6J2DRI&ab_channel=Perseus999,3 Ιουλίου 2020: Νύχτα ωμής αστυνομικής βίας και τρομοκρατίας στα Εξάρχεια,,194
+3/19/2021 3:49:14,7/16/2020,Εξάρχεια,https://www.youtube.com/watch?v=2xkYrr9IJmc&ab_channel=Perseus999,"Χρυσοχοίδης: Πλάτες σε συγκεντρώσεις από φασίστες, άγριο ξύλο χωρίς ούτε μία αφορμή σε αντιφασίστες",,195
+3/19/2021 3:52:36,2/24/2020, Athens University of Economics,https://www.youtube.com/watch?v=0ORLbINq_L8&ab_channel=Perseus999,Εξύβριση αστυνομικών προς πολίτη που προσάγεται,approved,196
+3/19/2021 3:53:12,2/25/2020,ΑΣΟΕ,https://www.youtube.com/watch?v=VntYDd2CWjU&ab_channel=Perseus999,ΑΣΟΕΕ: Τι πραγματικά συνέβη - Βίντεο από την πρώτη γραμμή με τον αστυνομικό που σημάδευε με όπλο,duplicate,197
+3/19/2021 3:56:01,12/6/2019,Κεντρο αθήνας,https://www.youtube.com/watch?v=qNYU_NBgsVs&ab_channel=Perseus999,Ίσως από τα καλύτερα βίντεο από θέμα αμεσότητας και λήψης για την βια της αστυνομίας,,198
+3/19/2021 3:57:08,12/6/2019,Εξάρχεια ,https://www.youtube.com/watch?v=URvEsn0x-Gc&ab_channel=Perseus999,Έτσι συνελάμβαναν ανθρώπους τα ΜΑΤ στα Εξάρχεια. Γιατί απλά ήταν εκεί (6 Δεκέμβρη 2019),,199
+3/19/2021 3:57:38,12/6/2019,Εξάρχεια ,https://www.youtube.com/watch?v=fEfEjJ_63X4&ab_channel=Perseus999,Εξάρχεια: Κρεσέντο βίας και χυδαιότητας από αυτοαποκαλούμενους ανθρώπους (6 Δεκέμβρη 2019),,200
+3/19/2021 3:58:20,12/6/2019,Εξάρχεια ,https://www.youtube.com/watch?v=xgz6Qb7b0nk&ab_channel=Perseus999,“Απομακρύνετε τα άτομα και να προβείτε σε συλλήψεις”: Ο ασύρματος πρόδωσε το σχέδιο της αστυνομίας,,201
+3/19/2021 4:00:36,11/17/2019,Εξάρχεια ,https://www.youtube.com/watch?v=eELKbWnPz8c&ab_channel=Perseus999,Εξάρχεια: Κρεσέντο βίας και χυδαιότητας από αυτοαποκαλούμενους ανθρώπους (ΜΑΤ - 17 Νοέμβρη 2019),,202
+3/19/2021 4:02:52,11/12/2019,ΑΣΟΕ,https://www.youtube.com/watch?v=1VbrXFy3Myg&ab_channel=Perseus999,Greece: Riot police invades the Athens University of Economics and attacks students,,203
+3/19/2021 4:04:15,10/31/2019,Μετρό Σύνταγμα,https://www.youtube.com/watch?v=SM7-p7BPTRw&ab_channel=Perseus999,Βια εναντίων πλανόδιου Στο μετρό Σύνταγμα,,204
+3/19/2021 4:05:51,11/7/2019,"καφενείο της πλατείας Εξαρχείων, Στουρνάρη και Τσαμαδού.",https://www.youtube.com/watch?v=tGv_E8hiurY&ab_channel=Perseus999,"Μαρτυρία για τα γεγονότα λίγο πριν τις 12 το βράδυ της Πέμπτης 7 Νοεμβρίου στα Εξάρχεια, στο καφενείο της πλατείας Εξαρχείων, Στουρνάρη και Τσαμαδού.",unclear,205
+3/19/2021 4:05:56,12/4/2020,"Σύνταγμα, Αθήνα",https://fb.watch/4jM45c4aRH/,"Επίθεση σε ειρηνική διαδήλωση, συλλήψεις και τραυματισμός μιας κοπέλας",,206
+3/19/2021 4:07:51,10/14/2019,Μετρό Σύνταγμα,https://www.youtube.com/watch?v=ENlfxaagFW4&ab_channel=Perseus999,7 αστυνομικοί και μια βίαιη προσαγωγή,,207
+3/19/2021 4:09:50,9/1/2019,Εξάρχεια,https://www.youtube.com/watch?v=KS4oh28OK9o&ab_channel=Perseus999,ΜΑΤ ρίχνουν δακρυγόνο στο εσωτερικό του κτηρίου ΒΟΞ και μετά αποχωρούν,approved,208
+3/19/2021 4:11:00,8/26/2019,Ελληνική τηλεόραση,https://www.youtube.com/watch?v=ert4gi9kZwQ&ab_channel=Perseus999,Μπαλάσκας: Το μισάνθρωπο παραλήρημα για τους ανθρώπους - σκουπίδια - σκόνη στα Εξάρχεια,unclear,209
+3/19/2021 4:13:09,7/21/2019,Αιγαίο πέλαγος,https://www.youtube.com/watch?v=1k2THtF9h6M&ab_channel=Perseus999,Ελληνική ακτοφυλακή διώχνει βίαια μετανάστες,,210
+3/19/2021 4:14:32,2/23/2011,Πλατεία συντάγματος,https://www.youtube.com/watch?v=q0br94gYgF8&ab_channel=Perseus999,Επίθεση με μηχανή σε διαδηλωτές ,,211
+3/19/2021 4:16:18,3/6/2021,Αθήνα,https://www.youtube.com/watch?v=sCZ7ziX3HZ8,"Επίθεση σε ειρηνική διαδήλωση, τυφλές συλλήψεις",,212
+3/19/2021 4:17:10,12/6/2018,Εξάρχεια,https://www.youtube.com/watch?v=YRVo3Lu2OV0&ab_channel=Perseus999,ΜΑΤ εκτοξεύουν βλήματα με ασφυξιογόνα σε ευθεία βολή,approved,213
+3/19/2021 4:17:49,3/6/2021,Αθήνα,https://www.youtube.com/watch?v=vku5pKl5a2M,Εξύβριση και τραμπουκισμός προς δικηγόρους διαδηλωτές από αστυνομικούς,approved,214
+3/19/2021 4:19:22,12/6/2018,Εξάρχεια,https://www.youtube.com/watch?v=c_TZcKonh-A&ab_channel=Perseus999,Ρίψη δακρυγόνου που δεν πήγε καλά,rejected,215
+3/19/2021 4:19:59,3/5/2021,Αθήνα,https://www.youtube.com/watch?v=7v1sqcI3ILc,Εκδίωξη δικηγόρων απο το  Σύνταγμα και επίθεση σε ειρηνική διαδήλωση,,216
+3/19/2021 4:20:51,12/8/2018,Εξάρχεια,https://www.youtube.com/watch?v=hVJGL03hUeg&ab_channel=Perseus999,ΜΑτ ρίχνουν χημικά μέσα σε κτήριο και κλωτσάνε άνθρωπο πεσμένο στο δρόμο,approved,217
+3/19/2021 4:22:31,12/6/2018,Εξάρχεια,https://www.youtube.com/watch?v=DIz9nDpXu2k&ab_channel=Perseus999,ΜΑΤ χτυπάει με την ασπίδα ακινητοποιημένο πολίτη,approved,218
+3/19/2021 4:24:20,11/29/2018,Θεσσαλονίκη πορεία για Μακεδονία,https://www.youtube.com/watch?v=bI1qdXG-IVE&ab_channel=Perseus999,Ασφαλίτης προπαγανδίζει και καρφώνεται ,,219
+3/19/2021 4:25:42,11/17/2018,λεωφόρο Αλεξάνδρας λίγο πριν τη ΓΑΔΑ στις 19:10,https://www.youtube.com/watch?v=XMSmTc31QWQ&ab_channel=Perseus999,Χωρίς καν μια αφορμή: Έτσι χτύπησαν τα ΜΑΤ του ΣΥΡΙΖΑ την πορεία της 17 Νοέμβρη 2018,,220
+3/19/2021 4:29:00,10/5/2013,Κερατσίνι,https://www.youtube.com/watch?v=IX9W-CtPNxg&ab_channel=Perseus999,"Είναι τα βίντεο από τις κάμερες για την δολοφονία του Παύλου Φύσσα, ξέρω είναι μεγάλο αλλά το στέλνω για το αρχείο σας",rejected,221
+3/19/2021 4:37:32,3/5/2021,Αθήνα,https://www.youtube.com/watch?v=9tr5dijh9bM,Επίθεση σε ειρηνική διαδήλωση,,222
+3/19/2021 4:38:25,2/25/2021,Αθήνα,https://www.youtube.com/watch?v=Duul-fxypLs,Διάλυση ειρηνικής διαδήλωσης,,223
+3/19/2021 4:40:02,11/17/2017,Αθήνα,https://www.youtube.com/watch?v=z6N95sKUwIQ&ab_channel=Perseus999,ΜΑΤ διαλύουν συγκεντρωμένου χωρίς αφορμή και ξυλοκοπούν άνθρωπο πεσμένο στο έδαφος,approved,224
+3/19/2021 4:41:24,12/6/2008,MEGA CHANNEL,https://www.youtube.com/watch?v=DDI1W7lq_64&ab_channel=Perseus999,Δεκέμβρης 2008: Όταν το MEGA Channel παραποίησε το βίντεο της δολοφονίας Γρηγορόπουλου,rejected,225
+3/19/2021 4:46:32,8/16/2017,Εξάρχεια,https://www.youtube.com/watch?v=bp1mwW5267U&ab_channel=Perseus999,Για τη δολοφονική επίθεση αστυνομικών κατά του 16χρονου Κώστα Μπ. (Όλα όσα δεν έδειξαν τα ΜΜΕ),rejected,226
+3/19/2021 4:50:10,10/30/2020,Γραφεία πολιτικής οργάνωσης αλλά δεν θυμάμαι λεπτομέρειες ,https://www.youtube.com/watch?v=rxUnsW_rlsQ&ab_channel=Putthekingsdown,Μπάτσοι τραμπουκίζουν αριστερούς έξω από τα γραφεία τους με πρόσχημα την μάσκα,duplicate,227
+3/19/2021 4:53:28,3/19/2021,Μόλις ανεβάστε και άλλα βιντεο θα δω τι λείπει από αυτη την σελίδα και τον perseus999 καθώς και από το αρχείο μου για να στείλω και άλλα,https://www.youtube.com/channel/UCCi_QBl7blyIDLtIUTWJaxg/videos,"άσχετο απλά αρκετά από τα βίντεο δεν μου τα ανοιγεί στην σελίδα σας, μπορεί να φταίω και εγώ απλά το αναφέρω.",rejected,228
+3/19/2021 4:55:09,2/19/2021,Αθήνα,https://www.youtube.com/watch?v=IdjqIZ5THxA,Επίθεση σε διαδήλωση,,229
+3/19/2021 4:55:47,6/29/2011,Πλατεία συντάγματος,https://www.youtube.com/watch?v=fwo3JbFM0vA&ab_channel=Perseus999,06/29/2011 Αθήνα η μάχη της πλατείας Συντάγματος,unclear,230
+3/19/2021 4:57:38,5/15/2006,Κέντρο Αθήνας,https://www.youtube.com/watch?v=R7aZHuJhO4c&ab_channel=Perseus999,Φοιτητές αντιστέκονται Μάιος 2006 - Μάρτιος 2007,rejected,231
+3/19/2021 5:00:04,12/6/2010,Σύνταγμα ,https://www.youtube.com/watch?v=BkAFZJ8h6Ww&ab_channel=Perseus999,Πορεία και βίαιη καταστολή 2 χρόνια από τον θάνατο του Αλέξη.,,232
+3/19/2021 5:04:02,2/9/2021,Αθήνα,https://www.youtube.com/watch?v=XlodWOpXpRk,Ξύλο σε ειρηνική παρέμβαση,,233
+3/19/2021 5:04:36,11/18/1995,Πολυτεχνείο ,https://www.youtube.com/watch?v=v2E70MrZ5LI&ab_channel=Perseus999,Πολυτεχνείο 1995,duplicate,234
+3/19/2021 5:04:54,2/9/2021,Αθήνα,https://www.youtube.com/watch?v=wJkHM_3TZDY,Ξύλο σε ειρηνική συγκέντρωση,,235
+3/19/2021 5:07:04,2/10/2012,Πλατεία Συνταγματος  ,https://www.youtube.com/watch?v=NZ0J00LO7ek&ab_channel=Perseus999,ΚΑταστολή και επεισόδια ,,236
+3/19/2021 5:09:57,8/21/2015,Greek Cypriot town of Polis Chrysochous,https://www.youtube.com/watch?v=2cgo0HJHjJo&ab_channel=Perseus999,Ξυλοδαρμός στα κρατητήρια στην Κύπρο,,237
+3/19/2021 5:15:12,2/12/2015,Ερμού Αθήνα,https://www.youtube.com/watch?v=3s_6JkoVXJA&ab_channel=Perseus999,σκηνή επίθεσης της ομάδας ΔΙΑΣ και Δέλτα σε διαδηλωτές στην Ερμού,,238
+3/19/2021 5:17:14,12/6/2014,Κέντρο Αθήνας,https://www.youtube.com/watch?v=4WNkK-NCJLg&ab_channel=Perseus999,"Αερομεταφερόμενη αναρχική ταξιαρχία, τι να άλλο να πω? ",rejected,239
+3/19/2021 5:18:28,12/6/2014,Εξάρχεια,https://www.youtube.com/watch?v=Y89dIL8P78Y&ab_channel=Perseus999,Ποδηλάτης παππούς ξεφτιλίζει με χιούμορ τα ΜΑΤ (Εξάρχεια 6 Δεκέμβρη 2014) ,rejected,240
+3/19/2021 5:20:13,11/17/2014,Πολυτεχνείο ,https://www.youtube.com/watch?v=yAjzVrl1Tws&ab_channel=Perseus999,Σε πρώτο πλάνο οι 2 επιθέσεις των ΜΑΤ με στόχο να διαλύσουν την πορεία του Πολυτεχνείου [17-11-2014],,241
+3/19/2021 5:22:03,11/13/2014,Κέντρο Αθήνας,https://www.youtube.com/watch?v=H_6Ze5_VnuQ&ab_channel=Perseus999,Στοχευμένη επίθεση των ΜΑΤ με κρότου-λάμψης εναντίον φωτορεπόρτερ (13 Νοέμβρη 2014),unclear,242
+3/19/2021 5:23:42,11/14/2014,Πολυτεχνείο,https://www.youtube.com/watch?v=gcUSJbRUqII&ab_channel=Perseus999,Επίθεση ματ σε φοιτητές στο Πολυτεχνείο ( 2014 ),unclear,243
+3/19/2021 5:26:00,5/15/2014,ΑΤ Βύρωνα ,https://www.youtube.com/watch?v=yD7TZRwLYxU&ab_channel=Perseus999,Καραγκιοζιλίκια της ΕΛ.ΑΣ με μάνικα νερού έξω από το ΑΤ Βύρωνα κι επίθεση ΜΑΤ [15 Μαίου 2014],,244
+3/19/2021 5:27:04,5/15/2014,ΑΤ Βυρωνα,https://www.youtube.com/watch?v=08IfsQh_1r0&ab_channel=Perseus999,Άλλη λήψη από το ΑΤ Βύρωνα και το νερό ,,245
+3/19/2021 5:30:03,12/6/2014,Πανεπιστήμιο ,https://www.youtube.com/watch?v=3rFC9FxBM8E&ab_channel=Perseus999,12/06/2014 ΜΑτ εναντίων μαθητών φοιτητών στο Πανεπιστήμιο ,,246
+3/19/2021 5:31:28,12/8/2008,Πλατεία Συντάγματος,https://www.youtube.com/watch?v=VmeGer7iIEE&ab_channel=Perseus999,ΜΑΤ εναντίων μαθητών 12/03/2008,,247
+3/19/2021 5:34:00,7/22/2013,Εξάρχεια,https://www.youtube.com/watch?v=-lFcTyqf3zw&ab_channel=Perseus999,"Επίθεση ομάδας Δέλτα με γυάλινα μπουκάλια , φωτοβολίδες και κρότου λάμψης",,248
+3/19/2021 5:36:16,7/10/2013,Ακρόπολη Αθηνών,https://www.youtube.com/watch?v=cj9PufVmW9I&ab_channel=Perseus999,Αστυνομικός ξυλοκοπεί ακινητοποιημένο άνδρα,approved,249
+3/19/2021 5:40:58,4/20/2012,Αθήνα,https://www.youtube.com/watch?v=RG4Cf1T8bR4&ab_channel=Perseus999,"Ξυλοδαρμός άνδρα κατά τη σύλληψη, ενώ είναι ακινητοποιημένος",approved,250
+3/19/2021 5:43:59,10/5/2011,Πλατεία Συντάγματος,https://www.youtube.com/watch?v=sTsjchIOc1A&ab_channel=Perseus999,ΜΑΤ - Ένοχοι για εγκλήματα κατά της κοινωνίας ,,251
+3/19/2021 5:46:08,11/17/2006,Θεσσαλονίκη,https://www.youtube.com/watch?v=LgTREwHpsFA&ab_channel=Perseus999,Η ζαρντινιέρα,duplicate,252
+3/19/2021 5:47:49,7/22/2007,Αθήνα,https://www.youtube.com/watch?v=EbbDXUjMoDw&ab_channel=Perseus999,Βασανισμός μέσα σε αστυνομικό τμήμα,approved,253
+3/19/2021 5:49:49,3/30/2007,Κέντρο Αθήνας,https://www.youtube.com/watch?v=349Sn-xP89Q&ab_channel=Perseus999,ΜΑΤ βγάζουν φωτογραφίες πολίτες,,254
+3/19/2021 5:51:20,7/17/2007,ΑΤ Ομόνοιας,https://www.youtube.com/watch?v=t0wb_qnXJ2Q&ab_channel=Perseus999,Ξυλοδαρμός σε ΑΤ Ομόνοιας νο2 αντίδραση των media,rejected,255
+3/19/2021 5:52:50,3/1/2007,Υπουργείο Αιγαίου?,https://www.youtube.com/watch?v=f9AaOYkO1eg&ab_channel=Perseus999,Ειδικός φρουρός πυροβολεί με όπλο στον αέρα εναντίων μαθητών ,,256
+3/19/2021 5:53:56,3/2/2007,Κέντρο Αθήνας,https://www.youtube.com/watch?v=2qiEXeup1Vg&ab_channel=Perseus999,ΜΑΤ εμποδίζουν δημοσιογράφους να αποθανατίσουν βιαιότητες ,,257
+3/19/2021 5:54:59,3/2/2007,Αθήνα,https://www.youtube.com/watch?v=ZZkiu25nfuc&ab_channel=Perseus999,Ματ εναντίων δημοσιογράφου κατά την διάρκεια άδικης σύλληψης ,,258
+3/19/2021 5:56:32,2/22/2007,Αθήνα ,https://www.youtube.com/watch?v=BJe1f62uBcE&ab_channel=Perseus999,Επίθεση ματ σε πορεία 22/02/2007,,259
+3/19/2021 5:59:39,5/29/2020,Σεπόλια,https://www.facebook.com/Covid19Solidarity/videos/252500532751960/,Βίντεο ντοκουμέντο για τον ξυλοδαρμό των νέων στα Σεπόλια,duplicate,260
+3/19/2021 6:00:16,11/16/2019,"AΣΣΟΕ, Αθήνα",https://www.youtube.com/watch?v=_j2BBZOEu2E,Τυχαία σύλληψη ,,261
+3/19/2021 6:02:54,2/13/2020,ΑΤ Βύρωνα,https://www.youtube.com/watch?v=JzucwY8yxuE&ab_channel=flashgr_,Ξυλοδαρμός μαθητή Βύρωνας: Προκαλεί η selfie που έβγαλαν οι δράστες μέσα στο αστυνομικό τμήμα,,262
+3/19/2021 6:03:36,12/24/2020,Πύργος Ηλείας,https://www.youtube.com/watch?v=cJ69phM2Oiw,Επίθεση σε άτομα που απλά κάθονταν στην κεντρική πλατεία Πύργου ,duplicate,263
+3/19/2021 6:03:59,2/5/2021,Δεν γνωρίζω,https://www.youtube.com/watch?v=1Xmvvpg37vo&ab_channel=www.tvxs.gr,Βίντεο ντοκουμέντο: Άγριο ξύλο από αστυνομικούς κατά τη σύλληψη μετανάστη,,264
+3/19/2021 6:07:54,11/17/2017,Αθήνα,https://www.youtube.com/watch?v=JOBLQ_BE5Ek,Άγριο ξύλο σε ειρηνική πορεία για επέτειο Πολυτεχνείου,,265
+3/19/2021 6:11:42,2/12/2016,Υπουργείο Αγροτικής ανάπτυξης,https://www.youtube.com/watch?v=54AMQ74piAo&ab_channel=www.tvxs.gr,επεισόδια υπ αγροτικής ανάπτυξης,rejected,266
+3/19/2021 6:13:10,12/11/2020,Εξάρχεια,https://www.youtube.com/watch?v=B7Mx4Bs9zww,Τυχαίες συλλήψεις μέσα σε σουβλατζίδικο,,267
+3/19/2021 6:14:29,1/17/2021,Μετρό,https://www.youtube.com/watch?v=czT1XoxgHWQ&ab_channel=OPEN,Ξυλοδαρμός σταθμάρχη από νέους και αστυνομικό που τους οργάνωσε,rejected,268
+3/19/2021 6:18:12,6/12/2020,Eξάρχεια,https://www.youtube.com/watch?v=HoCoha-4Zqw,Ανθρωποκυνηγητό και τραμπουκισμός δημοσιογράφων,,269
+3/19/2021 6:19:36,1/18/2021,Μετρό,https://www.youtube.com/watch?v=4Ch5kzX-qdg&t=31s&ab_channel=OPEN,Ολόκληρο το ντοκουμέντο ωμής βίας στο Μετρό ( Σταθμάρχης ),rejected,270
+3/19/2021 6:22:07,5/16/2020,Θεσσαλονικη,https://www.youtube.com/watch?v=Z5rtJWNfF24,Βίαιη εκδίωξη ανθρώπων που απλά κάθονταν σε πλατεία,,271
+3/19/2021 6:30:34,2/12/2016,Πλατεία Βάθης,https://www.youtube.com/watch?v=h0AycMM5urk&ab_channel=FotisPanagiotakopoulos,ΚΡΗΤΙΚΟΙ ΜΑΓΚΟΥΡΟΦΟΡΟΙ ΚΥΝΗΓΟΥΝ ΠΡΟΒΟΚΑΤΟΡΑ ΣΤΗ ΠΛΑΤΕΙΑ ΒΑΘΗΣ 12-2-2016,unclear,272
+3/19/2021 6:31:55,3/14/2018,Δεν γνωρίζω,https://www.youtube.com/watch?v=MyKUqsjg9xg&ab_channel=%CE%95%CE%BB%CE%B5%CF%8D%CE%B8%CE%B5%CF%81%CE%BF%CF%82%CE%A4%CF%8D%CF%80%CE%BF%CF%82,Επεισόδια μεταξύ ΜΑΤ και διαδηλωτών ενάντια στους πλειστηριασμούς,,273
+3/19/2021 6:33:25,6/24/2014,Αθήνα,https://www.youtube.com/watch?v=aonQvvLsg_Q&ab_channel=gaspsinner,ΜΑΤ Αθήνα επεισόδια,,274
+3/19/2021 6:34:13,2/27/2020,Χιος λιμάνι Μεστών,https://www.youtube.com/watch?v=HS5XVo6zLWA&ab_channel=AlithiaMME,ΜΑΤ σε ρόλο χούλιγκανς στο λιμάνι Μεστών Χίου,,275
+3/19/2021 6:36:02,11/29/2019,Καβούρι,https://www.youtube.com/watch?v=uw2EerG6I8s&ab_channel=ANT1TV,Επεισόδια μεταξύ φοιτητών και ΜΑΤ στο Καβούρι,,276
+3/19/2021 6:38:01,4/16/2018,"οδό Βασιλέως Κωνσταντίνου στο ύψος του αγάλματος Τρούμαν,",https://www.youtube.com/watch?v=Xk_FayiO6ws&ab_channel=902.gr,ΕΠΕΙΣΟΔΙΑ ΣΤΗΝ ΔΙΑΔΗΛΩΣΗ ΦΟΙΤΗΤΩΝ - ΜΑΘΗΤΩΝ - ΕΡΓΑΖΟΜΕΝΩΝ,,277
+3/19/2021 6:40:36,2/26/2020,Χίος,https://www.youtube.com/watch?v=mssg8LPTXZY&ab_channel=GiannisManolakis,H απόβαση των ΜΑΤ στην Χίο και τα επεισόδια τής 1ης νύκτας και τού πρωινού. ΝΤΡΟΠΗ στην Κυβέρνηση !!,,278
+3/19/2021 6:44:51,2/28/2020,Χίος και Λέσβος,https://www.youtube.com/watch?v=j6dmLAMXdOU&ab_channel=KontraChannel,Βανδαλισμοί των ΜΑΤ σε βάρος πολιτών σε Χίο και Λέσβο Kontra News 10,,279
+3/19/2021 6:47:50,10/9/2020,Mall,https://www.youtube.com/watch?v=90VkR_OCjoA&ab_channel=newsbeastgr,Newsbeast.gr - Επεισόδια μαθητών και ΜΑΤ μέσα και έξω από εμπορικό κέντρο,,280
+3/19/2021 6:53:56,1/21/2021,άγαλμα Βενιζέλου Θεσσαλονίκη,https://www.youtube.com/watch?v=RG5Oc3Cv1xg&ab_channel=%CE%9A%CE%91%CE%98%CE%91%CE%A1%CE%9F%CE%A3%CE%9F%CE%A5%CE%A1%CE%91%CE%9D%CE%9F%CE%A3,"Θεσσαλονίκη: Τα ΜΑΤ εμπόδισαν πορεία φοιτητών, Αγρια επεισόδια και συλλήψεις",,281
+3/19/2021 7:30:50,5/11/2008,Αθήνα - Αναξαγόρα,https://youtu.be/lFuP3Hjmi9c,Ειδικοί φρουροί χτυπούν νεαρό μέχρι θανάτου μέρα μεσημέρι στην Αναξαγόρα και μετά λένε ψέματα ότι απλά περνούσαν από εκεί και τον βρήκαν ήδη αναίσθητο. ,,282
+3/19/2021 15:42:02,5/6/2010,"Σύνταγμα, Αθήνα",https://www.youtube.com/watch?v=RW4RMahYzYM,Ξύλο σε ειρηνική συγκέντρωση,,283
+3/19/2021 19:13:16,4/16/2018,Αθήνα ,https://www.youtube.com/watch?v=cWilImn0l8c,ΜΑΤ ρίχνουν ξύλο,,
