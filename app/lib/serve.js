@@ -45,7 +45,7 @@ const serve = async db => {
     const events = await db('video')
         .select()
         .join('event', 'event.id', '=', 'video.event_id')
-        .where('video.url', '>', 10)
+        .whereNotNull('video.url')
         .where({ source: 'local' })
 
     for (let ev of events) {
@@ -81,4 +81,5 @@ const serveResult = (async () => {
     console.log('Cleaned up lock')
     return result
 })()
+
 export default serveResult
