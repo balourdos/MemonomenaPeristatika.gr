@@ -1,8 +1,11 @@
+const path = require('path')
+
 const db = require('knex')({
     client: 'sqlite',
     connection: {
-      filename: './db.sqlite'
+      filename: path.join(__dirname, 'db.sqlite')
     },
+    pool: { min: 0, max: 1 },
     useNullAsDefault: true
 });
 
@@ -12,6 +15,22 @@ const getEvent = async (id) => {
         .first()
 
     return event
+}
+
+const updateEvent = async (contrib) => {
+    await db('event').update({
+        page_url: contrib.url,
+        description: contrib.description,
+        location: contrib.location,
+        happened_at: contrib.date,
+        posted_at: contrib.contribution_date
+    })
+    .where({
+        id: contrib.id,
+    })
+
+    // Unfortunately returning('*') is not supported
+    return getEvent(contrib.id)
 }
 
 const createEvent = async (contrib) => {
@@ -48,5 +67,6 @@ module.exports = {
     deleteEvent,
     createEvent,
     saveVideo,
+    updateEvent,
     getVideosByEventID,
 }

@@ -4,16 +4,18 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "rm -f .sqlite.lock && next build",
     "start": "next start",
     "deploy": "rm -rf .next && rm -rf out && next build && next export && rm -rf ../docs && mv out ../docs"
   },
   "dependencies": {
     "csv-parse": "^4.15.3",
+    "knex": "^0.95.2",
     "moment": "^2.29.1",
     "next": "10.0.9",
     "react": "17.0.1",
     "react-dom": "17.0.1",
+    "sqlite3": "^5.0.2",
     "video.js": "^7.11.4"
   }
 }

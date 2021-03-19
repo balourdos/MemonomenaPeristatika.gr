@@ -8,8 +8,8 @@ export default function Entry({ entry }) {
       <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap'}}>
         {
           entry.videos.map(
-            submission =>
-              <Thumb submission={submission} />
+            video =>
+              <Thumb video={video} />
           )
         }
       </div>
