@@ -4,7 +4,7 @@ const _ = require('lodash')
 const parse = require('csv-parse/lib/sync')
 const { getVideoFromSM, getVideoFilename } = require('./uploader')
 const { loadConfig } = require('./utils')
-const { getEvent, deleteEvent, saveVideo, createEvent, getVideosByEventID } = require('./db')
+const { getEvent, deleteEvent, saveVideo, createEvent, updateEvent, getVideosByEventID } = require('./db')
 
 const COLUMNS = ['contribution_date', 'date', 'location', 'url', 'description', 'status', 'id']
 const CSV = path.join(__dirname, '../entries.csv')
@@ -54,7 +54,9 @@ const populateDatabase = async contribs => {
             console.log(`Event ${pageURL} does't exist in the database. Adding it`)
             event = await createEvent(contrib)
         }
-
+        else {
+            await updateEvent(contrib)
+        }
 
         const hostedVideos = await getVideosByEventID(contrib.id)
         const sources = hostedVideos.map(t => t.source)
