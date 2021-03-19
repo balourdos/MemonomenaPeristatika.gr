@@ -10,7 +10,6 @@ export default function Layout({ children }) {
       plausible('DonateButtonClicked')
     }
     setDonationsVisibility(!donationsVisible)
-    <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
   }
 
   return (
