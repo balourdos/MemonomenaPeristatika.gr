@@ -6,9 +6,6 @@ export default function Layout({ children }) {
   const [donationsVisible, setDonationsVisibility] = useState(false)
 
   function handleDonationsClick() {
-    if (gtag && !donationsVisible) {
-      gtag('event', 'click', {target: 'donations'});
-    }
     setDonationsVisibility(!donationsVisible)
   }
 
