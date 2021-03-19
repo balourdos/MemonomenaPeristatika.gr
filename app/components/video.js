@@ -11,7 +11,7 @@ export default function Video({ video }) {
   }
 
   useEffect(() => {
-    window.addEventListener("popstate",()=>{document.getElementById("go-back").click()})
+    window.addEventListener('popstate',()=>{document.getElementById('go-back').click()})
     
     const player = videojs(videoEl.current)
 
@@ -39,7 +39,7 @@ export default function Video({ video }) {
   return (
     <div style={{maxWidth: '1200px', maxHeight: '100%', width: '100%', borderBottom: '1px solid #ccc', paddingBottom: '1em'}}>
       <Link href={`/#${video.event_id}`}>
-        <a id ="go-back" style={{display: 'block', paddingBottom: '1em'}}>← Πίσω σε όλα τα περιστατικά</a>
+        <a id='go-back' style={{display: 'block', paddingBottom: '1em'}}>← Πίσω σε όλα τα περιστατικά</a>
       </Link>
 
       <div style={{width: '100%', height: '0', paddingTop: '56.25%', backgroundColor: 'red', position: 'relative'}}>
