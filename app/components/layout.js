@@ -6,6 +6,9 @@ export default function Layout({ children }) {
   const [donationsVisible, setDonationsVisibility] = useState(false)
 
   function handleDonationsClick() {
+    if (plausible && !donationsVisible) {
+      plausible('DonateButtonClicked')
+    }
     setDonationsVisibility(!donationsVisible)
   }
 
