@@ -6,6 +6,9 @@ export default function Layout({ children }) {
   const [donationsVisible, setDonationsVisibility] = useState(false)
 
   function handleDonationsClick() {
+    if (plausible && !donationsVisible) {
+      plausible('DonateButtonClicked')
+    }
     setDonationsVisibility(!donationsVisible)
   }
 
@@ -13,6 +16,7 @@ export default function Layout({ children }) {
     <div>
       <Head>
         <script async defer data-domain="memonomenaperistatika.gr" src="https://plausible.io/js/plausible.js"></script>
+        <script dangerouslySetInnerHTML= {{ __html: "window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }"}} />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&amp;display=swap" rel="stylesheet" />
         <link rel="shortcut icon" type="image/jpg" href="https://img.icons8.com/ios-filled/50/000000/policeman-male--v1.png" />
