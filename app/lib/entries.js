@@ -10,7 +10,7 @@ export const getEvents = async () => {
   const events = await serveResult
 
   for (const event of events) {
-    event.humanDate = humanDate(event.date)
+    event.humanDate = humanDate(event.happened_at)
   }
 
   return events
