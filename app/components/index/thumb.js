@@ -10,7 +10,7 @@ export default function Thumb({ video }) {
               {video.thumbnail?
                 <img id={video.event_id} style={{width: '100%', height: '100%'}} src={video.thumbnail} alt={video.description} />
                 :
-                <div style={{border: '1px solid #ccc', width: '100%', height: '100%', backgroundColor: 'black'}}></div>
+                <div id={video.event_id} style={{border: '1px solid #ccc', width: '100%', height: '100%', backgroundColor: 'black'}}></div>
               }
             </span>
           </span>

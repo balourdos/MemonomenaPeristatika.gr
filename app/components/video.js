@@ -5,16 +5,14 @@ import videojs from 'video.js'
 export default function Video({ video }) {
   const metaData = [video.humanDate]
   const videoEl = useRef()
-
+  
   if (video.location) {
     metaData.push(video.location)
   }
 
   useEffect(() => {
-    window.addEventListener('popstate',()=>{document.getElementById('go-back').click()})
-    
     const player = videojs(videoEl.current)
-
+   
     player.ready(() => {
       console.log('Player is ready')
       try {
@@ -34,12 +32,20 @@ export default function Video({ video }) {
       }
       console.log('Ready done')
     })
+
+    
+    window.addEventListener('popstate',()=> {
+      if (document.getElementById(`go${video.event_id}`) === null) {
+        return
+      }
+      document.getElementById(`go${video.event_id}`).click()
+    },{once: true})
   }, [])
 
   return (
     <div style={{maxWidth: '1200px', maxHeight: '100%', width: '100%', borderBottom: '1px solid #ccc', paddingBottom: '1em'}}>
       <Link href={`/#${video.event_id}`}>
-        <a id='go-back' style={{display: 'block', paddingBottom: '1em'}}>← Πίσω σε όλα τα περιστατικά</a>
+        <a id={`go${video.event_id}`} style={{display: 'block', paddingBottom: '1em'}}>← Πίσω σε όλα τα περιστατικά</a>
       </Link>
 
       <div style={{width: '100%', height: '0', paddingTop: '56.25%', backgroundColor: 'red', position: 'relative'}}>
