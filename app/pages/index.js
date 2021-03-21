@@ -32,10 +32,10 @@ export default function HomePage({ entries }) {
 
       <section id="map-section">
         <MapDynamicWrapper 
-          containerStyle={{width:1000, height: 500}}
-          highQuality={true}
-          onMapReady={(mapObject)=>{}}
-          onEntryClick={(geojsonFeature)=>{console.log(geojsonFeature)}}
+          containerStyle={{width:1000, height: 500}} // Simple div container, has to have set dimensions
+          highQuality={true} // True uses Mapbox freemium style (have to obtain API key), false uses free OpenStreetMap
+          onMapReady={(mapObject)=>{}} // If you want to handle with the map, e.g. pan, zoom etc
+          onEntryClick={(geojsonFeature)=>{console.log(geojsonFeature)}} // Handle user interaction, Scroll to video, etc
         />
       </section>
 

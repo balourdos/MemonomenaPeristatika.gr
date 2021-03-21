@@ -35,11 +35,10 @@ function Map(props){
             const basemap = props.highQuality ? mapbox : openstreetmap;
                         
             const newMap = L.map('map', {
-                center: [37.9838,23.7275],
-                zoom: 10,
+                center: [38.4,24.5],
+                zoom: 5,
                 layers: [basemap]
-            });       
-
+            });
 
             fetch('entries.geojson',{
                 headers : { 
@@ -103,13 +102,12 @@ Map.propTypes = {
     highQuality: PropTypes.bool,
     onMapReady: PropTypes.func,
     onEntryClick: PropTypes.func,
-    onDescriptionClick: PropTypes.func
 };
 Map.defaultProps = {
     containerStyle: {width: 500, height: 350},
     highQuality: false,
     onMapReady: ()=>{}, // Runs function when Leaflet map object is responsive. Accepts map object.
-    onEntryClick: ()=>{}, // Runs when entry markers are clicked on.
+    onEntryClick: ()=>{}, // Runs when entry markers are clicked.
 };
 
 export default Map;
