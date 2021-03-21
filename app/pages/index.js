@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { getEntries } from '../lib/entries'
 import Entry from '../components/index/entry'
 import Layout from '../components/layout'
+import MapDynamicWrapper from '../components/mapDynamicWrapper'
 
 export default function HomePage({ entries }) {
   return (
@@ -28,6 +29,15 @@ export default function HomePage({ entries }) {
         <a href="https://forms.gle/cNgRuEyUQWDPr4rr8" className="button button-primary" target="_blank">Αναφορα Περιστατικου</a>
         <a href="https://twitter.com/peristatika" className="button button-secondary" target="_blank">Twitter</a>
       </nav>
+
+      <section id="map-section">
+        <MapDynamicWrapper 
+          containerStyle={{width:1000, height: 500}}
+          highQuality={true}
+          onMapReady={(mapObject)=>{}}
+          onEntryClick={(geojsonFeature)=>{console.log(geojsonFeature)}}
+        />
+      </section>
 
       <section id="content">
         {
