@@ -33,18 +33,20 @@ export default function Video({ video }) {
       console.log('Ready done')
     })
 
-    
-    window.addEventListener('popstate',()=> {
-      if (document.getElementById(`go${video.event_id}`) === null) {
+    window.history.pushState(null, "", window.location.href);
+
+    window.onpopstate= function(){
+      if (document.getElementById(`go${video.event_id}`) == null) {
         return
       }
       document.getElementById(`go${video.event_id}`).click()
-    },{once: true})
+    }
+    
   }, [])
 
   return (
     <div style={{maxWidth: '1200px', maxHeight: '100%', width: '100%', borderBottom: '1px solid #ccc', paddingBottom: '1em'}}>
-      <Link href={`/#${video.event_id}`}>
+      <Link href = {`/#${video.event_id}`}>
         <a id={`go${video.event_id}`} style={{display: 'block', paddingBottom: '1em'}}>← Πίσω σε όλα τα περιστατικά</a>
       </Link>
 
