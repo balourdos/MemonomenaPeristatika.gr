@@ -5,7 +5,6 @@ import videojs from 'video.js'
 export default function Video({ video }) {
   const metaData = [video.humanDate]
   const videoEl = useRef()
-  const en = useRef (entry)
   
   if (video.location) {
     metaData.push(video.location)
