@@ -1,15 +1,17 @@
 import { useEffect, useRef } from 'react'
+import Entry from './index/entry'
 import Link from 'next/link'
 import videojs from 'video.js'
 
-export default function Video({ video }) {
+export default function Video({ video, entry }) {
   const metaData = [video.humanDate]
   const videoEl = useRef()
+  const en = useRef (entry)
   
   if (video.location) {
     metaData.push(video.location)
   }
-
+  
   useEffect(() => {
     const player = videojs(videoEl.current)
    
@@ -33,15 +35,6 @@ export default function Video({ video }) {
       console.log('Ready done')
     })
 
-    window.history.pushState(null, "", window.location.href);
-
-    window.onpopstate= function(){
-      if (document.getElementById(`go${video.event_id}`) == null) {
-        return
-      }
-      document.getElementById(`go${video.event_id}`).click()
-    }
-    
   }, [])
 
   return (
