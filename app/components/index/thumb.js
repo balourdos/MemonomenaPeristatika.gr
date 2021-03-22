@@ -1,6 +1,13 @@
 import Link from 'next/link'
+import { useEffect, useRef } from 'react'
 
 export default function Thumb({ video }) {
+  useEffect(() => {
+   document.getElementById(`${video.event_id}`).addEventListener('click',()=>{ 
+     console.log(location.hash= `${video.event_id}` )
+   })
+
+  }, [])
   return (
     <div className='thumb'>
       <Link href={`/v/${video.event_id}`}>

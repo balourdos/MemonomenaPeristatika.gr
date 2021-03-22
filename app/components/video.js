@@ -1,9 +1,8 @@
 import { useEffect, useRef } from 'react'
-import Entry from './index/entry'
 import Link from 'next/link'
 import videojs from 'video.js'
 
-export default function Video({ video, entry }) {
+export default function Video({ video }) {
   const metaData = [video.humanDate]
   const videoEl = useRef()
   const en = useRef (entry)
