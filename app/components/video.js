@@ -51,6 +51,7 @@ export default function Video({ video }) {
             poster={video.thumbnail? video.thumbnail: undefined}
             data-setup='{ "preload": "auto", "fill": true }'
             controls="true"
+            type="video/mp4"
             playsInline
           >
             <source src={video.url} type="video/mp4" />
