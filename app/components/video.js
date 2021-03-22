@@ -50,6 +50,8 @@ export default function Video({ video }) {
             preload="auto"
             poster={video.thumbnail? video.thumbnail: undefined}
             data-setup='{ "preload": "auto", "fill": true }'
+            controls="true"
+            playsInline
           >
             <source src={video.url} type="video/mp4" />
             <p className="vjs-no-js">
