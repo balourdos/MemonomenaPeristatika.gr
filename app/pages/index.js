@@ -8,6 +8,7 @@ export default function HomePage({ entries }) {
     <Layout>
       <Head>
         <title>Μεμονωμένα Περιστατικά</title>
+        <meta name="description" content="Μεμονωμένα Περιστατικά Αστυνομικής βίας και κατάχρησης εξουσίας" />
         <meta property="og:locale" content="el_GR" />
         <meta property="og:title" content="Μεμονωμένα Περιστατικά" />
         <meta property="og:description" content="Αστυνομική βία, αυθαιρεσία και κατάχρηση εξουσίας" />
