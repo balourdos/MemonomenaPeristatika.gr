@@ -28,10 +28,8 @@ const loadActiveHandlers = () => {
 
 const getContributions = () => {
     const csv = fs.readFileSync(CSV).toString()
-    const records = parse(csv, { columns: COLUMNS, from_line: 2 })
+    const entries = parse(csv, { columns: COLUMNS, from_line: 2 })
 
-    // Deduplicate
-    const entries = _.uniqBy(records, 'url')
     console.log(`Retrieved ${entries.length} entries`)
 
     return entries
