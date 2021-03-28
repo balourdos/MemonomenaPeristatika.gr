@@ -1,9 +1,26 @@
+import { useState } from 'react'
 import Head from 'next/head'
 import { getEntries } from '../lib/entries'
 import Entry from '../components/index/entry'
 import Layout from '../components/layout'
+import Filters from '../components/index/filters'
 
 export default function HomePage({ entries }) {
+  const [filters, setFilters] = useState('')
+
+  let filteredEntries = filters !== '' ? entries.map(entry => {
+    return {
+      title: entry.title,
+      videos: entry.videos.filter((video) => {
+        let searchable = entry.title + ' ' + video.description + ' ' + video.location + ' ' + video.happened_at + ' ' + video.humanDate;
+        let searchTerms = filters.toLowerCase().trim().normalize("NFD").replace(/[\u0300-\u036f]/g, "").split(' ');
+        return searchTerms.every(term => {
+            return searchable.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(term);
+        });
+      })
+    }
+  }).filter(entry => entry.videos.length > 0) : entries
+
   return (
     <Layout>
       <Head>
@@ -30,9 +47,16 @@ export default function HomePage({ entries }) {
       </nav>
 
       <section id="content">
+        <Filters
+          entries={ entries }
+          setFilters={ (fitlers) => setFilters(fitlers)}
+        />
+        { filteredEntries.length === 0 && <div className="alert">Δεν βρέθηκαν αποτελέσματα για την αναζήτηση σας.</div> }
         {
-          entries.map(
-            entry => <Entry entry={entry} key={entry.title} />
+          filteredEntries.length > 0 ? filteredEntries.map(
+            entry => entry.videos.length > 0 && <Entry entry={entry} key={entry.title} />
+          ) : entries.map(
+            entry => entry.videos.length > 0 && <Entry entry={entry} key={entry.title} />
           )
         }
       </section>
