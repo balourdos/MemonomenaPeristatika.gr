@@ -50,6 +50,7 @@ a:visited:not(.button) {
 section {
   max-width: 1200px;
   margin: auto;
+  min-width: 100%;
 }
 
 h4 {
@@ -93,5 +94,11 @@ nav a {
   text-align: left;
   background: #efefef;
   padding: 20px;
+  border-radius: 5px;
+}
+
+.alert {
+  background: rgba(51, 195, 240, 0.2);
+  padding: 1.5rem 2rem;
   border-radius: 5px;
 }

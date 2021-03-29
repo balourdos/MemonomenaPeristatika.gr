@@ -1,0 +1,34 @@
+.filtersContainer {
+  margin-top: 3rem;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+}
+
+.filtersContainer .filter, .filtersContainer .filter label, .filtersContainer .filter input, .filtersContainer .filter select {
+  width: 100%;
+  max-width: 360px;
+}
+
+.cancelFilters {
+  margin-top: 1.9em;
+}
+
+.cancelFilters button {
+  display: flex;
+  align-items: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .filtersContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .filtersContainer {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
