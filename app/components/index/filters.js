@@ -30,7 +30,7 @@ export default function Filters({ entries, setFilters }) {
       locations.add(video.location.trim())
     })
   })
-  locations = [...locations.values()]
+  locations = [...locations.values()].sort((a, b) => a.localeCompare(b))
   return (
     <div className={ styles.filtersContainer }>
       { showFilters ?
