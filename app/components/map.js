@@ -12,8 +12,8 @@ import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
 import 'leaflet.markercluster/dist/leaflet.markercluster.js';
 
 // ---------------------------------------------------------------------------------
-// High quality map: this API key is temporary and has to be replaced with your own. https://www.mapbox.com
-const mapboxKey = 'pk.eyJ1IjoibmlrbGVtcGVzaXMiLCJhIjoiY2ttamJtZ3N6MHBnOTJwazU4emZlMGdmMiJ9.WIlK336RUoVqVSyqYr78fQ';
+// API key for premium light mode map. Leave null if using free option. Get API key here:  https://www.mapbox.com
+const mapboxKey = null;
 // ---------------------------------------------------------------------------------
 
 function Map(props){
@@ -21,27 +21,31 @@ function Map(props){
 
     useEffect(
         ()=>{
-            // Free map
-            const openstreetmap = L.tileLayer(
-                'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', 
-                {
-                    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-                }
-            );
+            let basemap;
 
-            const mapbox = L.tileLayer(
-                'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}',
-                {
-                    accessToken: mapboxKey,
-                    id: 'mapbox/light-v10',
-                    tileSize: 512,
-                    zoomOffset: -1,
-                    attribution: '© <a href="https://www.newMapbox.com/about/newMaps/">Mapbox</a> © <a href="http://www.openstreetnewMap.org/copyright">OpenStreetMap</a>',
-                }
-            );
-            
-            const basemap = props.highQuality ? mapbox : openstreetmap;
-                        
+            if (mapboxKey) {
+                // High quality map
+                basemap = L.tileLayer(
+                    'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}',
+                    {
+                        accessToken: mapboxKey,
+                        id: 'mapbox/light-v10',
+                        tileSize: 512,
+                        zoomOffset: -1,
+                        attribution: '© <a href="https://www.newMapbox.com/about/newMaps/">Mapbox</a> © <a href="http://www.openstreetnewMap.org/copyright">OpenStreetMap</a>',
+                    }
+                );
+            }
+            else {
+                // Free map
+                basemap = L.tileLayer(
+                    'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', 
+                    {
+                        attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                    }
+                );
+            };          
+                                    
             const newMap = L.map('map', {
                 center: [38.4,24.5],
                 zoom: 5,
@@ -75,7 +79,7 @@ function Map(props){
                         });
                         if (feature.properties && feature.properties.description) {
                             // layer.bindTooltip(`<a href="/v/${feature.id}" target="_blank">${feature.properties.description}</a>`, {interactive: true});
-                            layer.bindTooltip(feature.properties.description);
+                            layer.bindTooltip(feature.properties.description, {offset: [20, 0], opacity: 1});
                         }
                     }
                 })
@@ -109,13 +113,11 @@ function Map(props){
 
 Map.propTypes = {
     containerStyle: PropTypes.object,
-    highQuality: PropTypes.bool,
     onMapReady: PropTypes.func,
     onEntryClick: PropTypes.func,
 };
 Map.defaultProps = {
     containerStyle: {width: 500, height: 350},
-    highQuality: false,
     onMapReady: ()=>{}, // Runs function when Leaflet map object is responsive. Accepts map object.
     onEntryClick: ()=>{}, // Runs when entry markers are clicked.
 };

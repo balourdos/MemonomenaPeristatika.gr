@@ -41,9 +41,9 @@ logger.addHandler(ch)
 
 #------------------ CONFIGURATION -------------------------------
 
-# Set your Google Geocoding API key here (you have to ENABLE it from dev dashboard) https://console.developers.google.com/apis/
+# Set your Google Geocoding API key here (you have to ENABLE from dev dashboard) https://console.developers.google.com/apis/
 # Example: API_KEY = 'AIzaSyC9azed9tLdjpZNjg2_kVePWvMIBq154eA'
-API_KEY = 'AIzaSyAOLJ8EKBZQWGDYD34iR1192kZ4U-_ifK8'
+API_KEY = '.......................................'
 # Backoff time sets how many minutes to wait between google pings when your API limit is hit
 BACKOFF_TIME = 30
 # Set input directory
