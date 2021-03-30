@@ -28,14 +28,15 @@ export default function HomePage({ entries }) {
       <nav>
         <a href="https://forms.gle/cNgRuEyUQWDPr4rr8" className="button button-primary" target="_blank">Αναφορα Περιστατικου</a>
         <a href="https://twitter.com/peristatika" className="button button-secondary" target="_blank">Twitter</a>
+        <button onClick="()=>{}" className="button button-secondary">ΧΑΡΤΗΣ</button>
       </nav>
 
       <section id="map-section">
         <MapDynamicWrapper 
           containerStyle={{width:1000, height: 500}} // Simple div container, has to have set dimensions
-          highQuality={true} // True uses Mapbox freemium style (have to obtain API key), false uses free OpenStreetMap
-          onMapReady={(mapObject)=>{}} // If you want to handle with the map, e.g. pan, zoom etc
-          onEntryClick={(geojsonFeature)=>{console.log(geojsonFeature)}} // Handle user interaction, Scroll to video, etc
+          highQuality={true} // True: Freemium Mapbox style (API key needed -> see component map.js) / False: Free OpenStreetMap style
+          onMapReady={(mapObject)=>{}} // If you want to handle the map, e.g. pan, zoom etc
+          onEntryClick={(geojsonFeature)=>{}} // Handle user interaction, Scroll to video, etc
         />
       </section>
 
