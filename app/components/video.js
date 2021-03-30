@@ -5,14 +5,14 @@ import videojs from 'video.js'
 export default function Video({ video }) {
   const metaData = [video.humanDate]
   const videoEl = useRef()
-
+  
   if (video.location) {
     metaData.push(video.location)
   }
-
+  
   useEffect(() => {
     const player = videojs(videoEl.current)
-
+   
     player.ready(() => {
       console.log('Player is ready')
       try {
@@ -32,12 +32,13 @@ export default function Video({ video }) {
       }
       console.log('Ready done')
     })
+
   }, [])
 
   return (
     <div style={{maxWidth: '1200px', maxHeight: '100%', width: '100%', borderBottom: '1px solid #ccc', paddingBottom: '1em'}}>
-      <Link href='/'>
-        <a style={{display: 'block', paddingBottom: '1em'}}>← Πίσω σε όλα τα περιστατικά</a>
+      <Link href = {`/#${video.event_id}`}>
+        <a id={`go${video.event_id}`} style={{display: 'block', paddingBottom: '1em'}}>← Πίσω σε όλα τα περιστατικά</a>
       </Link>
 
       <div style={{width: '100%', height: '0', paddingTop: '56.25%', backgroundColor: 'red', position: 'relative'}}>

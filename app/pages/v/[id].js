@@ -17,12 +17,19 @@ export default function VideoPage({ video }) {
       <meta property="og:description" content={video.description} />
       <meta property="og:image" content={image} />
       <meta property="og:url" content={ `https://memonomenaperistatika.gr/v/${video.event_id}`} />
-      <meta property="og:type" content="website" />
+      <meta property="og:type" content="video.other" />
       <meta property="og:site_name" content="Μεμονωμένα Περιστατικά" />
+      <meta property="og:video:url" content={video.url} />
+      <meta property="og:video:secure_url" content={video.url} />
+      <meta property="og:video:width" content="960" />
+      <meta property="og:video:height" content="720" />
       <meta name="twitter:title" content={title} />
+      <meta name="twitter:card" content="player" />
       <meta name="twitter:description" content={video.description} />
       <meta name="twitter:image" content={image} />
-      <meta name="twitter:card" content="summary_large_image" />
+      <meta property="twitter:player" content={video.url} />
+      <meta property="twitter:player:width" content="960" />
+      <meta property="twitter:player:height" content="720" />
     </Head>
     <Video video={video} />
   </Layout>
