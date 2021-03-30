@@ -37,7 +37,7 @@ export default function HomePage({ entries }) {
       { showMap &&
         <section id="map-section">
           <MapDynamicWrapper // See map.js for map style options
-            containerStyle={{width:1000, height: 500}} // Simple div container, has to have set dimensions
+            containerStyle={{width:800, height: 450, maxWidth: '90vw', maxHeight: '68vw'}} // Simple div container, has to have set dimensions
             onMapReady={(mapObject)=>{}} // If you want to handle the map, e.g. pan, zoom etc
             onEntryClick={(geojsonFeature)=>{}} // Handle user interaction, Scroll to video, etc
           />
