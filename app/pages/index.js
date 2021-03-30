@@ -3,8 +3,11 @@ import { getEntries } from '../lib/entries'
 import Entry from '../components/index/entry'
 import Layout from '../components/layout'
 import MapDynamicWrapper from '../components/mapDynamicWrapper'
+import React, { useState } from 'react';
 
 export default function HomePage({ entries }) {
+  const [showMap, setShowMap] = useState(false);
+
   return (
     <Layout>
       <Head>
@@ -28,17 +31,19 @@ export default function HomePage({ entries }) {
       <nav>
         <a href="https://forms.gle/cNgRuEyUQWDPr4rr8" className="button button-primary" target="_blank">Αναφορα Περιστατικου</a>
         <a href="https://twitter.com/peristatika" className="button button-secondary" target="_blank">Twitter</a>
-        <button onClick="()=>{}" className="button button-secondary">ΧΑΡΤΗΣ</button>
+        <button onClick={() => {setShowMap(prev=>!prev)}} className="button button-secondary">ΧΑΡΤΗΣ</button>
       </nav>
 
-      <section id="map-section">
-        <MapDynamicWrapper 
-          containerStyle={{width:1000, height: 500}} // Simple div container, has to have set dimensions
-          highQuality={true} // True: Freemium Mapbox style (API key needed -> see component map.js) / False: Free OpenStreetMap style
-          onMapReady={(mapObject)=>{}} // If you want to handle the map, e.g. pan, zoom etc
-          onEntryClick={(geojsonFeature)=>{}} // Handle user interaction, Scroll to video, etc
-        />
-      </section>
+      { showMap &&
+        <section id="map-section">
+          <MapDynamicWrapper 
+            containerStyle={{width:1000, height: 500}} // Simple div container, has to have set dimensions
+            highQuality={true} // True: Freemium Mapbox style (API key needed -> see component map.js) / False: Free OpenStreetMap style
+            onMapReady={(mapObject)=>{}} // If you want to handle the map, e.g. pan, zoom etc
+            onEntryClick={(geojsonFeature)=>{}} // Handle user interaction, Scroll to video, etc
+          />
+        </section>
+      }
 
       <section id="content">
         {
