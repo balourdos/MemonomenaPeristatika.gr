@@ -3,10 +3,10 @@ import Thumb from './thumb'
 export default function Entry({ entry }) {
 
   return (
-    <div>
+    <div className='entry'>
       <h4 id={entry.title.replace(/ /g, '_')}>{ entry.title }</h4>
 
-      <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap'}}>
+      <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-evenly'}}>
         {
           entry.videos.map(
             (video, i) =>
