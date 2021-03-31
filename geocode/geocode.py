@@ -43,7 +43,7 @@ logger.addHandler(ch)
 
 # Set your Google Geocoding API key here (you have to ENABLE from dev dashboard) https://console.developers.google.com/apis/
 # Example: API_KEY = 'AIzaSyC9azed9tLdjpZNjg2_kVePWvMIBq154eA'
-API_KEY = '.......................................'
+API_KEY = '..................................'
 # Backoff time sets how many minutes to wait between google pings when your API limit is hit
 BACKOFF_TIME = 30
 # Set input directory
@@ -61,6 +61,8 @@ id_column_name = "ID"
 # Specify the column name in your input data that contains event description. This goes into geocode csv and map marker popups.
 # Set None for no descriptions
 description_column_name = "Σύντομη περιγραφή"
+# Process only rows with location
+NON_EMPTY = True
 # Filter to specific rows
 # Set None if no filters
 FILTERS = [
@@ -90,6 +92,9 @@ if address_column_name not in data.columns:
 
 if id_column_name not in data.columns:
 	raise ValueError("Missing unique ID column in input data")
+
+if NON_EMPTY:
+    data = data[data[address_column_name].notnull()]
 
 if FILTERS:
     for filter in FILTERS:
