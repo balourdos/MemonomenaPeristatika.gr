@@ -22,6 +22,9 @@ body {
   transition: box-shadow 0.3s;
 }
 
+.thumb:hover {
+  box-shadow: 0 0 6px 8px #e8e8e8;
+}
 .thumb > a {
   text-decoration: none;
 }
