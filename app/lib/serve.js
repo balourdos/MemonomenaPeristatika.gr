@@ -58,7 +58,7 @@ const serve = async db => {
 
         // TODO Rewrite that using a url library
         ev.url = `https://videos.memonomenaperistatika.gr/${ev.url}`
-        ev.thumbnail = genThumbFromCloudinary(url)
+        ev.thumbnail = genThumbFromVideo(ev.url)
         ev.happened_at = new Date(ev.happened_at).toISOString()
 
         delete ev.posted_at
@@ -68,9 +68,9 @@ const serve = async db => {
     return events
 }
 
-const genThumbFromCloudinary = cloudinaryURL => {
-    return cloudinaryURL ?
-        cloudinaryURL.substr(0, cloudinaryURL.lastIndexOf('.')) + '.jpg' :
+const genThumbFromVideo = url => {
+    return url ?
+        url.substr(0, url.lastIndexOf('.')) + '.jpg' :
         false
 }
 
