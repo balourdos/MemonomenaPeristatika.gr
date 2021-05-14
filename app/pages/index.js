@@ -2,8 +2,12 @@ import Head from 'next/head'
 import { getEntries } from '../lib/entries'
 import Entry from '../components/index/entry'
 import Layout from '../components/layout'
+import MapDynamicWrapper from '../components/mapDynamicWrapper'
+import React, { useState } from 'react';
 
 export default function HomePage({ entries }) {
+  const [showMap, setShowMap] = useState(false);
+
   return (
     <Layout>
       <Head>
@@ -27,7 +31,18 @@ export default function HomePage({ entries }) {
       <nav>
         <a href="https://forms.gle/cNgRuEyUQWDPr4rr8" className="button button-primary" target="_blank">Αναφορα Περιστατικου</a>
         <a href="https://twitter.com/peristatika" className="button button-secondary" target="_blank">Twitter</a>
+        <button onClick={() => {setShowMap(prev=>!prev)}} className="button button-secondary">ΧΑΡΤΗΣ</button>
       </nav>
+
+      { showMap &&
+        <section id="map-section">
+          <MapDynamicWrapper // See map.js for map style options
+            containerStyle={{width:800, height: 450, maxWidth: '90vw', maxHeight: '68vw'}} // Simple div container, has to have set dimensions
+            onMapReady={(mapObject)=>{}} // If you want to handle the map, e.g. pan, zoom etc
+            onEntryClick={(geojsonFeature)=>{}} // Handle user interaction, Scroll to video, etc
+          />
+        </section>
+      }
 
       <section id="content">
         {

@@ -1,0 +1,119 @@
+,formatted_address,latitude,longitude,accuracy,google_place_id,type,postcode,ID,description,input_string,number_of_results,status
+0,"Omonoia, Athens, Athens 104 31, Greece",37.9840406,23.7280318,APPROXIMATE,ChIJyW8XBDC9oRQRlUEiC4dd98s,"neighborhood,political",104 31,13,Σύρσιμο γυναίκας με ειδικές ανάγκες έξω από το τμήμα και βρέξιμο της με μάνικα,Ομόνοια Αθήνα,1,OK
+1,"Lesbos, Greece",39.2645095,26.2777073,APPROXIMATE,ChIJ9x8-96OSuhQRjU4uyhIxkqI,"establishment,natural_feature",,17,Σπάσιμο αυτοκινήτων,Λέσβος,2,OK
+2,"Chios 821 00, Greece",38.3709813,26.1363457,APPROXIMATE,ChIJgYulANlluxQR3xebdBqPuN8,"locality,political",821 00,18,Σπάσιμο περισσότερων αυτοκινήτων,Χίος,1,OK
+3,"Volos, Greece",39.366584,22.9506769,APPROXIMATE,ChIJ8Wyv4WBspxQR4qoZAjmObl0,"locality,political",,20,Άγριος ξυλοδαρμός άνδρα,Βόλος,1,OK
+4,"Thessaloniki 541 24, Greece",40.6308283,22.9592224,GEOMETRIC_CENTER,ChIJyZInQ_84qBQR6cjmwx3-7hU,"establishment,point_of_interest,university",541 24,23,Επίθεση σε δημοσιογράφους,ΑΠΘ,1,OK
+5,"Nea Smyrni, Greece",37.9442881,23.7117556,APPROXIMATE,ChIJvXOxxEy8oRQRl3mevrHaz1U,"locality,political",,26,Κλωτσιές σε κορίτσι,Νέα Σμύρνη,1,OK
+6,"Nea Smyrni, Greece",37.9442881,23.7117556,APPROXIMATE,ChIJvXOxxEy8oRQRl3mevrHaz1U,"locality,political",,27,Επίθεση με μηχανάκι σε άνδρα και έναντι δημοσιογράφων,Νέα Σμύρνη,1,OK
+7,"Nea Smyrni, Greece",37.9442881,23.7117556,APPROXIMATE,ChIJvXOxxEy8oRQRl3mevrHaz1U,"locality,political",,28,"""Πάμε να τους γαμήσουμε! Να τους σκοτώσουμε""",Νέα Σμύρνη,1,OK
+8,"Nea Smyrni, Greece",37.9442881,23.7117556,APPROXIMATE,ChIJvXOxxEy8oRQRl3mevrHaz1U,"locality,political",,29,Ξυλοδαρμός άνδρα,Νέα Σμύρνη,1,OK
+9,"Nea Smyrni, Greece",37.9442881,23.7117556,APPROXIMATE,ChIJvXOxxEy8oRQRl3mevrHaz1U,"locality,political",,30,Προέκταση όπλου,Νέα Σμύρνη,1,OK
+10,"Nea Smyrni, Greece",37.9442881,23.7117556,APPROXIMATE,ChIJvXOxxEy8oRQRl3mevrHaz1U,"locality,political",,31,Εξώθηση από κατάστημα και ξυλοδαρμός,Νέα Σμύρνη,1,OK
+11,"Nea Smyrni, Greece",37.9442881,23.7117556,APPROXIMATE,ChIJvXOxxEy8oRQRl3mevrHaz1U,"locality,political",,32,Επίθεση σε γυναίκα,Νέα Σμύρνη,1,OK
+12,"Nea Smyrni, Greece",37.9442881,23.7117556,APPROXIMATE,ChIJvXOxxEy8oRQRl3mevrHaz1U,"locality,political",,33,Ξυλοδαρμός άνδρα,Νέα Σμύρνη,1,OK
+13,"Athens, Greece",37.9838096,23.7275388,APPROXIMATE,ChIJ8UNwBh-9oRQR3Y1mdkU1Nic,"locality,political",,35,Επίθεση σε δημοσιογράφο κατά τη σύλληψη διαδηλωτή,Αθήνα,1,OK
+14,"Thessaloniki 541 24, Greece",40.6308283,22.9592224,GEOMETRIC_CENTER,ChIJyZInQ_84qBQR6cjmwx3-7hU,"establishment,point_of_interest,university",541 24,36,Σύρσιμο φοιτητή με το κεφάλι του στο δρόμο,ΑΠΘ,1,OK
+15,"Thessaloniki 541 24, Greece",40.6308283,22.9592224,GEOMETRIC_CENTER,ChIJyZInQ_84qBQR6cjmwx3-7hU,"establishment,point_of_interest,university",541 24,37,Ξυλοδαρμός υποψήφιου διδάκτορα του ΑΠΘ,ΑΠΘ,1,OK
+16,"Athens, Greece",37.9838096,23.7275388,APPROXIMATE,ChIJ8UNwBh-9oRQR3Y1mdkU1Nic,"locality,political",,38,Χημικά σε ανήλικους μαθητές,Αθήνα,1,OK
+17,"Olimpou, Thessaloniki, Greece",40.6386686,22.94535,GEOMETRIC_CENTER,ChIJA1tbJak5qBQRfSxk8guuaoc,route,,39,Αγκωνιές και κλωτσιές σε πολίτη,Θεσσαλονίκη - Όλύμπου,1,OK
+18,"Athens 105 57, Greece",37.9752774,23.7369757,GEOMETRIC_CENTER,ChIJNW8QIz-9oRQRTcr7DV3g7tY,"establishment,local_government_office,point_of_interest",105 57,40,Απειλή αυτόπτη μάρτυρα τροχαίου δυστυχήματος στο οποίο εμπλεκόταν υπηρεσιακό όχημα,Βουλή,1,OK
+19,"Athens, Greece",37.9838096,23.7275388,APPROXIMATE,ChIJ8UNwBh-9oRQR3Y1mdkU1Nic,"locality,political",,41,Γροθιές σε ακινητοποιημένο συλληφθέντα,Αθήνα,1,OK
+20,"Kypseli, Athens, Greece",38.0027173,23.7423148,APPROXIMATE,ChIJc0WaHrmioRQRUk07-S29ACY,"neighborhood,political",,46,Κλωτσιές σε πολίτες,Κυψέλη,1,OK
+21,"Exarcheia, Athens, Greece",37.9878442,23.73566,APPROXIMATE,ChIJk8jKmja9oRQRck07-S29ACY,"neighborhood,political",,47,Ρίψη κρότου λάμψης εντός πολυκατοικίας,Εξάρχεια,1,OK
+22,"Athens, Greece",37.9838096,23.7275388,APPROXIMATE,ChIJ8UNwBh-9oRQR3Y1mdkU1Nic,"locality,political",,48,Επίθεση με μηχανάκια σε πλήθος διαδηλωτών,Αθήνα,1,OK
+23,"Athens, Greece",37.9838096,23.7275388,APPROXIMATE,ChIJ8UNwBh-9oRQR3Y1mdkU1Nic,"locality,political",,52,Ξυλοδαρμός Τιτκώβ και Λάλου,Αθήνα,1,OK
+24,"Patras, Greece",38.2466395,21.734574,APPROXIMATE,ChIJLe0kpZk1XhMRoIy54iy9AAQ,"locality,political",,57,ΜΑΤ περικυκλωνουν και χτυπαν πορεια 40 ατομων και απειλουν με ευθυβολη ριψη χημικων,ΠΑΤΡΑ,1,OK
+25,"Nea Smyrni, Greece",37.9442881,23.7117556,APPROXIMATE,ChIJvXOxxEy8oRQRl3mevrHaz1U,"locality,political",,59,Χαστούκι σε γυναίκα,Νέα Σμύρνη,1,OK
+26,"Nea Smyrni, Greece",37.9442881,23.7117556,APPROXIMATE,ChIJvXOxxEy8oRQRl3mevrHaz1U,"locality,political",,60,Εξώθηση πολίτη μέσα από πολυκατοικία και κλωτσιές στο δρόμο,Νέα Σμύρνη,1,OK
+27,"Athens, Greece",37.9838096,23.7275388,APPROXIMATE,ChIJ8UNwBh-9oRQR3Y1mdkU1Nic,"locality,political",,61,Αστυνομική βία στα γραφεία του Σοσιαλιστικού Εργατικού Κόμματος (ΣΕΚ),Αθήνα,1,OK
+28,"Sepolia, Athens 104 43, Greece",38.0045679,23.7160906,APPROXIMATE,ChIJN4B2wdeioRQRkko7-S29ACY,"neighborhood,political",104 43,63,Επίθεση σε φοιτητή και στην οικογένειά του,Σεπόλια,1,OK
+29,"Exarcheia, Athens, Greece",37.9878442,23.73566,APPROXIMATE,ChIJk8jKmja9oRQRck07-S29ACY,"neighborhood,political",,64,Αστυνομικοί πέφτουν με μηχανάκια πάνω σε δημοσιογράφους,Εξάρχεια,1,OK
+30,"Athens, Greece",37.9838096,23.7275388,APPROXIMATE,ChIJ8UNwBh-9oRQR3Y1mdkU1Nic,"locality,political",,67,Επίθεση σε διαδηλωτές που αποχωρούν συντεταγμένα,Αθήνα,1,OK
+31,"Karditsa 431 00, Greece",39.3640258,21.9214049,APPROXIMATE,ChIJex3NLg_ZWBMRfh8-RDjlO14,"locality,political",431 00,68,Επίθεση σε ζευγάρι και βίαιη σύλληψη,Καρδίτσα,1,OK
+32,"Kirillou Loukareos 14, Athina 115 22, Greece",37.9889865,23.7528836,ROOFTOP,ChIJi0MwTa2ioRQRmX-D2lR5Zls,"courthouse,establishment,local_government_office,point_of_interest",115 22,69,Η αστυνομία διαλύει την συγκέντρωση για την καταδικη της ΧΑ,Εφετείο Αθηνών,2,OK
+33,"Ilisia, Zografou 157 71, Greece",37.9778401,23.7595457,APPROXIMATE,ChIJbaEeble9oRQR6uq8a9I_3Os,"neighborhood,political",157 71,74,Ξυλοδαρμός μοτοσυκλετιστή,Ιλίσια,1,OK
+34,"Lesbos, Greece",39.2645095,26.2777073,APPROXIMATE,ChIJ9x8-96OSuhQRjU4uyhIxkqI,"establishment,natural_feature",,76,Ξύλο σε πρόσφυγες στη Μυτιλήνη,Λέσβος,2,OK
+35,"Lesbos, Greece",39.2645095,26.2777073,APPROXIMATE,ChIJ9x8-96OSuhQRjU4uyhIxkqI,"establishment,natural_feature",,77,Δακρυγόνα σε παιδιά και ηλικιωμένους που φεύγουν από τη φλεγόμενη Μόρια,Λέσβος,2,OK
+36,"Sepolia, Athens 104 43, Greece",38.0045679,23.7160906,APPROXIMATE,ChIJN4B2wdeioRQRkko7-S29ACY,"neighborhood,political",104 43,79,Ξυλοδαρμός δύο νεαρών,Σεπόλια,1,OK
+37,"Athens, Greece",37.9838096,23.7275388,APPROXIMATE,ChIJ8UNwBh-9oRQR3Y1mdkU1Nic,"locality,political",,80,Κουκουλοφόρος αστυνομικός εκτός υπηρεσίας βγάζει όπλο εναντίον φοιτητών στο προαύλιο της ΑΣΟΕΕ,Αθήνα,1,OK
+38,"Acharnes, Greece",38.0852204,23.738064,APPROXIMATE,ChIJc6GE2QSgoRQRwHu54iy9AAQ,"locality,political",,81,Επίθεση σε 11χρονο παιδί,Μενίδι,1,OK
+39,"Exarcheia, Athens, Greece",37.9878442,23.73566,APPROXIMATE,ChIJk8jKmja9oRQRck07-S29ACY,"neighborhood,political",,82,Βία σε άνδρα πεσμένο στο δρόμο,Εξάρχεια,1,OK
+40,"Ir. Politechniou 9, Zografou 157 73, Greece",37.9756771,23.7793562,ROOFTOP,ChIJmWuILfqXoRQROt-iebQPd38,"establishment,point_of_interest,university",157 73,85,Ξυλοδαρμός φοιτητών ,Πολυτεχνείο,1,OK
+41,"Chania, Greece",35.5138298,24.0180367,APPROXIMATE,ChIJOz_P4L59nBQRqCzNeX1Vs5Q,"locality,political",,86,Επίθεση σε συγκέντρωση,Χανιά,1,OK
+42,"Exarcheia, Athens, Greece",37.9878442,23.73566,APPROXIMATE,ChIJk8jKmja9oRQRck07-S29ACY,"neighborhood,political",,87,Εισβολή σε πολυκατοικία,Εξάρχεια,1,OK
+43,"Athens, Greece",37.9838096,23.7275388,APPROXIMATE,ChIJ8UNwBh-9oRQR3Y1mdkU1Nic,"locality,political",,88,Διάλυση ειρηνικής διαδήλωσης,Αθήνα,1,OK
+44,"Athens, Greece",37.9838096,23.7275388,APPROXIMATE,ChIJ8UNwBh-9oRQR3Y1mdkU1Nic,"locality,political",,89,Διάλυση ειρηνικής διαδήλωσης,Αθήνα,1,OK
+45,"Athens, Greece",37.9838096,23.7275388,APPROXIMATE,ChIJ8UNwBh-9oRQR3Y1mdkU1Nic,"locality,political",,93,Επίθεση σε ειρηνική διαδήλωση,Αθήνα,1,OK
+46,"Exarcheia, Athens, Greece",37.9878442,23.73566,APPROXIMATE,ChIJk8jKmja9oRQRck07-S29ACY,"neighborhood,political",,94,Κλοπή από περίπτερο και ξυλοδαρμός υπαλλήλου,Εξάρχεια,1,OK
+47,"Athens, Greece",37.9838096,23.7275388,APPROXIMATE,ChIJ8UNwBh-9oRQR3Y1mdkU1Nic,"locality,political",,95,Επίθεση σε φοιτητική πορεία,Aθήνα,1,OK
+48,"Athens, Greece",37.9838096,23.7275388,APPROXIMATE,ChIJ8UNwBh-9oRQR3Y1mdkU1Nic,"locality,political",,96,Επίθεση σε διαδήλωση,Αθήνα,1,OK
+49,"Athens, Greece",37.9838096,23.7275388,APPROXIMATE,ChIJ8UNwBh-9oRQR3Y1mdkU1Nic,"locality,political",,98,"Συλληφθείς κατηγορείται για ""συναυτουργία"" για μπουκάλι το οποίο αστυνομικοί βρήκαν παρατημένο στο δρόμο",Αθήνα,1,OK
+50,"Athens, Greece",37.9838096,23.7275388,APPROXIMATE,ChIJ8UNwBh-9oRQR3Y1mdkU1Nic,"locality,political",,99,Τοποθέτηση μπουκαλιών σε σακίδιο συλληφθέντα,Αθήνα,1,OK
+51,"Exarcheia, Athens, Greece",37.9878442,23.73566,APPROXIMATE,ChIJk8jKmja9oRQRck07-S29ACY,"neighborhood,political",,101,Ξυλοδαρμός πολιτών που δεν προβάλουν αντίσταση,Εξάρχεια,1,OK
+52,"Pyrgos 271 00, Greece",37.6718487,21.4432257,APPROXIMATE,ChIJ2_x3aLy_YBMR8eYsIFCIoQM,"locality,political",271 00,102,Παρεμπόδιση καταγραφής περιστατικού βίας,Πύργος Ηλείας,1,OK
+53,"Galatsi, Greece",38.0188948,23.7560223,APPROXIMATE,ChIJLbYjnoSioRQRGDYRmwa6d6M,"locality,political",,108,Αστυνομική επίθεση σε καφετέρια και τραυματισμός 5χρονου παιδιού,Γαλάτσι,1,OK
+54,"Aspropyrgos 193 00, Greece",38.0609063,23.5910603,APPROXIMATE,ChIJUyNV7HWloRQRa7wGkwx6Dg8,"locality,political",193 00,109,Ξυλοδαρμοί διαδηλωτών,Ασπρόπυργος,1,OK
+55,"Exarcheia, Athens, Greece",37.9878442,23.73566,APPROXIMATE,ChIJk8jKmja9oRQRck07-S29ACY,"neighborhood,political",,110,Σπάσιμο τζαμαρίας σε μαγαζί την Κωλέττη,Εξάρχεια,1,OK
+56,"Exarcheia, Athens, Greece",37.9878442,23.73566,APPROXIMATE,ChIJk8jKmja9oRQRck07-S29ACY,"neighborhood,political",,111,Επίθεση με καρέκλες,Εξάρχεια,1,OK
+57,"Exarcheia, Athens, Greece",37.9878442,23.73566,APPROXIMATE,ChIJk8jKmja9oRQRck07-S29ACY,"neighborhood,political",,114,Ασέβεια σε μνημείο του Αλέξανδρου Γρηγορόπουλου,Εξάρχεια,1,OK
+58,"Plateia Syntagmatos, Athina, Greece",37.9755253,23.7349038,APPROXIMATE,ChIJNQRIkj69oRQRDlYNy1cQumg,town_square,,115,Χτύπημα διαδηλωτή στο κεφάλι με γκλόπ,Πλατεία Συντάγματος,1,OK
+59,"Nea Smyrni, Greece",37.9442881,23.7117556,APPROXIMATE,ChIJvXOxxEy8oRQRl3mevrHaz1U,"locality,political",,125,Βίαιη σύλληψη ατόμου ενώ κάτοικοι αποδοκιμάζουν,Νέα Σμύρνη,1,OK
+60,"Pl. Sintrivaniou, Thessaloniki 546 21, Greece",40.6306575,22.9532764,GEOMETRIC_CENTER,ChIJoyWGKwA5qBQRgdRxizdHmms,route,546 21,126,"Ξυλοδαρμός φοιτητή (υπόθεση ""ζαρντινιέρα"")",Πλατεία Συντριβανίου Θεσσαλονίκη,1,OK
+61,"Exarcheia, Athens, Greece",37.9878442,23.73566,APPROXIMATE,ChIJk8jKmja9oRQRck07-S29ACY,"neighborhood,political",,127,Δολοφονία του δεκαπεντάχρονου μαθητή Αλ. Γρηγορόπουλου,Εξάρχεια,1,OK
+62,"Athens, Greece",37.9838096,23.7275388,APPROXIMATE,ChIJ8UNwBh-9oRQR3Y1mdkU1Nic,"locality,political",,134,Επίθεση των ΜΑΤ σε πρόσφυγες στην Πλατεία Βικτωρίας,Αθήνα,1,OK
+63,"Athens, Greece",37.9838096,23.7275388,APPROXIMATE,ChIJ8UNwBh-9oRQR3Y1mdkU1Nic,"locality,political",,135,Μηχανή της ομάδας ΔΕΛΤΑ χτυπάει την Αγγ. Κουτσουμπού κατά τη διάρκεια διαδήλωσης,Αθήνα,1,OK
+64,"Athens, Greece",37.9838096,23.7275388,APPROXIMATE,ChIJ8UNwBh-9oRQR3Y1mdkU1Nic,"locality,political",,136,"""Μη με βαρέσεις"" - ΜΑΤ χτυπάει διαδηλωτή στο κεφάλι",Αθήνα,1,OK
+65,"Monastiraki, Athina, Greece",37.9758108,23.7268379,APPROXIMATE,ChIJ9S6n5yK9oRQRUk87-S29ACY,"neighborhood,political",,137,Έφοδος της ομάδας ΔΡΑΣΗ και χειροβομβίδες κρότου λάμψης σε εστιατόρια,"Μοναστηράκι, Αθήνα",1,OK
+66,"Athens, Greece",37.9838096,23.7275388,APPROXIMATE,ChIJ8UNwBh-9oRQR3Y1mdkU1Nic,"locality,political",,138,ΜΑΤ ρίχνουν δακρυγόνα μέσα στο σταθμό μετρό στο Σύνταγμα,Αθήνα,1,OK
+67,"Athens, Greece",37.9838096,23.7275388,APPROXIMATE,ChIJ8UNwBh-9oRQR3Y1mdkU1Nic,"locality,political",,139,"Κουκουλοφόροι συνομιλούν με ΜΑΤ, περπατάνε δίπλα τους, και μπαίνουν στο προαύλιο της Βουλής",Αθήνα,1,OK
+68,"Athens, Greece",37.9838096,23.7275388,APPROXIMATE,ChIJ8UNwBh-9oRQR3Y1mdkU1Nic,"locality,political",,141,Επίθεση με χημικά στο ιατρείο της Πλατείας Συντάγματος,Αθήνα,1,OK
+69,"Athens, Greece",37.9838096,23.7275388,APPROXIMATE,ChIJ8UNwBh-9oRQR3Y1mdkU1Nic,"locality,political",,142,ΜΑΤ πετάνε μάρμαρα σε διαδηλωτές,Αθήνα,1,OK
+70,"Athens, Greece",37.9838096,23.7275388,APPROXIMATE,ChIJ8UNwBh-9oRQR3Y1mdkU1Nic,"locality,political",,143,Επίθεση ΜΑΤ με δακρυγόνα σε κόσμο που χορεύει στην πλατεία Συντάγματος,Αθήνα,1,OK
+71,"Athens, Greece",37.9838096,23.7275388,APPROXIMATE,ChIJ8UNwBh-9oRQR3Y1mdkU1Nic,"locality,political",,144,Δακρυγόνα και χειροβομβίδες κρότου λάμψης σε καφετέρια,Αθήνα,1,OK
+72,"Athens, Greece",37.9838096,23.7275388,APPROXIMATE,ChIJ8UNwBh-9oRQR3Y1mdkU1Nic,"locality,political",,146,Δακρυγόνα και επίθεση ΜΑΤ σε διαδηλωτές στο Hilton,Αθήνα,1,OK
+73,"Athens, Greece",37.9838096,23.7275388,APPROXIMATE,ChIJ8UNwBh-9oRQR3Y1mdkU1Nic,"locality,political",,147,Αστυνομικοί πετούν πέτρες σε διαδηλωτές,Αθήνα,1,OK
+74,"Keratsini, Greece",37.9643568,23.6215313,APPROXIMATE,ChIJZdZppFO6oRQRYH-54iy9AAQ,"locality,political",,148,Άνδρες με πολιτικά δίπλα στα ΜΑΤ πετάνε πέτρες σε διαδηλωτές αντιφασιστικής συγκέντρωσης,Κερατσίνι,1,OK
+75,"Thessaloniki, Greece",40.6400629,22.9444191,APPROXIMATE,ChIJ7eAoFPQ4qBQRqXTVuBXnugk,"locality,political",,151,Δακρυγόνα και επίθεση ΜΑΤ σε διαδηλωτές που αποχωρούν,Θεσσαλονίκη,1,OK
+76,"Athens, Greece",37.9838096,23.7275388,APPROXIMATE,ChIJ8UNwBh-9oRQR3Y1mdkU1Nic,"locality,political",,154,Βιοπραγίες κατά του αναίσθητου Ζακ Κωστόπουλου,Αθήνα,1,OK
+77,"Athens, Greece",37.9838096,23.7275388,APPROXIMATE,ChIJ8UNwBh-9oRQR3Y1mdkU1Nic,"locality,political",,158,Υπηρεσιακό όχημα τραυματίζει θανάσιμα πολίτη σε δίκυκλο,Αθήνα,1,OK
+78,"Sepolia, Athens 104 43, Greece",38.0045679,23.7160906,APPROXIMATE,ChIJN4B2wdeioRQRkko7-S29ACY,"neighborhood,political",104 43,160,Ξυλοδαρμός δύο 24χρονων από αστυνομικούς,Σεπόλια,1,OK
+79,"Plateia Syntagmatos, Athina, Greece",37.9755253,23.7349038,APPROXIMATE,ChIJNQRIkj69oRQRDlYNy1cQumg,town_square,,163,ΜΑΤ ξυλοκοπούν και σέρνουν στο δρόμο πεσμένο άνθρωπο,Σύνταγμα,1,OK
+80,"Plateia Syntagmatos, Athina, Greece",37.9755253,23.7349038,APPROXIMATE,ChIJNQRIkj69oRQRDlYNy1cQumg,town_square,,164,Ξύλο πολλών ΜΑΤ σε ήδη συλληφθέντα διαδηλωτή,Σύνταγμα,1,OK
+81,"Exarcheia, Athens, Greece",37.9878442,23.73566,APPROXIMATE,ChIJk8jKmja9oRQRck07-S29ACY,"neighborhood,political",,165,Ομάδα ΔΕΛΤΑ ξυλοκοπεί ανθρώπους που τους χειροκροτούν ειρωνικά και σπάει το τζάμι καταστήματος,Εξάρχεια,1,OK
+82,"Athens, Greece",37.9838096,23.7275388,APPROXIMATE,ChIJ8UNwBh-9oRQR3Y1mdkU1Nic,"locality,political",,166,Αστυνομικοί του ΑΤ Ομονοίας υποχρεώνουν συλληφθέντες να χτυπάνε ο ένας τον άλλο,Αθήνα,1,OK
+83,"Exarcheia, Athens, Greece",37.9878442,23.73566,APPROXIMATE,ChIJk8jKmja9oRQRck07-S29ACY,"neighborhood,political",,173,Απαγόρευση μετακίνησης στο σημείο της δολοφονίας και προσαγωγή αθώων πολιτών,Εξάρχεια,1,OK
+84,"Athens, Greece",37.9838096,23.7275388,APPROXIMATE,ChIJ8UNwBh-9oRQR3Y1mdkU1Nic,"locality,political",,176,Επίθεση σε διαδηλωτές ,Αθήνα,1,OK
+85,"Omonoia, Athens, Athens 104 31, Greece",37.9840406,23.7280318,APPROXIMATE,ChIJyW8XBDC9oRQRlUEiC4dd98s,"neighborhood,political",104 31,177,Επίθεση σε διαδηλωτές στο μετρό,Ομόνοια Αθήνα,1,OK
+86,"Plateia Syntagmatos, Athina, Greece",37.9755253,23.7349038,APPROXIMATE,ChIJNQRIkj69oRQRDlYNy1cQumg,town_square,,182,Διάλυση διαδήλωσης,Σύνταγμα,1,OK
+87,"Exarcheia, Athens, Greece",37.9878442,23.73566,APPROXIMATE,ChIJk8jKmja9oRQRck07-S29ACY,"neighborhood,political",,183,ΚΑταστολή διαδήλωσης ,Εξάρχεια,1,OK
+88,"Omonia, Athina 104 31, Greece",37.9841827,23.7286954,GEOMETRIC_CENTER,ChIJ1xFWBDC9oRQRzQgf8dWi3Ys,"establishment,point_of_interest,subway_station,transit_station",104 31,189,"Αστυνομικός κλωτσά τραυματία με γύψο στο πόδι και πατερίτσες (Μετρό, Σταθμός Ομόνοια)",Μετρό ομόνοια,1,OK
+89,"Kypseli, Athens, Greece",38.0027173,23.7423148,APPROXIMATE,ChIJc0WaHrmioRQRUk07-S29ACY,"neighborhood,political",,191,Επίθεση στην Κυψέλη: Έσβησαν τα φώτα και χωρίς προειδοποίηση ΜΑΤ και ΔΕΛΤΑ επιτέθηκαν με χημικά,Κυψέλη,1,OK
+90,"Ano Poli, Thessaloniki, Greece",40.6419949,22.9460496,APPROXIMATE,ChIJ42G_Za45qBQRd1hk6UlTKVI,"neighborhood,political",,193,Επίθεση σε πλατεία στην Θεσσαλονίκη ,"Άνω Πόλη, Θεσσαλονίκη",1,OK
+91,"76, Patission Street , 104 34 Athens 2, Troias, Kimolou and Spetson Street, 113 62 Athens 47A, Evelpidon and 33, Lefkados 113 62, Athina 104 34, Greece",37.994042,23.7328114,ROOFTOP,ChIJTUz3wMyioRQRh7xlhyCtv5g,"establishment,point_of_interest,university",104 34,196,Εξύβριση αστυνομικών προς πολίτη που προσάγεται, Athens University of Economics,1,OK
+92,"Exarcheia, Athens, Greece",37.9878442,23.73566,APPROXIMATE,ChIJk8jKmja9oRQRck07-S29ACY,"neighborhood,political",,200,Εξάρχεια: Κρεσέντο βίας και χυδαιότητας από αυτοαποκαλούμενους ανθρώπους (6 Δεκέμβρη 2019),Εξάρχεια ,1,OK
+93,"Exarcheia, Athens, Greece",37.9878442,23.73566,APPROXIMATE,ChIJk8jKmja9oRQRck07-S29ACY,"neighborhood,political",,202,Εξάρχεια: Κρεσέντο βίας και χυδαιότητας από αυτοαποκαλούμενους ανθρώπους (ΜΑΤ - 17 Νοέμβρη 2019),Εξάρχεια ,1,OK
+94,"76, Patission Street , 104 34 Athens 2, Troias, Kimolou and Spetson Street, 113 62 Athens 47A, Evelpidon and 33, Lefkados 113 62, Athina 104 34, Greece",37.994042,23.7328114,ROOFTOP,ChIJTUz3wMyioRQRh7xlhyCtv5g,"establishment,point_of_interest,university",104 34,203,Greece: Riot police invades the Athens University of Economics and attacks students,ΑΣΟΕ,1,OK
+95,"Syntagma metro station, Athina, Greece",37.9745068,23.7352651,GEOMETRIC_CENTER,ChIJLZ8bXz69oRQRLtjqeCFD4eQ,"establishment,point_of_interest,transit_station",,204,Βια εναντίων πλανόδιου Στο μετρό Σύνταγμα,Μετρό Σύνταγμα,1,OK
+96,"Syntagma metro station, Athina, Greece",37.9745068,23.7352651,GEOMETRIC_CENTER,ChIJLZ8bXz69oRQRLtjqeCFD4eQ,"establishment,point_of_interest,transit_station",,207,7 αστυνομικοί και μια βίαιη προσαγωγή,Μετρό Σύνταγμα,1,OK
+97,"Exarcheia, Athens, Greece",37.9878442,23.73566,APPROXIMATE,ChIJk8jKmja9oRQRck07-S29ACY,"neighborhood,political",,208,ΜΑΤ ρίχνουν δακρυγόνο στο εσωτερικό του κτηρίου ΒΟΞ και μετά αποχωρούν,Εξάρχεια,1,OK
+98,"Exarcheia, Athens, Greece",37.9878442,23.73566,APPROXIMATE,ChIJk8jKmja9oRQRck07-S29ACY,"neighborhood,political",,213,ΜΑΤ εκτοξεύουν βλήματα με ασφυξιογόνα σε ευθεία βολή,Εξάρχεια,1,OK
+99,"Athens, Greece",37.9838096,23.7275388,APPROXIMATE,ChIJ8UNwBh-9oRQR3Y1mdkU1Nic,"locality,political",,214,Εξύβριση και τραμπουκισμός προς δικηγόρους διαδηλωτές από αστυνομικούς,Αθήνα,1,OK
+100,"Exarcheia, Athens, Greece",37.9878442,23.73566,APPROXIMATE,ChIJk8jKmja9oRQRck07-S29ACY,"neighborhood,political",,217,ΜΑτ ρίχνουν χημικά μέσα σε κτήριο και κλωτσάνε άνθρωπο πεσμένο στο δρόμο,Εξάρχεια,1,OK
+101,"Exarcheia, Athens, Greece",37.9878442,23.73566,APPROXIMATE,ChIJk8jKmja9oRQRck07-S29ACY,"neighborhood,political",,218,ΜΑΤ χτυπάει με την ασπίδα ακινητοποιημένο πολίτη,Εξάρχεια,1,OK
+102,"Athens, Greece",37.9838096,23.7275388,APPROXIMATE,ChIJ8UNwBh-9oRQR3Y1mdkU1Nic,"locality,political",,224,ΜΑΤ διαλύουν συγκεντρωμένου χωρίς αφορμή και ξυλοκοπούν άνθρωπο πεσμένο στο έδαφος,Αθήνα,1,OK
+103,"Athens 105 58, Greece",37.9715323,23.7257492,GEOMETRIC_CENTER,ChIJ86z1Nxi9oRQR9g3r9ULAl1w,"establishment,point_of_interest,tourist_attraction",105 58,249,Αστυνομικός ξυλοκοπεί ακινητοποιημένο άνδρα,Ακρόπολη Αθηνών,1,OK
+104,"Athens, Greece",37.9838096,23.7275388,APPROXIMATE,ChIJ8UNwBh-9oRQR3Y1mdkU1Nic,"locality,political",,250,"Ξυλοδαρμός άνδρα κατά τη σύλληψη, ενώ είναι ακινητοποιημένος",Αθήνα,1,OK
+105,"Athens, Greece",37.9838096,23.7275388,APPROXIMATE,ChIJ8UNwBh-9oRQR3Y1mdkU1Nic,"locality,political",,253,Βασανισμός μέσα σε αστυνομικό τμήμα,Αθήνα,1,OK
+106,"Athens, Greece",37.9838096,23.7275388,APPROXIMATE,ChIJ8UNwBh-9oRQR3Y1mdkU1Nic,"locality,political",,254,Λήψη φωτογραφιών από διαδηλωτές,Αθήνα,1,OK
+107,"Athens, Greece",37.9838096,23.7275388,APPROXIMATE,ChIJ8UNwBh-9oRQR3Y1mdkU1Nic,"locality,political",,259,Επίθεση σε πορεία,Αθήνα ,1,OK
+108,"Athens, Greece",37.9838096,23.7275388,APPROXIMATE,ChIJ8UNwBh-9oRQR3Y1mdkU1Nic,"locality,political",,295,Βρέξιμο και παρενόχληση αστέγου,Αθήνα,1,OK
+109,"Galatsi, Greece",38.0188948,23.7560223,APPROXIMATE,ChIJLbYjnoSioRQRGDYRmwa6d6M,"locality,political",,296,Απρόκλητη επίθεση σε καφετέρια,Γαλάτσι,1,OK
+110,"Rethimno 741 00, Greece",35.36555450000001,24.4919838,APPROXIMATE,ChIJF1hMghZ1mxQR89x2bdQcDOk,"locality,political",741 00,302,Επίθεση σε ειρηνική πορεία,Ρέθυμνο,1,OK
+111,"Petrou Ralli 24, Athina 177 78, Greece",37.9766046,23.6881077,ROOFTOP,ChIJOTTuj5O8oRQR4rrX9MMSS_w,"establishment,point_of_interest,police",177 78,303,Ξυλοδαρμός  εγκλείστων μεταναστών,κολαστήριο Πέτρου Ράλλη,2,OK
+112,"Plateia Syntagmatos, Athina, Greece",37.9755253,23.7349038,APPROXIMATE,ChIJNQRIkj69oRQRDlYNy1cQumg,town_square,,305,Σπρώξιμο διαδηλώτριας με ασπίδα,Σύνταγμα,1,OK
+113,"Nikis 11, Athina 105 57, Greece",37.9748799,23.7332317,ROOFTOP,ChIJi1-3Q3m9oRQRlAm6282paNo,"establishment,health,point_of_interest",105 57,311,Επίθεση σε διαδήλωση έξω από το υπουργείο ναυτλίας,Κέντρο Αθήνας,1,OK
+114,"Epaminonda 2, Athina 105 55, Greece",37.9744777,23.7261611,ROOFTOP,ChIJN1tcoiK9oRQR3Zp5gTXz2Is,"establishment,food,point_of_interest,restaurant",105 55,312,Βίαιη διάλυση ειρινικής διαδήλωσης και ξυλοδαρμοί,Ακρόπολη,1,OK
+115,"Λεωφ. Βασιλέως Γεωργίου 27, Mpizaniou 7, Thessaloniki 546 40, Greece",40.6192979,22.9545099,ROOFTOP,ChIJtyvYbjI5qBQRDrHIOGj6aAM,"cafe,establishment,food,point_of_interest,store",546 40,316,"Συμμετοχή ένστολων σε επίθεση ακροδεξιών στο ""Ελεύθερο Κοινωνικό Χώρο Σχολείο""","ΕΚΧ Σχολείο, Θεσσαλονίκη",1,OK
+116,"Λεωφ. Βασιλέως Γεωργίου 27, Mpizaniou 7, Thessaloniki 546 40, Greece",40.6192979,22.9545099,ROOFTOP,ChIJtyvYbjI5qBQRDrHIOGj6aAM,"cafe,establishment,food,point_of_interest,store",546 40,317,"Συνεργασία με ακροδεξιούς που επιτίθενται στο ""Ελεύθερο Κοινωνικό Χώρο Σχολείο""","ΕΚΧ Σχολείο, Θεσσαλονίκη",1,OK
+117,"Ioannina, Greece",39.66502880000001,20.8537466,APPROXIMATE,ChIJZ93-3qLpWxMRwJe54iy9AAQ,"locality,political",,320, Ξυλοδαρμοί φοιτητών στην επέτειο του Πολυτεχνείου,Ιωάννινα,1,OK
