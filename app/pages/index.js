@@ -8,6 +8,7 @@ export default function HomePage({ entries }) {
     <Layout>
       <Head>
         <title>Μεμονωμένα Περιστατικά</title>
+        <meta name="description" content="Μεμονωμένα Περιστατικά Αστυνομικής βίας και κατάχρησης εξουσίας" />
         <meta property="og:locale" content="el_GR" />
         <meta property="og:title" content="Μεμονωμένα Περιστατικά" />
         <meta property="og:description" content="Αστυνομική βία, αυθαιρεσία και κατάχρηση εξουσίας" />
@@ -25,8 +26,8 @@ export default function HomePage({ entries }) {
       <h3>Αστυνομικής <em>βίας</em> και <em>κατάχρησης</em> εξουσίας</h3>
 
       <nav>
-        <a href="https://forms.gle/cNgRuEyUQWDPr4rr8" className="button button-primary" target="_blank">Αναφορα Περιστατικου</a>
-        <a href="https://twitter.com/peristatika" className="button button-secondary" target="_blank">Twitter</a>
+        <a href="https://forms.gle/cNgRuEyUQWDPr4rr8" className="button button-primary" target="_blank" rel="external noopener noreferrer">Αναφορα Περιστατικου</a>
+        <a href="https://twitter.com/peristatika" className="button button-secondary" target="_blank" rel="external noopener noreferrer">Twitter</a>
       </nav>
 
       <section id="content">
