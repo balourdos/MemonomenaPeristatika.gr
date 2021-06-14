@@ -4,26 +4,27 @@ body {
   margin: 3em;
 }
 
-@media (max-width: 600px) {
-  body {
-    margin: 3em 0;
-  }
-  .thumb {
-    width: 100%;
-  }
+.entry {
+  background-color: #f3f3f3;
+  border-radius: 7px;
+  padding: 3%;
+  margin: 1%;
 }
 
-@media (min-width: 600px) {
-  .thumb {
-    width: 360px;
-    padding: 10px 10px 10px 0;
-  }
-}
 
 .thumb {
-  padding-bottom: 10px;
+  width: 320px;
+  padding: 0px;
+  box-shadow: 0 0 6px 1px #e8e8e8;
+  border-radius: 5px;
+  margin: 10px 5px;
+  background-color: #fff;
+  transition: box-shadow 0.3s;
 }
 
+.thumb:hover {
+  box-shadow: 0 0 6px 8px #e8e8e8;
+}
 .thumb > a {
   text-decoration: none;
 }
@@ -54,7 +55,7 @@ section {
 
 h4 {
   font-size: 140%;
-  margin-top: 2em;
+  font-weight: bold;
 }
 h5 {
   font-size: 100%;
@@ -76,7 +77,7 @@ em {
 
 span.description {
   display: block;
-  margin: 5px 0 5px 0;
+  margin: 8px;
 }
 
 nav {
@@ -95,3 +96,13 @@ nav a {
   padding: 20px;
   border-radius: 5px;
 }
+
+@media (max-width: 600px) {
+  body {
+    margin: 3em 0;
+  }
+  .thumb {
+    width: 100%;
+  }
+}
+
